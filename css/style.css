@@ -1,0 +1,40 @@
+@font-face{ 
+	font-family: 'BlackChancery';
+	src: url('./webfonts/blkchcry-webfont.eot');
+	src: url('./webfonts/blkchcry-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('./webfonts/blkchcry-webfont.woff') format('woff'),
+	     url('./webfonts/blkchcry-webfont.ttf') format('truetype'),
+	     url('./webfonts/blkchcry-webfont.svg#webfont') format('svg');
+}
+body{
+    margin: 0;
+}
+.main-nav{    
+    background: #242124;
+}
+.logo{
+    margin: .5em 3em 0em;
+}
+.main-nav__list{
+    float: right;
+    margin: .7em 2em 0em 0em;
+}
+.main-nav__item{
+    display: inline-block;
+}
+.main-nav__link{
+    margin: 0em 1em;    
+    text-decoration: none;
+    font-family: 'BlackChancery';
+    font-size: 1.7em;
+    color: #fff;
+}
+.main-nav__link:hover{
+    color: #b11921;
+}
+.main-background__container{
+    
+}
+.main-background__img{
+    width: 100%;
+}
