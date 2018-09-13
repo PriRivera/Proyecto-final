@@ -13,28 +13,30 @@ body{
     background: #242124;
 }
 .logo{
+    max-width: 5em;
     margin: .5em 3em 0em;
 }
 .main-nav__list{
     float: right;
-    margin: .7em 2em 0em 0em;
+    margin: .8em 2em 0em 0em;
 }
 .main-nav__item{
     display: inline-block;
 }
 .main-nav__link{
-    margin: 0em 1em;    
+    margin: 0em 1.5em;    
     text-decoration: none;
     font-family: 'BlackChancery';
-    font-size: 1.7em;
+    font-size: 1.3em;
     color: #fff;
 }
 .main-nav__link:hover{
     color: #b11921;
 }
 .main-background__container{
-    
+    background-color: #242124;
 }
 .main-background__img{
     width: 100%;
+    opacity: .5;
 }
