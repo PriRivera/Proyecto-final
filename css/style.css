@@ -4,10 +4,19 @@
 	src: url('./webfonts/blkchcry-webfont.eot?#iefix') format('embedded-opentype'),
 	     url('./webfonts/blkchcry-webfont.woff') format('woff'),
 	     url('./webfonts/blkchcry-webfont.ttf') format('truetype'),
-	     url('./webfonts/blkchcry-webfont.svg#webfont') format('svg');
+         url('./webfonts/blkchcry-webfont.svg#webfont') format('svg');
+         
+    font-family: 'Dejavu-Sans';
+	src: url('./dejavu-sans.extralight-webfont.eot');
+	src: url('./webfonts/dejavu-sans.extralight-webfont.eot') format('embedded-opentype'),
+	     url('./webfonts/DejaVuSans-ExtraLight-webfont.woff') format('woff'),
+	     url('./webfonts/DejaVuSans-ExtraLight.ttf') format('truetype'),
+	     url('./webfonts/DejaVuSans-ExtraLight-webfont.svg') format('svg');
 }
+
 body{
-    margin: 0;
+    background: #F2F2F2;
+    margin: 0px;
 }
 .main-nav{    
     background: #242124;
@@ -39,4 +48,71 @@ body{
 .main-background__img{
     width: 100%;
     opacity: .5;
+}
+.sub-menu{
+    margin: 4em;
+    float: right;
+}
+.sub-menu_item{
+    display: inline-block;
+    background: #731921;
+    margin: 1em;
+    height: 3em;
+}
+.sub-menu_link{
+    margin: 1em;
+    text-decoration: none;
+    font-family: 'Dejavu-Sans';
+    font-size: 2em;
+    color: #fff;
+}
+.main-recipies{
+    margin: 8em 2em 6em 3em;
+    padding: 2em;
+    display: block;
+    border-style: groove;
+    background: #fff;
+}
+.recipe-img{
+    width: 25%;
+}
+.red-block{
+    background: #731921;
+    width: 100%;
+    height: 148px;
+    z-index: -1;
+    position: absolute;
+    top: 973px;
+    left: 0px;
+}
+.main-footer{
+    background:#242124;
+    width: 100%;
+    height: 125px;
+}
+.footer-li_link{
+    text-decoration: none;
+    margin: 0.5em;
+}
+.footer-li_img{
+    width: 3.5%;
+}
+.footer-imgs{
+    display: inline;
+    text-decoration: none;
+    margin: 21em;
+}
+.footer-li_item{
+    display: contents;
+}
+.footer-p{
+    font-family: 'Dejavu-Sans';
+    color:#fff;
+    float: right;
+    margin: 2em;
+    font-size: 1em;
+}
+.footer-logo{
+    max-width: 10em;
+    margin: 1.5em 2em 0em;
 }
