@@ -152,7 +152,7 @@ body{
     height: 859px;
     background: #fff;
     border-radius: 2%;
-    margin: 9em 15em;
+    margin: 3em 15em;
 }
 .form-login{
     font-family: 'Dejavu-Sans-ExtraLight';
@@ -171,14 +171,14 @@ body{
     margin-left: 0.8em;
 }
 .icono-login{
-    width: 16%;
+    width: 14%;
     margin: 1em 25em;
 }
 .titulo-login{
     font-family: 'Dejavu-Sans-Condensed';
     color: #731921;
-    font-size: 3em;
-    margin-left: 5em;
+    font-size: 2em;
+    margin-left: 10em;
     margin-top: 0.5em;
 }
 .titulo-login_span{
@@ -188,7 +188,7 @@ body{
 }
 .main-btn{
     display: block;
-    margin: 0.5em 32em;
+    margin: 1em 32em;
     width: 6em;
     padding: 0.3em;
     border-radius: .3em;
