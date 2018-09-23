@@ -5,8 +5,8 @@
             url('./webfonts/blkchcry-webfont.woff') format('woff'),
             url('./webfonts/blkchcry-webfont.ttf') format('truetype'),
             url('./webfonts/blkchcry-webfont.svg#webfont') format('svg');
-         font-weight: normal;
-         font-style: normal;
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face{    
     font-family: 'Dejavu-Sans-Condensed';
@@ -15,8 +15,8 @@
             url('./webfonts/DejaVuSansCondensed.woff') format('woff'),
             url('./webfonts/DejaVuSansCondensed.ttf') format('truetype'),
             url('./webfonts/DejaVuSansCondensed.svg') format('svg');   
-        font-weight: normal;
-        font-style: normal;   
+    font-weight: normal;
+    font-style: normal;   
 }
 @font-face{
     font-family: 'Dejavu-Sans-ExtraLight';
@@ -29,10 +29,12 @@
     font-style: normal;
 }
 
-
+/* ---------- Estilos genericos ----------*/
 body{
     background: #F2F2F2;
     margin: 0px;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 20px;
 }
 .main-nav{    
     background: #242124;
@@ -58,6 +60,88 @@ body{
 .main-nav__link:hover{
     color: #b11921;
 }
+h3{
+    margin: 0;  
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 32px;
+    font-weight: 100;
+}
+h3 span{
+    font-family: 'Dejavu-Sans-Condensed';
+    color: #731921;
+}
+.form-texto{
+    width: 78%;
+    padding: 6px;
+    margin: .5em 0em;
+    border: none;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 20px;
+}
+.text-area{
+    resize: none;
+}
+.border{
+    padding: 12px 20px;
+    margin: 1em 0;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.main-btn{
+    display: inline-block;
+    margin: .5em 0 1em;
+    padding: 0.3em;
+    border-radius: .3em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    background: #4C759E;
+    color: #fff;
+    font-family: 'Dejavu-Sans-Condensed';
+}
+.main-footer{
+    width: 100%;
+    height: 125px;
+}
+.footer-nav{
+    display: block;
+    text-align: center;
+    background:#242124;
+}
+.footer-logo{
+    display: inline-block;
+    float: left;
+    margin: 1em 2em;
+    max-width: 20%;
+}
+.footer-imgs{
+    display: inline-block;
+    text-align: center;
+    max-width: 20%;
+    margin: 2em 2em;
+    padding: 0;
+}
+.footer-li_link{
+    text-decoration: none;
+    margin: .5em;
+}
+.footer-li_img{
+    max-width: 15%;
+}
+.footer-li_item{
+    display: contents;
+}
+.footer-p{
+    display: inline-block;
+    float: right;
+    margin: 1em 3em;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    color:#fff;
+    font-size: 1em;
+}
+
+/* ---------- index ---------- */
 .main-background__container{
     background-color: #242124;
     height: 722px; /*Esto no es una reparacion optima (Preguntar al profesor)*/
@@ -67,7 +151,7 @@ body{
     opacity: .5;
 }
 .sub-menu{
-    margin: 4em 4em 0em 0em;
+    margin: -4em 4em 0em 0em;
     float: right;
 }
 .sub-menu_item{
@@ -108,95 +192,95 @@ body{
     z-index: -1;
     width: 100%;
     height: 10em;
-    top: 65em;
+    top: 55em;
     left: 0px;
     background: #731921;
 }
-.main-footer{
-    background:#242124;
-    width: 100%;
-    height: 125px;
-}
-.footer-li_link{
-    text-decoration: none;
-    margin: 0.5em;
-}
-.footer-li_img{
-    width: 3.5%;
-}
-.footer-imgs{
-    display: inline;
-    text-decoration: none;
-    margin: 21em;
-}
-.footer-li_item{
-    display: contents;
-}
-.footer-p{
-    font-family: 'Dejavu-Sans-ExtraLight';
-    color:#fff;
-    float: right;
-    margin: 2em;
-    font-size: 1em;
-}
-.footer-logo{
-    max-width: 10em;
-    margin: 1.5em 2em 0em;
-}
+
+/*------ Login -----*/
 .body-Login{
     background-image: url("../img/fondoLogin.png");
     background-image: no-repeat;
 }
 .cuadro-login{
-    width: 64%;
-    height: 859px;
+    width: 64%; 
+    margin: 2em auto;
+    text-align: center;
     background: #fff;
     border-radius: 2%;
-    margin: 3em 15em;
 }
 .form-login{
-    font-family: 'Dejavu-Sans-ExtraLight';
-    margin-left: 1em;
+    margin: 3em 3em 0;
+    text-align: left;
+}
+.icono-login{
+    display: block;
+    width: 14%;
+    margin: auto;
 }
 .form-login_imput{
+    display: inline-block;
     width: 94%;
     padding: 12px 20px;
-    margin: 1em 1em;
-    display: inline-block;
+    margin: 1em 0;
     border: 1.5px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
 }
-.form-text{
-    margin-left: 0.8em;
+.btn-login{
+    position: relative;
+    width: 16%;
+    left: 30%;
 }
-.icono-login{
-    width: 14%;
-    margin: 1em 25em;
-}
-.titulo-login{
-    font-family: 'Dejavu-Sans-Condensed';
-    color: #731921;
-    font-size: 2em;
-    margin-left: 10em;
-    margin-top: 0.5em;
-}
-.titulo-login_span{
-    font-family: 'Dejavu-Sans-ExtraLight';
-    color: black;
-    font-size: 1em;
-}
-.main-btn{
+
+/*------ Submit ------*/
+.main-title{  
     display: block;
-    margin: 1em 32em;
-    width: 6em;
-    padding: 0.3em;
-    border-radius: .3em;
+    max-width: 25%;
+    margin: 1em auto;
+}
+.recipe-form{
     text-align: center;
-    text-decoration: none;
-    font-size: 1.5em;
-    border: 1px solid;
-    background: #4C759E;
-    color: #fff;
-    font-family: 'Dejavu-Sans-Condensed';
+}
+.bloque-izquierda{
+    display: inline-block;
+    width: 48%;
+    float: left;
+    margin-left: .5em;
+}
+.bloque-imagen{
+    width: 60%;
+    height: 24.5em;
+    margin: auto;
+    background: #fff;
+}
+.imagen-vacia{
+    margin: 3em 2em 0em;
+}
+.bloque-derecha{
+    display: inline-block;
+    width: 48%;
+    text-align: left;
+}
+.bloque-aniadir{
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+}
+.btn-adding{
+    position: relative;
+    left: 76%;
+    border: none;
+}
+.form-steps{    
+    width: 97%;
+    padding: 6px;
+    margin: .5em 0em;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 20px;
+}
+.btn-submit{
+    position: relative;
+    left: 79%;
+    border: none;
 }

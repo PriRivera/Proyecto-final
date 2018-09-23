@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="¿Que se supone que va aquí"> <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
-    <title>Create account</title>
+    <title>Submit recipe</title>
 </head>
-<body class="body-Login">
+<body>
     <header>
         <nav class="main-nav">
             <img class="logo" src="img/logo.png" alt="Secret du Chef's logo">
@@ -18,25 +18,37 @@
             </ul>
         </nav>
     </header>
-    <section class="cuadro-login">
-        <br><br>
-        <img class="icono-login" src="img/Recurso 10.svg" alt="">
-        <br>
-        <h3><span>Create</span> a new account</h3>
-        <form class="form-login">
-            <label class="form-texto">Name:</label><br>
-            <input class="form-login_imput" type="text" name="firstname" placeholder="Your name.."> <br>
-            <label class="form-texto">Lastname:</label><br>
-            <input class="form-login_imput" type="text" name="lastname" placeholder="Your lastname.."> <br>
-            <label class="form-texto">Email:</label><br>
-            <input class="form-login_imput" type="email" name="email" placeholder="Your email.."> <br>
-            <label class="form-texto">Create password:</label><br>
-            <input class="form-login_imput"type="password" name="password" placeholder="Your password.."> <br>
-            <label class="form-texto">Confirm password:</label><br>
-            <input class="form-login_imput" type="password" name="password" placeholder="Confirm your password.."> <br>
+
+    <section>
+        <img class="main-title" src="img/new-recipe.png" alt="New recipe title">
+        <form class="recipe-form" action="">
+            <div class="bloque-izquierda">
+                <div class="bloque-imagen border">
+                    <img class="imagen-vacia" src="img/imagen.png" alt="Empty image simbol.">
+                    <p>Drop an image here <br> or</p>
+                    <input type="file" name="Recipe photo">
+                </div>                
+            </div>
+            <div class="bloque-derecha">
+                <h3><span>Name</span> for your recipe.</h3>
+                <input class="form-texto border" type="text" name="" id="" placeholder="Title" autofocus>
+                <br><br><br>
+                <h3><span>Description</span> to show.</h3>
+                <textarea class="form-texto text-area border" name="" id="" cols="30" rows="10" placeholder="Small and clear description."></textarea>
+            </div>
+            <div class="bloque-aniadir">
+                <br><br>
+                <h3><span>Ingredients</span> to be used.</h3>
+
+                <button class="main-btn btn-adding">Add an ingredient</button>
+                <br><br>
+                <h3><span>Preparation</span> instructions.</h3>
+                <textarea class="form-steps text-area border" name="" id="" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>
+                <button class="main-btn btn-submit">Save & publish</button>
+            </div>
         </form>
-        <a class="main-btn btn-login">Create</a>
     </section>
+
     <footer class="main-footer">
         <nav class="footer-nav">
             <img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo">
@@ -47,7 +59,7 @@
                 <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
             </ul>   
             <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
-        </nav>       
-    </footer>   
+        </nav>    
+    </footer>
 </body>
 </html>
