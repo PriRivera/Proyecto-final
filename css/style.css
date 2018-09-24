@@ -51,7 +51,7 @@ body{
     display: inline-block;
 }
 .main-nav__link{
-    margin: 0em 1.5em;    
+    margin: 0em .5em 0 1.5em;    
     text-decoration: none;
     font-family: 'BlackChancery';
     font-size: 1.3em;
@@ -143,16 +143,55 @@ h3 span{
 
 /* ---------- index ---------- */
 .main-background__container{
-    background-color: #242124;
-    height: 722px; /*Esto no es una reparacion optima (Preguntar al profesor)*/
+    background-image: url(../img/fondoIndex.png);
+    background: cover;
+    max-width: 100%;
 }
-.main-background__img{
+.main-slider{
+    width: 70%;
+    margin: auto;
+    padding: 2em;
+}
+.slider-background{
+    border: #fff solid 10px;
+    height: 30em;
+    background: #fff;
+    overflow: hidden;
+}
+.slider-ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 500%;
+    animation: slide 25s infinite;
+}
+.slider-li{
+    list-style: none;
     width: 100%;
-    opacity: .5;
+}
+.slider-img{
+    width: 100%;
+    height: auto;
 }
 .sub-menu{
     margin: -4em 4em 0em 0em;
     float: right;
+}
+@keyframes slide{
+    0%{margin-left: 0%}
+    16.6%{margin-left: 0%}
+    
+    20%{margin-left: -100%}
+    36%{margin-left: -100%}
+    
+    40%{margin-left: -200%}
+    56%{margin-left: -200%}
+    
+    60%{margin-left: -300%}
+    76%{margin-left: -300%}
+
+    80%{margin-left: -400%}
+    100%{margin-left: -400%}
 }
 .sub-menu_item{
     display: inline-block;
