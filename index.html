@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="¿Que se supone que va aquí"> <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
     <title>Food recepies</title>
 </head>
 <body>
     <header>
         <nav class="main-nav">
             <img class="logo" src="img/logo.png" alt="Secret du Chef's logo">
+            <div class="main-nav__search-container">
+              <form action="">
+                <input class="main-nav__input" type="text" placeholder="Search.." name="search">
+                <button class="main-nav__button" type="submit"><i class="fa fa-search"></i></button>
+               </form>
+            </div>
             <ul class="main-nav__list">
                 <li class="main-nav__item"><a class="main-nav__link" href="#">Home</a></li>
                 <li class="main-nav__item"><a class="main-nav__link" href="#">Contact</a></li>
@@ -25,7 +32,7 @@
                         <li class="slider-li"><img class="slider-img" src="img/ensalada-cesar.jpg" alt="Caesar salad"></li>
                         <li class="slider-li"><img class="slider-img" src="img/gallo-pinto.jpg" alt="Gallo pinto"></li>
                         <li class="slider-li"><img class="slider-img" src="img/penne-tomate.jpg" alt="Penne pasta with tomato"></li>
-                        <li class="slider-li"><img class="slider-img" src="img/queque-de-banano.jpg" alt="Banana cake"></li>
+                        <li class="slider-li"><img class="slider-img slider-img--queque" src="img/queque.jpeg" alt="cake"></li>
                     </ul>
                </div>
             </div>
@@ -39,11 +46,19 @@
             <li class="sub-menu_item"><a class="sub-menu_link" href="#">Pastas</a></li>
             <li class="sub-menu_item"><a class="sub-menu_link" href="#">Baked</a></li>
         </ul> 
-        <div class="main-recipies">   
-            <img class="recipe-img" src="img/recipies.png" alt="recepies">        
+        <div class="main-recipies">      
+            <ul class="recipe-menu">
+                <li class="recipe-menu_item"><a class="recipe-menu_link"></a><img class="recipe-menu_img" src="img/frenchToast.png" alt="French Toast"><p class="recipe-menu_description">French Toast</p></a></li>
+                <li class="recipe-menu_item"><a class="recipe-menu_link"></a><img class="recipe-menu_img" src="img/elementoLista.jpeg" alt="lasagna"><p class="recipe-menu_description">Pasta Pie</p></a></li>
+                <li class="recipe-menu_item"><a class="recipe-menu_link"></a><img class="recipe-menu_img" src="img/chicken.png" alt="fried chicken"><p class="recipe-menu_description">Chicken Tenders</p></a></li>
+                <li class="recipe-menu_item"><a class="recipe-menu_link"></a><img class="recipe-menu_img" src="img/favrecipes.jpeg" alt="fried chicken wings"><p class="recipe-menu_description">Chicken Wings</p></a></li>
+                <li class="recipe-menu_item"><a class="recipe-menu_link"></a><img class="recipe-menu_img" src="img/papa.jpg" alt="baked potato"><p class="recipe-menu_description">Baked Potato</p></a></li>
+                <li class="recipe-menu_item"><a class="recipe-menu_link"></a><img class="recipe-menu_img" src="img/ultreia-039.jpg" alt="fish"><p class="recipe-menu_description">Gourmet Fish</p></a></li>
+            </ul>
+            <img class="recipe-img" src="img/recipes.png" alt="recepies">  
             <div class="red-block"></div>
         </div>
-    </section>     
+    </section>      
     <footer class="main-footer">
         <nav class="footer-nav">
             <img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo">
