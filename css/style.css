@@ -241,6 +241,14 @@ h3 span{
     background-image: url("../img/fondoLogin.png");
     background-image: no-repeat;
 }
+.cuadro-registro{
+    display: none;  
+    width: 64%; 
+    margin: 2em auto;
+    text-align: center;
+    background: #fff;
+    border-radius: 2%;
+}
 .cuadro-login{
     width: 64%; 
     margin: 2em auto;
