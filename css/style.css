@@ -57,6 +57,34 @@ body{
     font-size: 1.3em;
     color: #fff;
 }
+.main-nav__search-container{
+    text-align: center;
+    display: -webkit-inline-box;
+    z-index: 1;
+    position: absolute;
+    margin-left: 16.5em;
+    margin-top: 0.5em;  
+}
+.main-nav__input{
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    font-family: 'Dejavu-Sans-Condensed';
+}
+.main-nav__button{
+  float: right;
+  padding: 6px 13px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.main-nav__button:hover{
+    background: #ccc;
+}
 .main-nav__link:hover{
     color: #b11921;
 }
@@ -143,18 +171,18 @@ h3 span{
 
 /* ---------- index ---------- */
 .main-background__container{
-    background-image: url(../img/fondoIndex.png);
+    background-image: url(../img/foodoverblack1.png);
     background: cover;
     max-width: 100%;
 }
 .main-slider{
-    width: 70%;
+    width:57%;
     margin: auto;
     padding: 2em;
 }
 .slider-background{
     border: #fff solid 10px;
-    height: 30em;
+    height: 28em;
     background: #fff;
     overflow: hidden;
 }
@@ -172,6 +200,9 @@ h3 span{
 .slider-img{
     width: 100%;
     height: auto;
+}
+.slider-img--queque{
+    height: ;
 }
 .sub-menu{
     margin: -4em 4em 0em 0em;
@@ -215,17 +246,47 @@ h3 span{
     top: -1em;
 }
 .main-recipies{
-    margin: 8em 3em;
+    margin: 9em 3em;
     padding: 2em;
     display: block;
     border-style: groove;
-    background: #fff;
+    background: white;
+    height: 502px;
 }
 .recipe-img{
     display: block;
-    margin: 8em 2em;
+    margin: 11em 1em;
     width: 25%;
 }
+.recipe-menu{
+    z-index: 2;
+    position: absolute;
+    width: 72%;
+    text-align: right;
+    margin-left: 8em;
+}
+.recipe-menu_item{
+    display: contents; 
+}
+.recipe-menu_link{
+   text-decoration: none;
+}
+.recipe-menu_description{
+    z-index: 2;
+    position: absolute;
+    margin: 10.5em -10em;
+    padding: 0em;
+    display: -webkit-inline-box;
+}
+.recipe-menu_img{
+    width: 23%;
+    margin: 0.5em;
+    margin-bottom: 2em;
+}
+.recipe-menu_img:hover{
+    opacity: 0.8;
+    cursor: pointer;
+ }
 .red-block{
     position: absolute;
     z-index: -1;
