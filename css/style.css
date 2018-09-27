@@ -202,7 +202,7 @@ h3 span{
     height: auto;
 }
 .slider-img--queque{
-    height: ;
+    height: auto;
 }
 .sub-menu{
     margin: -4em 4em 0em 0em;
@@ -391,4 +391,101 @@ h3 span{
     position: relative;
     left: 79%;
     border: none;
+}
+/*-----search-----*/
+.header-background{
+    background-image: url("../img/foodoverblack1.png");
+    background-image: no-repeat;
+    height: 365px;
+    background-position-x: -250px;
+    background-position-y: -227px;
+}
+.main-nav__input-search{
+    font-size: 17px;
+    border: none;
+    font-family: 'Dejavu-Sans-Condensed';
+    background-color: white;
+    padding-right: 15em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    padding-left: 13px;  
+}
+.main-nav__button-search{
+    float: right;
+    padding: 17px 23px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+.container-search{
+    text-align: center;
+    display: -webkit-inline-box;
+    z-index: 1;
+    position: absolute;
+    margin-left: -1.9em;
+    margin-top: 1.5em;
+}
+.search-bar{
+    margin-left: 3em;
+    margin-top: 2em;
+}
+.main-text{
+    display: inline-block;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    color: #fff;
+    margin-left: 7.5em;
+    margin-top: 2em;
+}
+.sub-menu_link-search{
+    display: block;
+    margin: 0px 98px;
+    text-decoration: none;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 1em;
+    color: #fff;
+}
+.sub-menu_item-search{
+    display: block;
+}
+.sub-menu_item-search:hover{
+  text-decoration: underline;  
+}
+.search-menu{
+    display: -webkit-inline-box;
+    font-size: 27px;
+    margin-left: 0;
+    margin-top: 3.5em;
+}
+.baked{
+    text-decoration: underline;
+}
+.search-content{
+    width: auto;
+    height: auto;
+    margin-top: 3em;
+    margin-bottom: 4em;
+    margin-right: 1em;
+}
+.search-content_item{
+    width: 22%;
+    margin: 16px 17px;
+    display: inline-block;
+}
+.search-content_link{
+    text-decoration: none;
+}
+.search-content_img{
+    width: 94%;
+    margin: 16px 17px;
+    display: inline-block;
+}
+.search-content_img:hover{
+    opacity: 0.8;
+    cursor: pointer;
+ }
+.search-description__margin{
+    margin: 0em 117px;
+    padding: 0em;
 }
