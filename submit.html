@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav class="main-nav">
-            <img class="logo" src="img/logo.png" alt="Secret du Chef's logo">
+            <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
                 <form action="">
                   <input class="main-nav__input" type="text" placeholder="Search.." name="search">
@@ -45,8 +45,24 @@
             </div>
             <div class="bloque-aniadir">
                 <br><br>
-                <h3><span>Ingredients</span> to be used.</h3>
-
+                <h3><span>Ingredients</span> to be used.</h3> <br>
+                <div class="ingrediente">
+                    <div class="form-texto contenedor-generico border">
+                        <input class="input-base input-name" type="text" placeholder="Ingredient name">
+                        <input class="input-base input-quantity" type="number" min="0" step="1" placeholder="0">
+                        <input class="input-base input-unit" list="medidas" placeholder="Measure">
+                    </div>
+                    <a href=""><img class="input-delete" src="img/delete.png" alt=""></a>
+                </div>
+                <datalist id="medidas">
+                    <option value="Grams">
+                    <option value="Ounces">
+                    <option value="Liter">
+                    <option value="Milliliter">
+                    <option value="Cups">
+                    <option value="Teaspoon">
+                    <option value="Tablespoon"> 
+                </datalist>
                 <button class="main-btn btn-adding">Add an ingredient</button>
                 <br><br>
                 <h3><span>Preparation</span> instructions.</h3>
