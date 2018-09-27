@@ -42,6 +42,7 @@ body{
 .logo{
     max-width: 5em;
     margin: .5em 3em 0em;
+    cursor: pointer;
 }
 .main-nav__list{
     float: right;
@@ -127,6 +128,7 @@ h3 span{
     background: #4C759E;
     color: #fff;
     font-family: 'Dejavu-Sans-Condensed';
+    cursor: pointer;
 }
 .main-footer{
     width: 100%;
@@ -200,9 +202,6 @@ h3 span{
 .slider-img{
     width: 100%;
     height: auto;
-}
-.slider-img--queque{
-    height: ;
 }
 .sub-menu{
     margin: -4em 4em 0em 0em;
@@ -335,8 +334,18 @@ h3 span{
     border-radius: 4px;
     box-sizing: border-box;
 }
+.to-register{
+    font-size: 17px;
+}
 .btn-login{
     position: relative;
+    margin-left: 7.7em; 
+    width: 16%;
+    left: 30%;
+}
+.btn-register{
+    position: relative;
+    margin-left: 13em; 
     width: 16%;
     left: 30%;
 }
@@ -374,6 +383,54 @@ h3 span{
     display: inline-block;
     width: 80%;
     text-align: left;
+}
+.ingrediente{
+    width: 100%;
+}
+.contenedor-generico{
+    display: inline-block;
+    width: 90%;
+    background: #fff;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.input-base{
+    display: inline-flex;
+    margin: 0;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 20px;
+    padding-left: 1em;
+}
+.input-name{
+    width: 55.5%;
+    height: 2.5em;
+    float: left;
+    border: none;
+}
+.input-quantity{
+    width: 19%;
+    height: 2.5em;
+    border-top: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+    border-left: 5px, solid, #ccc;
+}
+.input-unit{
+    width: 19.5%;
+    height: 2.5em;
+    float: right;
+    border-top: transparent;
+    border-right: transparent;
+    border-bottom: transparent;
+    border-left: 5px, solid, #ccc;
+}
+.input-delete{
+    display: inline-block;
+    width: 30px;
+    height: auto;
+    margin-left: 1em;
 }
 .btn-adding{
     position: relative;

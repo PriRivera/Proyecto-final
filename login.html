@@ -11,7 +11,7 @@
 <body class="body-Login">
     <header>
         <nav class="main-nav">
-            <img class="logo" src="img/logo.png" alt="Secret du Chef's logo">
+            <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
                 <form action="">
                   <input class="main-nav__input" type="text" placeholder="Search.." name="search">
@@ -41,20 +41,22 @@
             <input class="form-login_imput"type="password" name="password" placeholder="Your password.."> <br>
             <label class="form-texto">Confirm password:</label><br>
             <input class="form-login_imput" type="password" name="password" placeholder="Confirm your password.."> <br>
+            <a class="main-btn btn-register">Register</a>
         </form>
-        <a class="main-btn btn-login">Create</a>
     </section>
     <section class="cuadro-login">
         <br><br>
         <img class="icono-login" src="img/Recurso 10.svg" alt="">
         <br>
         <h3><span>Create</span> a new account</h3>
-        <form action="form-login">
+        <form action="" class="form-login">
             <label class="form-texto">Email:</label><br>
             <input class="form-login_imput" type="text" name="firstname" placeholder="Your name.."> <br>
             <label class="form-texto">Password:</label><br>
             <input class="form-login_imput" type="text" name="lastname" placeholder="Your lastname.."> <br>
-        </form>
+            <a href="#" class="to-register">Create an account</a>
+            <a class="main-btn btn-login">Login</a>
+        </form>        
     </section>
     <footer class="main-footer">
         <nav class="footer-nav">
@@ -67,6 +69,8 @@
             </ul>   
             <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
         </nav>       
-    </footer>   
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
