@@ -174,7 +174,7 @@ h3 span{
 /* ---------- index ---------- */
 .main-background__container{
     background-image: url(../img/foodoverblack1.png);
-    background: cover;
+    background-size: cover;
     max-width: 100%;
 }
 .main-slider{
@@ -203,12 +203,6 @@ h3 span{
     width: 100%;
     height: auto;
 }
-<<<<<<< HEAD
-.slider-img--queque{
-    height: auto;
-}
-=======
->>>>>>> 2373cdfa264e8d9ec1fa145131baa4441f7337fb
 .sub-menu{
     margin: -4em 4em 0em 0em;
     float: right;
