@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="¿Que se supone que va aquí"> <!--Aiuda-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
+    <title>Create account</title>
+</head>
+<body class="body-Login">
+    <header>
+        <nav class="main-nav">
+            <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <div class="main-nav__search-container">
+                <form action="">
+                  <input class="main-nav__input" type="text" placeholder="Search.." name="search">
+                  <button class="main-nav__button" type="submit"><i class="fa fa-search"></i></button>
+                 </form>
+              </div>
+            <ul class="main-nav__list">
+                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="#">Contact</a></li>
+                <li id="login" class="main-nav__item"><a class="main-nav__link" href="#">Login</a></li>                
+                <div id="logedin" class="main-nav__item  dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-content--a">Profile</a>
+                        <a href="submit.html" class="dropdown-content--a">New recipe</a>
+                        <a id="logout" href="#" class="dropdown-content--a">Log out</a>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <footer class="main-footer">
+        <nav class="footer-nav">
+            <img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo">
+            <ul class="footer-imgs">
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/fb.png" alt="facebook"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
+            </ul>   
+            <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
+        </nav>       
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+  </html>
