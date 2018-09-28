@@ -13,15 +13,23 @@
         <nav class="main-nav">
             <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
-              <form action="">
-                <input class="main-nav__input" type="text" placeholder="Search.." name="search">
-                <button class="main-nav__button" type="submit"><i class="fa fa-search"></i></button>
-               </form>
-            </div>
+                <form action="">
+                  <input class="main-nav__input" type="text" placeholder="Search.." name="search">
+                  <button class="main-nav__button" type="submit"><i class="fa fa-search"></i></button>
+                 </form>
+              </div>
             <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Home</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Contact</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="login.html">Login</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
+                <li id="login" class="main-nav__item"><a class="main-nav__link" href="login.html">Login</a></li>                
+                <div id="logedin" class="main-nav__item  dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-content--a">Profile</a>
+                        <a href="submit.html" class="dropdown-content--a">New recipe</a>
+                        <a id="logout" href="#" class="dropdown-content--a">Log out</a>
+                    </div>
+                </div>
             </ul>
         </nav>
         <div class="main-background__container">
