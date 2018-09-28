@@ -63,11 +63,12 @@ body{
     display: -webkit-inline-box;
     z-index: 1;
     position: absolute;
-    margin-left: 16.5em;
+    margin-left: 1.5em;
     margin-top: 0.5em;  
 }
 .main-nav__input{
     padding: 6px;
+    padding-right: 137px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
