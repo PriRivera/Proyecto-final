@@ -21,7 +21,15 @@
             <ul class="main-nav__list">
                 <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
                 <li class="main-nav__item"><a class="main-nav__link" href="#">Contact</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Login</a></li>
+                <li id="login" class="main-nav__item"><a class="main-nav__link" href="#">Login</a></li>                
+                <div id="logedin" class="main-nav__item  dropdown">
+                    <button class="dropbtn">Dropdown</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-content--a">Profile</a>
+                        <a href="submit.html" class="dropdown-content--a">New recipe</a>
+                        <a id="logout" href="#" class="dropdown-content--a">Log out</a>
+                    </div>
+                </div>
             </ul>
         </nav>
     </header>
@@ -54,7 +62,8 @@
             <input class="form-login_imput" type="text" name="firstname" placeholder="Your name.."> <br>
             <label class="form-texto">Password:</label><br>
             <input class="form-login_imput" type="text" name="lastname" placeholder="Your lastname.."> <br>
-            <a href="#" class="to-register">Create an account</a>
+            <p class="dont-account">Don't have an account?</p> 
+            <a href="#" class="to-register">Create account</a>
             <a class="main-btn btn-login">Login</a>
         </form>        
     </section>
