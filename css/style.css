@@ -590,7 +590,6 @@ h3 span{
     margin: 0em 117px;
     padding: 0em;
 }
-<<<<<<< HEAD
 /*------------contact-----*/
 .body-contact{
     background-image: url(../img/shrimp.jpg);
@@ -713,7 +712,6 @@ h3 span{
     margin: 0.5em;
     font-size: 1.9em;
 }
-=======
 
 /* ---------- Recipe ------------*/
 .recipe-sector{
@@ -756,4 +754,3 @@ h3 span{
 .ingredient-table tr:nth-child(odd) {
    background-color: #F2F2F2;
 }
->>>>>>> 86057c6227c1e254cd2ef23c1fe53bdeefafdd61
