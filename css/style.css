@@ -36,6 +36,10 @@ body{
     font-family: 'Dejavu-Sans-ExtraLight';
     font-size: 20px;
 }
+th{
+    font-weight: normal;
+    padding: .5em 0;
+}
 .main-nav{    
     background: #242124;
 }
@@ -129,6 +133,10 @@ h3 span{
     font-family: 'Dejavu-Sans-Condensed';
     color: #731921;
 }
+.main-p{
+    text-align: justify;
+    text-justify: inter-word;
+}
 .form-texto{
     width: 78%;
     padding: 6px;
@@ -159,6 +167,17 @@ h3 span{
     color: #fff;
     font-family: 'Dejavu-Sans-Condensed';
     cursor: pointer;
+}
+.bloque-izquierda{
+    display: inline-block;
+    width: 48%;
+    float: left;
+    margin-left: .5em;
+}
+.bloque-derecha{
+    display: inline-block;
+    width: 48%;
+    text-align: left;
 }
 .main-footer{
     width: 100%;
@@ -395,12 +414,6 @@ h3 span{
 .recipe-form{
     text-align: center;
 }
-.bloque-izquierda{
-    display: inline-block;
-    width: 48%;
-    float: left;
-    margin-left: .5em;
-}
 .bloque-imagen{
     width: 50%;
     height: auto;
@@ -409,11 +422,6 @@ h3 span{
 }
 .imagen-vacia{
     margin: 3em 2em 0em;
-}
-.bloque-derecha{
-    display: inline-block;
-    width: 48%;
-    text-align: left;
 }
 .bloque-aniadir{
     display: inline-block;
@@ -582,6 +590,7 @@ h3 span{
     margin: 0em 117px;
     padding: 0em;
 }
+<<<<<<< HEAD
 /*------------contact-----*/
 .body-contact{
     background-image: url(../img/shrimp.jpg);
@@ -704,3 +713,47 @@ h3 span{
     margin: 0.5em;
     font-size: 1.9em;
 }
+=======
+
+/* ---------- Recipe ------------*/
+.recipe-sector{
+    width: 85%;
+    margin: auto;    
+    text-justify: inter-word;
+}
+.recipe-title{
+    display: block;
+    font-family: 'BlackChancery';
+    font-size: 72px;
+    text-align: center;
+    color: #731921;
+}
+.recipe-image--container{
+    max-width: 85%;
+    max-height: 24em;
+    border-radius: 4px;
+    background: #ccc;
+    overflow: hidden;
+}
+.recipe-image{
+    display: block;
+    width: 100%;
+}
+.bloque-central{
+    width: 100%;
+}
+.ingredient-table{
+    width: 100%;
+    border-spacing: 0;
+}
+.ingredient-title{
+    font-family: 'Dejavu-Sans-Condensed';
+    font-size: 25px;
+}
+.ingredient-table tr:nth-child(even) {
+    background-color: #ccc;
+}
+.ingredient-table tr:nth-child(odd) {
+   background-color: #F2F2F2;
+}
+>>>>>>> 86057c6227c1e254cd2ef23c1fe53bdeefafdd61
