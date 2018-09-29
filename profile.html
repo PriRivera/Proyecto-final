@@ -6,10 +6,10 @@
     <meta name="description" content="¿Que se supone que va aquí"> <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
-    <title>Create account</title>
+    <title>Profile</title>
 </head>
-<body class="body-Login">
-    <header>
+<body>
+    <header class="header-background__profile">
         <nav class="main-nav">
             <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
@@ -21,7 +21,7 @@
             <ul class="main-nav__list">
                 <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
                 <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
-                <li id="login" class="main-nav__item"><a class="main-nav__link" href="login.html">Login</a></li>                
+                <li id="login" class="main-nav__item"><a class="main-nav__link" href="login.html">Hiram_253</a></li>                
                 <div id="logedin" class="main-nav__item  dropdown">
                     <button class="dropbtn">Hiram_253</button>
                     <div class="dropdown-content">
@@ -30,42 +30,37 @@
                         <a id="logout" href="#" class="dropdown-content--a">Log out</a>
                     </div>
                 </div>
+                </div>
             </ul>
         </nav>
+        <div class="bloque-imagen border profile-block">
+           <a><img class="icono-login profile-img" src="img/Recurso 10.svg" alt="profile image"></a> 
+            <p class="p-drop">Drop an image here or</p>
+            <input class="input-profile" type="file" name="profile photo">
+        </div>
+        <p class="main-name">Hiram_253</p>
+            <label class="form-texto account-description">Account Description:</label><br>
+            <p class="form-login_imput account-description--p"> I like to make healthy and fat food<br>
     </header>
-    <section class="cuadro-registro">
-        <br><br>
-        <img class="icono-login" src="img/Recurso 10.svg" alt="">
-        <br>
-        <h3><span>Create</span> a new account</h3>
-        <form class="form-login">
-            <label class="form-texto">Name:</label><br>
-            <input class="form-login_imput" type="text" name="firstname" placeholder="Your name.."> <br>
-            <label class="form-texto">Lastname:</label><br>
-            <input class="form-login_imput" type="text" name="lastname" placeholder="Your lastname.."> <br>
-            <label class="form-texto">Email:</label><br>
-            <input class="form-login_imput" type="email" name="email" placeholder="Your email.."> <br>
-            <label class="form-texto">Create password:</label><br>
-            <input class="form-login_imput"type="password" name="password" placeholder="Your password.."> <br>
-            <label class="form-texto">Confirm password:</label><br>
-            <input class="form-login_imput" type="password" name="password" placeholder="Confirm your password.."> <br>
-            <a class="main-btn btn-register">Register</a>
-        </form>
-    </section>
-    <section class="cuadro-login">
-        <br><br>
-        <img class="icono-login" src="img/Recurso 10.svg" alt="">
-        <br>
-        <h3><span>Login</span> to your account</h3>
-        <form action="" class="form-login">
-            <label class="form-texto">Email:</label><br>
-            <input class="form-login_imput" type="text" name="firstname" placeholder="Your name.."> <br>
-            <label class="form-texto">Password:</label><br>
-            <input class="form-login_imput" type="text" name="lastname" placeholder="Your lastname.."> <br>
-            <p class="dont-account">Don't have an account?</p> 
-            <a href="#" class="to-register">Create account</a>
-            <a class="main-btn btn-login">Login</a>
-        </form>        
+    <section>
+        <h1 class="main-h1__profile">My Recipes</h1>
+        <img class="img-paletas" src="img/paletas.svg" alt="spoon and spatula">
+        <ul class="search-content search-content-profile">
+            <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/receta1.jpg" alt=""><p class="recipe-menu_description profile-img__names">Manicotti</p></a></li>
+            <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/receta2.jpg" alt=""><p class="recipe-menu_description profile-img__names">Mushrooms and beef</p></a></li>
+            <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/receta3.png" alt=""><p class="recipe-menu_description profile-img__names">Garlic Mushrooms</p></a></li>
+            <li class="search-content_item"><a class="search-content_link"> <i class="search-content_img bloque-imagen border profile-item plus fa fa-plus" style="font-size:100px"></i><img class="" src="" alt=""><p class="recipe-menu_description profile-img__names">Add a new recipe</p></a></li>
+        </li>
+    </ul>
+</section>
+<section>
+    <i class="fa fa-heart main-heart"style="font-size:50px"></i>
+        <h2 class="main-h2__profile">Favorite Recipes</h2>
+        <ul class="search-content search-content-favorites">
+                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/favrecipes.jpeg" alt=""><p class="recipe-menu_description profile-img__names">Fried Chicken<br>By:Priscilla_Rivera</p></a></li>
+                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/tortillas.jpeg" alt=""><p class="recipe-menu_description profile-img__names">Tortillas<br>By:Jorge_Miranda</p></a></li>
+        </li>
+       </ul>
     </section>
     <footer class="main-footer">
         <nav class="footer-nav">

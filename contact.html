@@ -6,9 +6,9 @@
     <meta name="description" content="¿Que se supone que va aquí"> <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
-    <title>Create account</title>
+    <title>Contact</title>
 </head>
-<body class="body-Login">
+<body class="body-contact">
     <header>
         <nav class="main-nav">
             <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
@@ -21,9 +21,9 @@
             <ul class="main-nav__list">
                 <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
                 <li class="main-nav__item"><a class="main-nav__link" href="#">Contact</a></li>
-                <li id="login" class="main-nav__item"><a class="main-nav__link" href="#">Login</a></li>                
+                <li id="login" class="main-nav__item"><a class="main-nav__link" href="login.html">Login</a></li>                
                 <div id="logedin" class="main-nav__item  dropdown">
-                    <button class="dropbtn">Dropdown</button>
+                    <button class="dropbtn">Hiram_253</button>
                     <div class="dropdown-content">
                         <a href="#" class="dropdown-content--a">Profile</a>
                         <a href="submit.html" class="dropdown-content--a">New recipe</a>
@@ -33,14 +33,26 @@
             </ul>
         </nav>
     </header>
+    <section class="cuadro-contact">
+        <p class="p-have">Have <span class="p-have--span">Questions?</span></p>
+        <form class="form-contact">
+            <label class="form-texto">Name:</label><br>
+            <input class="form-login_imput" type="text" name="firstname" placeholder="Your name.."> <br>
+            <label class="form-texto">Email:</label><br>
+            <input class="form-login_imput" type="email" name="email" placeholder="Your email.."> <br>
+            <label class="form-texto">Comments:</label><br>
+            <input class="form-login_imput comments" type="text" name="lastname" placeholder="Give us your feedback.."> <br>
+            <a class="main-btn send-btn">Send</a>
+        </form>
+    </section>
     <footer class="main-footer">
         <nav class="footer-nav">
             <img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo">
             <ul class="footer-imgs">
-                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/fb.png" alt="facebook"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/fb.png" alt="facebook"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
             </ul>   
             <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
         </nav>       

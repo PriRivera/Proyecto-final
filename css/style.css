@@ -402,8 +402,8 @@ h3 span{
     margin-left: .5em;
 }
 .bloque-imagen{
-    width: 60%;
-    height: 24.5em;
+    width: 50%;
+    height: auto;
     margin: auto;
     background: #fff;
 }
@@ -581,4 +581,126 @@ h3 span{
 .search-description__margin{
     margin: 0em 117px;
     padding: 0em;
+}
+/*------------contact-----*/
+.body-contact{
+    background-image: url(../img/shrimp.jpg);
+    background-image: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+.cuadro-contact{
+    background: #F1F1F1;
+    border-radius: 1em;
+    width: 70%;
+    height: 543px;
+    margin: 4em 11em;
+}
+.form-contact{
+    padding-top: 0em;
+    margin-left: 3em;
+    margin-top: 1em;
+}
+.p-have{
+    margin: 0em;
+    padding-left: 2em;
+    padding-top: 2em;
+    color: #400E12;
+    font-size: 24px;
+    display: block;
+    text-align: center;
+}
+.p-have--span{
+ font-size: 29px;
+ color: #731921;
+}
+.comments{
+    padding-bottom: 5em;
+}
+.send-btn{
+    padding: 0.3em 1em;
+    font-size: 23px;
+    float: right;
+    margin-right: 55px;
+    margin-top: 26px;
+}
+/*--------profile--------*/
+.header-background__profile{
+    background-image: url(../img/fondoProfile.png);
+    background-image: no-repeat;
+    background-size: cover;
+    height: 428px;
+}
+.profile-block{
+    float: left;
+    margin: 2em 3em;
+    width: 21%;
+    height: 281px;
+}
+.profile-img{
+    width: 61%;
+}
+.p-drop{
+    font-size: 18px;
+    text-align: center;
+}
+.input-profile{
+    margin-left: 3.7em;
+}
+.main-name{
+    color: #fff;
+    font-family: 'BlackChancery';
+    font-size: 3em;
+    margin: 0.5em;
+}
+.account-description{
+    color:white;
+}
+.account-description--p{
+    width: 34%;
+    background: #fff;
+    padding-bottom: 4em;
+}
+.main-h1__profile{
+    font-family: 'Dejavu-Sans-Condensed';
+    color: #731921;
+    margin: 1.5em 0em 0em 11em;
+    font-size: 51px;
+    display: inline-block;
+}
+.img-paletas{
+    width: 5%;
+    display: inline-block;
+}
+.profile-img__names{
+    margin: 0em 21px;
+    position: relative;
+}
+.profile-item{
+    display: inline-block;
+    position: absolute;
+    height: 301px;
+    top: 0.8em;
+    width: 82%;
+}
+.plus{
+    margin: 1em 0em 1em;
+    padding: 1em 0.9em;
+    position: relative;
+    color: #6B6661;
+}
+.search-content-profile{
+    margin-top: -6em;
+}
+.search-content-favorites{
+    margin-top: 0.5em;
+}
+.main-heart{
+    color: #731921;
+    margin-left: 1em;
+}
+.main-h2__profile{
+    display: inline-block;
+    margin: 0.5em;
+    font-size: 1.9em;
 }
