@@ -40,19 +40,36 @@
         </div>
         <p class="main-name">Hiram_253</p>
             <label class="form-texto account-description">Account Description:</label><br>
-            <p class="form-login_imput account-description--p"> I like to make healthy and fat food<br>
-    </header>
+            <textarea class="form-login_imput account-description--textarea" placeholder="I like to make healthy and fat food." id="textArea"></textarea>
+            <button class="main-btn save-btn" onclick="guardarDatos()">Save</button>
+        </header>
+
     <section>
         <h1 class="main-h1__profile">My Recipes</h1>
         <img class="img-paletas" src="img/paletas.svg" alt="spoon and spatula">
-        <ul class="search-content search-content-profile">
-            <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/receta1.jpg" alt=""><p class="recipe-menu_description profile-img__names">Manicotti</p></a></li>
-            <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/receta2.jpg" alt=""><p class="recipe-menu_description profile-img__names">Mushrooms and beef</p></a></li>
-            <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/receta3.png" alt=""><p class="recipe-menu_description profile-img__names">Garlic Mushrooms</p></a></li>
-            <li class="search-content_item"><a class="search-content_link"> <i class="search-content_img bloque-imagen border profile-item plus fa fa-plus" style="font-size:100px"></i><img class="" src="" alt=""><p class="recipe-menu_description profile-img__names">Add a new recipe</p></a></li>
+        <ul class="search-content search-content-profile">  
+            <li class="search-content_item"><a class="search-content_link">
+                <div class="text-img__background"><p class="inside-text">Click to edit</p></div>     
+                <img class="profile-content-img pruebaImagen" src="img/receta1.jpg" alt="">
+                <p class="recipe-menu_description profile-img__names">Manicotti</p></a>
+            </li>
+            <li class="search-content_item"><a class="search-content_link">
+                <div class="text-img__background"><p class="inside-text">Click to edit</p></div> 
+                <img class="profile-content-img" src="img/receta2.jpg" alt="">
+                <p class="recipe-menu_description profile-img__names">Mushrooms and beef</p></a>
+            </li>
+            <li class="search-content_item"><a class="search-content_link">
+                <div class="text-img__background"><p class="inside-text">Click to edit</p></div> 
+                <img class="profile-content-img" src="img/receta3.png" alt="">
+                <p class="recipe-menu_description profile-img__names">Garlic Mushrooms</p></a>
+            </li>
+            <li class="search-content_item"><a class="search-content_link"> 
+                <i class="search-content_img bloque-imagen border profile-item plus fa fa-plus" style="font-size:100px"></i>
+                <img class="" src="" alt=""><p class="recipe-menu_description profile-img__names">Add a new recipe</p></a>
+            </li>
         </li>
     </ul>
-</section>
+    </section>
 <section>
     <i class="fa fa-heart main-heart"style="font-size:50px"></i>
         <h2 class="main-h2__profile">Favorite Recipes</h2>

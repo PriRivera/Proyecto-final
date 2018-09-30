@@ -672,10 +672,21 @@ h3 span{
 .account-description{
     color:white;
 }
-.account-description--p{
+.account-description--textarea{
     width: 34%;
     background: #fff;
     padding-bottom: 4em;
+    font-family: 'Dejavu-Sans-ExtraLight';
+    font-size: 19px;
+}
+.save-btn{
+    text-decoration: none;
+    font-size: 109%;
+    border: #4C759E;
+    display: inline-block;
+    z-index: 1;
+    position: absolute;
+    margin: 5.5em 1em;
 }
 .main-h1__profile{
     font-family: 'Dejavu-Sans-Condensed';
@@ -720,6 +731,33 @@ h3 span{
     margin: 0.5em;
     font-size: 1.9em;
 }
+.profile-content-img{
+    width: 94%;
+    margin: 16px 17px;
+    display: inline-block;
+}
+
+.text-img__background{
+    position: absolute;
+    height: auto;
+    width: auto;
+    margin-left: 1%;
+    margin-top: 1%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: grey;
+}
+.text-img__background:hover{
+    opacity: 0.6; 
+}
+.inside-text{
+    color: #fff;
+    text-align: center;
+    font-family: 'Dejavu-Sans-Condensed';
+    padding: 3.5em 2.4em;
+    font-size: 30px;
+}
+
 
 /* ---------- Recipe ------------*/
 .recipe-sector{
