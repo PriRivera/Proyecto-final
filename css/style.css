@@ -111,6 +111,9 @@ th{
     font-size: 17px;
     border: none;
    -webkit-border-radius: 0px;
+   -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     font-family: 'Dejavu-Sans-Condensed';
 }
 .main-nav__button{
@@ -524,6 +527,9 @@ h3 span{
     padding-top: 1em;
     padding-left: 13px;  
     -webkit-border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 .main-nav__button-search{
     float: right;
