@@ -523,6 +523,7 @@ h3 span{
     padding-bottom: 1em;
     padding-top: 1em;
     padding-left: 13px;  
+    -webkit-border-radius: 0px;
 }
 .main-nav__button-search{
     float: right;
