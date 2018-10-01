@@ -505,7 +505,7 @@ h3 span{
     float: right;
     border: none;
 }
-/*-----search-----*/
+/*-----search----------------------------*/
 .header-background{
     background-image: url("../img/foodoverblack1.png");
     background-image: no-repeat;
@@ -613,7 +613,7 @@ h3 span{
     background: #F1F1F1;
     border-radius: 1em;
     width: 70%;
-    height: 543px;
+    height: 676px;
     margin: 4em 11em;
 }
 .form-contact{
@@ -897,6 +897,23 @@ h3 span{
     .btn-submit{
         font-size: 2.5vw;
     }
+    /*------------------contact------------------*/
+    .cuadro-contact{
+        height: 771px;
+        margin: 10em;
+    }
+    .p-have{
+        font-size: 42px;
+        padding-top: 1em;
+    }
+    .form-contact{
+        padding-top: 0em;
+        margin-top: 4em;
+        margin-left: 2em;
+    }
+    .comments{
+        padding-bottom: 10em;
+    }
 }
 @media (max-width: 991.98px) {
     .main-nav__list{
@@ -1048,6 +1065,29 @@ h3 span{
     .input-unit{
         width: 17%;
     }
+    /*---------contact-----------------*/
+    .body-contact{
+        background-image: none;
+        
+    }
+    .cuadro-contact{
+        width: auto;
+        height: 799px;
+        margin: auto;
+        border-radius: 0px;
+    }
+    .p-have{
+        padding-left: 0em;
+        padding-top: 4em;
+    }
+    .form-contact{
+        margin-left: 2em;
+        margin-top: 1em;
+        width: auto;
+    }
+    .send-btn{
+        margin: 0em 4em;
+    }
 }
 @media (max-width: 767.98px) {
     .logo{
@@ -1144,6 +1184,26 @@ h3 span{
     }
     .main-nav__input-search{
         padding-right: 5em;
+    }
+    /*----------------contact-----------------------*/
+
+    .body-contact{
+        background-image: none;
+    }
+    .cuadro-contact{
+        width: fit-content;
+        height: 613px;
+        margin: auto;
+    }
+    .p-have{
+        padding-left: 0em;
+        padding-top: 1em;
+    }
+    .form-contact{
+        margin-left: 0em;
+    }
+    .send-btn{
+        margin: 0em 4em;
     }
 }
 @media (max-width: 575.98px) {
@@ -1383,6 +1443,30 @@ h3 span{
         font-size: 2.7vw;
         text-align: left;
     }
+    /*----------------contact-----------------------*/
+
+    .body-contact{
+        background-image: none;
+    }
+    .cuadro-contact{
+        width: fit-content;
+        height: 799px;
+        margin: auto;
+    }
+    .p-have{
+        padding-left: 0em;
+        padding-top: 3em;
+    }
+    .form-contact{
+        margin-left: 0em;
+    }
+    .send-btn{
+        margin: 0em 4em;
+    }
+    .form-login_imput{
+        width: 100%;
+    }
+
 }
 @media (max-width: 375px) and (max-height: 667px){
     /*----search----*/
