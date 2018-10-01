@@ -829,6 +829,11 @@ h3 span{
     .sub-menu{
         margin-top: 6em;
     }
+    .sub-menu_item:hover{
+        height: 3em;
+        top: 0;
+        position: inherit;
+    }
     /*--search--*/
 
     .search-menu{
@@ -875,7 +880,7 @@ h3 span{
         margin-bottom: 0em;
     }
     .search-content_item{
-        margin: width: 22%;
+        width: 22%;
         margin: 0px 19px 89px 0px;
         display: inline-block;
     }
@@ -893,7 +898,7 @@ h3 span{
         float: right;
     }
     .main-footer {
-        width: 134%;
+        width: 100%;
         height: auto;
     }
 
@@ -924,7 +929,7 @@ h3 span{
         margin: auto;
         width: inherit;
         background: #731921;
-        }    
+    }   
     .sub-menu_link{
         margin: auto;
         position: unset;
@@ -1047,29 +1052,7 @@ h3 span{
     
 }
 
-@media (max-width: 375px) and (max-height: 667px){
-   /*----search----*/
-    .container-search {
-        margin-top: auto;
-        margin-left: -1.5em !important;
-    }
-    .search-menu{
-        margin-left: 0em !important;
-        font-size: 11px !important;
-    }
-    /*----profile-----*/
-    .input-profile{
-        margin-left: 16%!important;
-        width: inherit!important;
-    }
 
-}
-@media (max-width: 349.98px) {
-    .main-nav__input{
-        width: 61%;
-        
-    }
-}
 @media (max-width: 575.98px) {
     .main-nav__burger{
         display: inline-block;
@@ -1131,6 +1114,9 @@ h3 span{
         column-gap: 2%;
     }
     .sub-menu_item{
+        height: 2em;
+    } 
+    .sub-menu_item:hover{
         height: 2em;
     }
     .main-recipies{
@@ -1294,5 +1280,26 @@ h3 span{
     }
     .img-paletas{
         display: none;
+    }
+}
+@media (max-width: 375px) and (max-height: 667px){
+    /*----search----*/
+    .container-search {
+        margin-top: auto;
+        margin-left: -1.5em !important;
+    }
+    .search-menu{
+        margin-left: 0em !important;
+        font-size: 11px !important;
+    }
+    /*----profile-----*/
+    .input-profile{
+        margin-left: 16%!important;
+        width: inherit!important;
+    }
+}
+@media (max-width: 349.98px) {
+    .main-nav__input{
+        width: 61%;   
     }
 }
