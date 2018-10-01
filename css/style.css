@@ -45,7 +45,6 @@ th{
 }
 .main-nav__burger{
     display: none;
-    cursor: pointer;
 }
 .logo{
     max-width: 5em;
@@ -90,7 +89,7 @@ th{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.dropdown-content__a {
+.dropdown-content--a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -879,9 +878,6 @@ h3 span{
     }
 }
 @media (max-width: 767.98px) {
-}
-@media (max-width: 575.98px) {
-}
     .logo{
         margin: .5em 1.5em 0;
     }
