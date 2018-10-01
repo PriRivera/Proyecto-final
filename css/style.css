@@ -502,7 +502,7 @@ h3 span{
 .header-background{
     background-image: url("../img/foodoverblack1.png");
     background-image: no-repeat;
-    height: 365px;
+    height: 100%;
     background-position-x: -250px;
     background-position-y: -227px;
 }
@@ -592,7 +592,7 @@ h3 span{
     cursor: pointer;
  }
 .search-description__margin{
-    margin: 0em 117px;
+    margin: 0em 111px;
     padding: 0em;
 }
 /*------------contact-----*/
@@ -754,8 +754,6 @@ h3 span{
     padding: 3.5em 2.4em;
     font-size: 30px;
 }
-
-
 /* ---------- Recipe ------------*/
 .recipe-sector{
     width: 85%;
@@ -798,11 +796,187 @@ h3 span{
    background-color: #F2F2F2;
 }
 
+
 @media (max-width: 1199.98px) {
 }
 @media (max-width: 991.98px) {
 }
 @media (max-width: 767.98px) {
+
+}
+@media (max-width: 375px) and (max-height: 667px){
+    .container-search {
+        margin-top: auto;
+        margin-left: -1.5em !important;
+    }
+    .search-menu{
+        margin-left: 0em !important;
+        font-size: 11px !important;
+    }
 }
 @media (max-width: 575.98px) {
+    .main-footer {
+        width: 100%;
+        height: auto;
+    }
+    .footer-p{
+        display: none;
+    }
+    .footer-imgs {
+        display: inline-block;
+        max-width: max-content;
+        margin: 0em 0em 1em 0em;
+    }
+    .footer-logo {
+        display: inline-block;
+        float: inherit;
+        margin: 0.5em 2em;
+        max-width: 30%;
+    }
+    .footer-li_img {
+        max-width: 8%;
+    }
+    .footer-li_link {
+        text-decoration: none;
+    }
+    /*------search-----*/
+
+    .header-background{
+        width: fit-content;
+    }
+    .main-text{
+        margin: 1em 4em 0em;
+        font-size: inherit;
+        display: block;
+    }
+    .search-bar{
+        width: max-content;
+    }
+    .main-nav__input-search{
+        font-size: 10px;
+        padding-left: 8px;
+        padding-right: 6em;
+        border-radius: 0%;
+    }
+    .container-search{
+        margin-top: auto;
+        margin-left: auto;
+    }
+    .main-nav__button-search{
+        padding: 6px 23px;
+        margin: 0em;
+    }
+    .sub-menu_link-search{
+        margin:-1px 30px 5px -13px;
+    }
+    .search-menu {
+        display: -webkit-inline-box;
+        font-size: 15px;
+        margin-top: 8em;
+        margin-left: 0em;
+    }
+    .search-content {
+        width: auto;
+        height: auto;
+        margin: 1em 0em;
+        padding: 0em;
+    }
+    .search-content_item {
+        width: 42%;
+        margin: auto;
+        display: inline-block;
+        margin: 1em 1em 0em 0em;
+    }
+    .search-content_img {
+        width: 100%;
+        margin: 0px 8px 0px 12px;
+        display: inline-block;
+    }
+    .search-description__margin {
+        margin: 1px 29px;
+        padding: 0em;
+        font-size: 72%;
+    }
+    /*----------profile--------------*/
+    .main-nav__item{
+        display: none;
+    }
+    .profile-block{
+        margin: 0.5em 4em;
+        width: 53%;
+        height: 44%;
+    }
+    .p-drop {
+        font-size: 15px;
+        text-align: center;
+        margin: 4px;
+    }
+    .input-profile {
+        margin-left: -5%;
+    }
+    .main-name {
+        font-size: 2em;
+        margin: 0% 23%;
+    }
+    .img-paletas{
+        display: none;
+    }
+    .form-texto {
+        margin: 1em 4em 1em 4.5em;
+        font-size: 18px;
+    }
+    .account-description--textarea {
+        width: 57%;
+        padding-bottom: 2em;
+        font-size: 19px;
+        margin: 1em 4em;
+    }
+    .save-btn{
+        margin: 4.5em -3.8em;
+        font-size: 91%;
+    }
+    .main-h1__profile {
+        margin: 2em 1.5em 0em;
+        font-size: 45px;
+    }
+    .inside-text{
+        display: none;
+    }
+    .text-img__background{
+        display: none;
+    }
+    .profile-img__names {
+        position: absolute;
+    }
+    .profile-content-img {
+        margin: 6px 15px;
+        display: inline;
+    }
+    .profile-img__names {
+        position: absolute;
+        margin: 0em 1em;
+        font-size: initial;
+    }
+    .style{
+        font-size: 77px!important;
+        padding: 0.5em;
+    }
+    .search-content_img {
+        width: 100%;
+        margin: 14px 0px 0px 1px;
+    }
+    .profile-item {
+        height: 156px;
+        top: 0.2em;
+    }
+    .main-h2__profile {
+        font-size: 1.4em;
+    }
+    .main-heart {
+        margin-top: 1em;
+        margin-left: 1%;
+    }
+    .search-content-favorites {
+        margin: 0em 0.5em 4em;
+    }
 }
