@@ -43,6 +43,9 @@ th{
 .main-nav{    
     background: #242124;
 }
+.main-nav__burger{
+    display: none;
+}
 .logo{
     max-width: 5em;
     margin: .5em 3em 0em;
@@ -61,6 +64,9 @@ th{
     font-family: 'BlackChancery';
     font-size: 1.3em;
     color: #fff;
+}
+.main-nav__link--right{
+    display: none;
 }
 .dropbtn {
     display: none;
@@ -93,7 +99,7 @@ th{
 .dropdown:hover .dropdown-content {display: block;}
 .main-nav__search-container{
     text-align: center;
-    display: -webkit-inline-box;
+    display: inline-block;
     position: absolute;
     margin-left: 1.5em;
     margin-top: 0.5em;  
@@ -224,6 +230,9 @@ h3 span{
     background-image: url(../img/foodoverblack1.png);
     background-size: cover;
     max-width: 100%;
+}
+.mobile-logo{
+    display: none;
 }
 .main-slider{
     width:57%;
@@ -798,8 +807,74 @@ h3 span{
 
 
 @media (max-width: 1199.98px) {
+    /*----- Estilos genericos -----*/
+    .main-nav__search-container{
+        margin-left: 0;
+        width: 38%;
+    }
+    .main-nav__input{
+        padding-right: 0;
+        width: 74%;
+        float: left;
+    }
+    .main-nav__button{
+        float: left;
+    }
+    .footer-imgs{   
+        max-width: 31%;
+    }
+
+    /*----- Index -----*/
+    .sub-menu{
+        margin-top: 6em;
+    }
 }
 @media (max-width: 991.98px) {
+    .main-nav__list{
+        display: none;
+    }
+    .main-nav__link--right{
+        display: inline-block;
+        margin: .5em 1.5em;
+        float: right;
+    }
+
+    /*----- Index -----*/
+    .slider-background{
+        border-width: 5px;
+    }    
+    .main-slider{
+        width:94%;
+        padding: 3em 0 3em 0;
+    }
+    .main-recipies{
+        margin: 0;
+    }
+    .sub-menu{
+        width: 92%;
+        margin: 3em 1em 0em 1em;
+        padding: 0;
+        position: relative;
+        float: unset;
+        text-align: right;
+        columns: 5;
+        list-style: none;
+    }
+    .sub-menu_item{
+        display: list-item;
+        height: 3em;
+        margin: auto;
+        width: inherit;
+        background: #731921;
+        }    
+    .sub-menu_link{
+        margin: auto;
+        position: unset;
+        padding: .7em 0 0 0;
+    }
+    .red-block{
+        display: none;
+    }
 }
 @media (max-width: 767.98px) {
 
@@ -978,5 +1053,91 @@ h3 span{
     }
     .search-content-favorites {
         margin: 0em 0.5em 4em;
+    }
+}
+    .logo{
+        margin: .5em 1.5em 0;
+    }
+    .main-nav__search-container{
+        width: 60%;
+    }
+    /*----- Index -----*/
+     .slider-background{
+        background: none;
+        border-width: 0px;
+    }
+    .sub-menu_link{
+        padding-top: 1em; 
+        font-size: 3vw;
+    }
+    .sub-menu{
+        column-gap: 0%
+    }
+    .main-recipies{
+        margin: 0;
+    }
+    .recipe-img{
+        display: none;
+    }
+    .recipe-menu{
+        width: 94%;
+    }
+    .recipe-menu_link{
+        font-size: 2.3vw;
+    }
+
+}
+@media (max-width: 575.98px) {
+    .main-nav__burger{
+        display: inline-block;
+        margin: .5em;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #fff;
+    }
+    .logo{
+        display: none;
+    }
+    .main-nav__search-container{
+        margin-top: .4em;
+    }
+    .main-nav__input{
+        width: 70%;
+    }
+    .main-nav__link--right{
+        margin: .5em .6em;
+    }
+     /*----- Index -----*/
+     .mobile-logo{
+        display: inline-block;
+        width: 40%;
+        margin: 5% 30% 0%;
+    }
+    .main-slider {
+        padding: 3em 0 0 0;
+    }
+    .sub-menu{
+        width: 100%;
+        margin: 1em .5em 0 0;
+        column-gap: 2%;
+    }
+    .sub-menu_item{
+        height: 2em;
+    }
+    .main-recipies{
+        border-top: none;
+        padding: .5em;
+    }
+    .recipe-menu{
+        columns: 2;
+    }
+    .recipe-menu_link{
+        font-size: 3.3vw;
+    }
+}
+@media (max-width: 349.98px) {
+    .main-nav__input{
+        width: 61%;
     }
 }
