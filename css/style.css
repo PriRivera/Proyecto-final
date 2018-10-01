@@ -102,7 +102,7 @@ th{
     display: inline-block;
     position: absolute;
     margin-left: 1.5em;
-    margin-top: 0.5em;  
+    margin-top: 0.5em; 
 }
 .main-nav__input{
     padding: 6px;
@@ -110,6 +110,7 @@ th{
     margin-top: 8px;
     font-size: 17px;
     border: none;
+   -webkit-border-radius: 0px;
     font-family: 'Dejavu-Sans-Condensed';
 }
 .main-nav__button{
@@ -1282,9 +1283,7 @@ h3 span{
     .recipe-menu_link{
         font-size: 3.3vw;
     }
-
     /*------search-------------------------*/
-
     .header-background{
         width: auto;
         height: auto;
@@ -1463,7 +1462,8 @@ h3 span{
     .send-btn{
         margin: 0em 4em;
     }
-    .form-login_imput{
+    
+    #contact_imput{
         width: 100%;
     }
 
