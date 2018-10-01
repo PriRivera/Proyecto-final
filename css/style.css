@@ -911,7 +911,9 @@ h3 span{
         width: 100%;
         height: auto;
     }
-
+    .footer-p{
+        display: none;
+    }
     /*----- Index -----*/
     .slider-background{
         border-width: 5px;
@@ -948,9 +950,9 @@ h3 span{
     .red-block{
         display: none;
     }
-      /*----search----*/
+    /*----search----*/
       .header-background{
-        width: fit-content;
+        width: 100%;
         height: auto;
     }
     .main-nav__button-search {
@@ -959,14 +961,23 @@ h3 span{
         margin-right: -3.6em;
         margin-top: -3.2em;
     }
+    .main-nav__input-search{
+        padding-left: 0px;
+        padding-right: 7em;
+    }
     .main-text {
-        margin-left: 1em;
+        margin-left: 0.5em;
+        font-size: 27px;
+        margin-top: 4em;
+    }
+    .container-search{
+        margin-top: 2.5em;
     }
     .search-menu {
-        margin-left: -86px;
+        margin-left: -33px;
     }
     .sub-menu_link-search {
-        margin: 0px 60px;
+        margin: 1em 1em;
     }
     .search-content_img {
         width: 105%;
@@ -979,19 +990,19 @@ h3 span{
         display: inline-block;
     }
     .search-description__margin {
-        margin: 0em 103px;
+        margin: 0em 77px;
         padding: 0em;
     }
     .search-content {
-        width: 133%;
+        width: 100%;
         height: auto;
         margin-top: 3em;
         margin-bottom: 4em;
         margin-right: 1em;
         padding: 0em;
     }
-      /*------------------profile--------------------------*/
-      .header-background__profile{
+    /*------------------profile--------------------------*/
+    .header-background__profile{
         height: auto;
         width: 134%;
     }
@@ -1125,6 +1136,14 @@ h3 span{
     }
     .bloque-aniadir{
         width: 90%;
+    }
+    /*------search----------------*/
+    .search-menu{
+        margin-left: inherit;
+        font-size: inherit;
+    }
+    .main-nav__input-search{
+        padding-right: 5em;
     }
 }
 @media (max-width: 575.98px) {
@@ -1272,9 +1291,6 @@ h3 span{
         margin:3.5em 3.7em 0.5em;
         width: 53%;
         height: 44%;
-    }
-    .search-content{
-        margin: auto;
     }
     .p-drop {
         font-size: 15px;
