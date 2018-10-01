@@ -36,9 +36,9 @@
             <div id="logedin" class="main-nav__item main-nav__link--right dropdown">
                     <button class="dropbtn">Hiram</button>
                     <div class="dropdown-content">
-                        <a href="profile.html" class="dropdown-content--a">Profile</a>
-                        <a href="submit.html" class="dropdown-content--a">New recipe</a>
-                        <a id="logout" href="#" class="dropdown-content--a">Log out</a>
+                        <a href="profile.html" class="dropdown-content__a">Profile</a>
+                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
+                        <a id="logout" href="#" class="dropdown-content__a">Log out</a>
                     </div>
                 </div>
         </nav>
@@ -49,18 +49,18 @@
         <form class="recipe-form" action="">
             <div class="bloque-izquierda">
                 <div class="bloque-imagen border">
-                    <i class="fa fa-file-picture-o" style="font-size:150px;color:#6B6661"></i>
-                    <!--<img class="imagen-vacia" src="img/imagen.png" alt="Empty image simbol.">-->
-                    <p>Drop an image here <br> or</p>
-                    <input type="file" name="Recipe photo">
+                    <i class="fa fa-file-picture-o" style="font-size:15vw;color:#6B6661"></i>
+                    <p class="bloque-imagen__p">Drop an image here <br> or</p>
+                    <input type="file" id="file" name="Recipe photo" class="file-chooser">
+                    <label for=file class="main-btn main-btn--size"> Choose a file..</label>
                 </div>                
             </div>
-            <div class="bloque-derecha">
+            <div class="bloque-derecha" id="bloque-derecha">
                 <h3><span>Name</span> for your recipe.</h3>
-                <input class="form-texto border" type="text" name="" id="" placeholder="Title" autofocus>
+                <input class="form-texto border" type="text" name="" id="bloque-derecha__input" placeholder="Title" autofocus>
                 <br><br><br>
                 <h3><span>Description</span> to show.</h3>
-                <textarea class="form-texto text-area border" name="" id="" cols="30" rows="10" placeholder="Small and clear description."></textarea>
+                <textarea class="form-texto text-area border" name="" id="bloque-derecha__input" cols="30" rows="10" placeholder="Small and clear description."></textarea>
             </div>
             <div class="bloque-aniadir">
                 <br><br>
@@ -83,7 +83,7 @@
                     <option value="Tablespoon"> 
                     <option value="Units"> 
                 </datalist>
-                <button class="main-btn btn-adding">Add an ingredient</button>
+                <button class="main-btn btn-submit">Add an ingredient</button>
                 <br><br>
                 <h3><span>Preparation</span> instructions.</h3>
                 <textarea class="form-steps text-area border" name="" id="" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>

@@ -89,7 +89,7 @@ th{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.dropdown-content--a {
+.dropdown-content__a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -141,6 +141,9 @@ h3 span{
 .main-p{
     text-align: justify;
     text-justify: inter-word;
+}
+.file-chooser{
+    display: none;
 }
 .form-texto{
     width: 78%;
@@ -462,7 +465,7 @@ h3 span{
     padding-left: 1em;
 }
 .input-name{
-    width: 55.5%;
+    width: 52%;
     height: 2.5em;
     float: left;
     border: none;
@@ -490,11 +493,6 @@ h3 span{
     height: auto;
     margin-left: 1em;
 }
-.btn-adding{
-    position: relative;
-    left: 76%;
-    border: none;
-}
 .form-steps{    
     width: 97%;
     padding: 6px;
@@ -504,7 +502,7 @@ h3 span{
 }
 .btn-submit{
     position: relative;
-    left: 79%;
+    float: right;
     border: none;
 }
 /*-----search-----*/
@@ -764,7 +762,6 @@ h3 span{
     font-size: 30px;
 }
 
-
 /* ---------- Recipe ------------*/
 .recipe-sector{
     width: 85%;
@@ -886,6 +883,19 @@ h3 span{
     }
     .inside-text{
         padding: 2em 1em;
+    }
+    /*---- Submit ----*/
+    .bloque-imagen__p{
+        font-size: 1.5vw;
+    }
+    .main-btn--size{
+        font-size: 2vw;
+    }
+    .input-name{
+        width:50%;
+    }
+    .btn-submit{
+        font-size: 2.5vw;
     }
 }
 @media (max-width: 991.98px) {
@@ -1013,14 +1023,30 @@ h3 span{
     .img-paletas{
         display: none;
     }
+    /*-----Recipe-------*/
+    .recipe-sector{
+        width: 90%;
+    }
+    .recipe-title{
+        margin-top: 1em; 
+    }
+    /*---- Submit ----*/
+    .input-quantity{
+        width: 17%;
+    }
+    .input-unit{
+        width: 17%;
+    }
 }
 @media (max-width: 767.98px) {
-
     .logo{
         margin: .5em 1.5em 0;
     }
     .main-nav__search-container{
         width: 60%;
+    }
+    h3{
+        font-size: 4vw;
     }
     .footer-p{
         display: none;
@@ -1049,10 +1075,58 @@ h3 span{
     .recipe-menu_link{
         font-size: 2.3vw;
     }
-    
+    /*-----Recipe-------*/
+    .recipe-sector{
+        width: 95%;
+    }
+    .recipe-title{
+        margin: .5em 0; 
+    }
+    .bloque-izquierda{
+        display: block;
+        float: none;
+        width:100%;
+        margin: auto;
+    }
+    .recipe-image--container{
+        width: 60%;
+        margin: auto;
+    }
+    .bloque-derecha{
+        margin-top: 3em;
+        width: 100%;
+    }
+    /*-----Submit-------*/
+    .main-title{
+        max-width: 40%;
+    }
+    .input-name{
+        font-size: 2.7vw;
+    }
+    .input-quantity{
+        font-size: 2.7vw;
+        width: 16%;
+    }
+    .input-unit{
+        font-size: 2.4vw;
+        width: 20%;
+    }
+    .input-delete{
+        width: 4vw;
+        margin-left: .5em;
+    }
+    .form-steps{
+        font-size: 2.7vw;
+    }
+    #bloque-derecha{
+        width: 90%;
+    }#bloque-derecha__input{
+        width: 100%;
+    }
+    .bloque-aniadir{
+        width: 90%;
+    }
 }
-
-
 @media (max-width: 575.98px) {
     .main-nav__burger{
         display: inline-block;
@@ -1280,6 +1354,18 @@ h3 span{
     }
     .img-paletas{
         display: none;
+    }    
+    /*-----Recipe-------*/
+    .recipe-title{
+        font-size: 11vw;
+    }
+    .recipe-image--container{
+        width:90%;
+    }
+    /*---- Submit ----*/
+    #bloque-derecha__input{
+        font-size: 2.7vw;
+        text-align: left;
     }
 }
 @media (max-width: 375px) and (max-height: 667px){
