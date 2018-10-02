@@ -653,10 +653,13 @@ h3 span{
     float: left;
     margin: 2em 3em;
     width: 21%;
-    height: 281px;
 }
 .profile-img{
     width: 61%;
+}
+#profile-chooser{
+    margin: auto;
+    width: 90%;
 }
 .p-drop{
     font-size: 18px;
@@ -854,7 +857,6 @@ h3 span{
     }
     /*-----profile-------*/
     .profile-block{
-        height: 245px;
     }
     .input-profile {
         margin-left: -0.3em;
@@ -917,6 +919,19 @@ h3 span{
     .comments{
         padding-bottom: 10em;
     }
+    /*---- Login ----*/
+    .icono-login{
+        width: 20%;
+    }
+    .btn-login{
+        font-size: 3vw;
+        left: 5vw;
+    }
+    .btn-register{
+        font-size: 2vw;
+        margin-left: 0em;
+        left: auto;
+    }
 }
 @media (max-width: 991.98px) {
     .main-nav__list{
@@ -976,10 +991,10 @@ h3 span{
         height: auto;
     }
     .main-nav__button-search {
-        float: right;
+        /*float: right;
         padding: 18px 23px;
         margin-right: -3.6em;
-        margin-top: -3em;
+        margin-top: -3em;*/
     }
     .main-nav__input-search{
         padding-left: 0px;
@@ -1088,6 +1103,17 @@ h3 span{
     .send-btn{
         margin: 0em 4em;
     }
+    /*---- Login ----*/
+    .icono-login{
+        width: 30%;
+    }
+    #form-login{
+        margin: 2em;
+    }
+    .btn-login{
+        font-size: 2.5vw;
+        left: 4vw;
+    }
 }
 @media (max-width: 767.98px) {
     .logo{
@@ -1190,7 +1216,6 @@ h3 span{
         margin: 0em;
     }
     .main-nav__button-search{
-        margin-top: auto;
         -webkit-border-radius: 0px;
     }
     .search-bar{
@@ -1216,6 +1241,18 @@ h3 span{
     }
     .send-btn{
         margin: 0em 4em;
+    }
+    /*---- Login ----*/
+    .icono-login{
+        width: 40%;
+    }
+    #form-login{
+        margin: 1em;
+    }
+    .btn-login{
+        display: block;
+        font-size: 3vw;
+        margin: auto;
     }
 }
 @media (max-width: 575.98px) {
@@ -1483,6 +1520,18 @@ h3 span{
     
     #contact_imput{
         width: 100%;
+    }
+    /*---- Login ----*/
+    .cuadro-login{
+        width: 80%;
+        margin: 1em auto;
+    }
+    .icono-login{
+        width: 50%;
+    }
+    #form-login__p{
+        font-size: 3vw;
+        text-align: left;
     }
 
 }
