@@ -68,9 +68,12 @@ th{
 .main-nav__link--right{
     display: none;
 }
+.main-nav__dropdown--display{
+    display: none;
+}
 .dropbtn {
     display: none;
-    margin: 0em .5em 0 1.5em;    
+    margin: .2em .1em 0 1em;    
     background-color: none;
     font-family: 'BlackChancery';
     font-size: 1.3em;
@@ -229,7 +232,7 @@ h3 span{
     font-size: 1em;
 }
 
-/* ---------- index ---------- */
+/*---- Index ----*/
 .main-background__container{
     background-image: url(../img/foodoverblack1.png);
     background-size: cover;
@@ -363,10 +366,10 @@ h3 span{
     background: #731921;
 }
 
-/*------ Login -----*/
+/*---- Login ----*/
 .body-Login{
-    background-image: url("../img/fondoLogin.png");
-    background-image: no-repeat;
+    background: url("../img/fondoLogin.png");
+    background-size: cover;
 }
 .cuadro-registro{
     display: none;  
@@ -378,7 +381,7 @@ h3 span{
 }
 .cuadro-login{
     width: 64%; 
-    margin: 2em auto;
+    margin: 6em auto 10em;
     text-align: center;
     background: #fff;
     border-radius: 2%;
@@ -423,7 +426,7 @@ h3 span{
     left: 30%;
 }
 
-/*------ Submit ------*/
+/*---- Submit ----*/
 .main-title{  
     display: block;
     max-width: 25%;
@@ -506,7 +509,7 @@ h3 span{
     float: right;
     border: none;
 }
-/*-----search----------------------------*/
+/*---- Search ----*/
 .header-background{
     background-image: url("../img/foodoverblack1.png");
     background-image: no-repeat;
@@ -600,7 +603,7 @@ h3 span{
     margin: 0em 117px;
     padding: 0em;
 }
-/*------------contact-----*/
+/*---- Contact ----*/
 .body-contact{
     background-image: url(../img/shrimp.jpg);
     background-image: no-repeat;
@@ -642,7 +645,7 @@ h3 span{
     margin-right: 55px;
     margin-top: 26px;
 }
-/*--------profile--------*/
+/*---- Profile ----*/
 .header-background__profile{
     background-image: url(../img/fondoProfile.png);
     background-image: no-repeat;
@@ -763,7 +766,7 @@ h3 span{
     font-size: 30px;
 }
 
-/* ---------- Recipe ------------*/
+/*---- Recipe ----*/
 .recipe-sector{
     width: 85%;
     margin: auto;    
@@ -806,7 +809,7 @@ h3 span{
 }
 
 @media (max-width: 1199.98px) {
-    /*----- Estilos genericos -----*/
+    /*---- Estilos genericos ----*/
     .main-nav__search-container{
         margin-left: 0;
         width: 38%;
@@ -823,7 +826,7 @@ h3 span{
         max-width: 31%;
     }
 
-    /*----- Index -----*/
+    /*---- Index ----*/
     .sub-menu{
         margin-top: 6em;
     }
@@ -832,7 +835,7 @@ h3 span{
         top: 0;
         position: inherit;
     }
-    /*--search--*/
+    /*---- Search ----*/
     .search-menu{
         margin-left: -2em;
     }
@@ -855,7 +858,7 @@ h3 span{
     .sub-menu_link-search{
         margin: 0px 56px;
     }
-    /*-----profile-------*/
+    /*---- Profile ----*/
     .profile-block{
         height: 245px;
     }
@@ -903,7 +906,7 @@ h3 span{
     .btn-submit{
         font-size: 2.5vw;
     }
-    /*------------------contact------------------*/
+    /*---- Contact ----*/
     .cuadro-contact{
         height: 771px;
         margin: 10em;
@@ -921,6 +924,9 @@ h3 span{
         padding-bottom: 10em;
     }
     /*---- Login ----*/
+    .cuadro-login{
+        margin: 31% auto;
+    }
     .icono-login{
         width: 20%;
     }
@@ -943,6 +949,11 @@ h3 span{
         margin: .5em 1.5em;
         float: right;
     }
+    .main-nav__dropdown--display{
+        display: inline-block;
+        margin: .5em 1.5em;
+        float: right;
+    }
     .main-footer {
         width: 100%;
         height: auto;
@@ -950,7 +961,7 @@ h3 span{
     .footer-p{
         display: none;
     }
-    /*----- Index -----*/
+    /*---- Index ----*/
     .slider-background{
         border-width: 5px;
     }    
@@ -986,7 +997,7 @@ h3 span{
     .red-block{
         display: none;
     }
-    /*----search----*/
+    /*---- Search ----*/
       .header-background{
         width: 100%;
         height: auto;
@@ -1028,7 +1039,7 @@ h3 span{
         margin-right: 1em;
         padding: 0em;
     }
-    /*------------------profile--------------------------*/
+    /*---- Profile ----*/
     .header-background__profile{
         height: auto;
         width: auto;
@@ -1067,7 +1078,7 @@ h3 span{
     #add-id{
         margin-top: -2.5em;
     }
-    /*-----Recipe-------*/
+    /*---- Recipe ----*/
     .recipe-sector{
         width: 90%;
     }
@@ -1081,7 +1092,7 @@ h3 span{
     .input-unit{
         width: 17%;
     }
-    /*---------contact-----------------*/
+    /*---- Contact ----*/
     .body-contact{
         background-image: none;
         
@@ -1106,7 +1117,7 @@ h3 span{
     }
     /*---- Login ----*/
     .icono-login{
-        width: 30%;
+        width: 25%;
     }
     #form-login{
         margin: 2em;
@@ -1129,7 +1140,7 @@ h3 span{
     .footer-p{
         display: none;
     }
-    /*----- Index -----*/
+    /*---- Index ----*/
      .slider-background{
         background: none;
         border-width: 0px;
@@ -1153,7 +1164,7 @@ h3 span{
     .recipe-menu_link{
         font-size: 2.3vw;
     }
-    /*-----Recipe-------*/
+    /*---- Recipe ----*/
     .recipe-sector{
         width: 95%;
     }
@@ -1174,7 +1185,7 @@ h3 span{
         margin-top: 3em;
         width: 100%;
     }
-    /*-----Submit-------*/
+    /*---- Submit ----*/
     .main-title{
         max-width: 40%;
     }
@@ -1204,7 +1215,7 @@ h3 span{
     .bloque-aniadir{
         width: 90%;
     }
-    /*------search----------------*/
+    /*---- Search ----*/
     .search-menu{
         margin-left: inherit;
         font-size: inherit;
@@ -1223,7 +1234,7 @@ h3 span{
     .search-bar{ 
         margin-left: 0em;
     }
-    /*----------------contact-----------------------*/
+    /*---- Contact ----*/
 
     .body-contact{
         background-image: none;
@@ -1245,17 +1256,18 @@ h3 span{
     }
     /*---- Login ----*/
     .icono-login{
-        width: 40%;
+        width: 30%;
     }
     #form-login{
         margin: 1em;
     }
     .btn-login{
-        display: block;
-        font-size: 3vw;
-        margin: auto;
+        display: inline-block;
+        font-size: 4vw;
+        margin: 1em auto;
+        left: inherit;
     }
-    /*-----------profile------------*/
+    /*---- Profile ----*/
     .main-h1__profile{
         margin: 0.5em 4em 0em;
     }
@@ -1269,7 +1281,7 @@ h3 span{
 @media (max-width: 575.98px) {
     .main-nav__burger{
         display: inline-block;
-        margin: .5em;
+        margin: .5em .3em;
         background: none;
         border: none;
         font-size: 1.5em;
@@ -1282,12 +1294,14 @@ h3 span{
         margin-top: .4em;
     }
     .main-nav__input{
-        width: 70%;
+        width: 50%;
     }
     .main-nav__link--right{
         margin: .5em .6em;
     }
-
+    .main-nav__dropdown--display{
+        margin: .5em 0em;        
+    }
     .main-footer {
         width: 100%;
         height: auto;
@@ -1312,8 +1326,8 @@ h3 span{
     .footer-li_link {
         text-decoration: none;
     }
-     /*----- Index -----*/
-     .mobile-logo{
+    /*---- Index ----*/
+    .mobile-logo{
         display: inline-block;
         width: 40%;
         margin: 5% 30% 0%;
@@ -1333,7 +1347,7 @@ h3 span{
         height: 2em;
     }
     .main-recipies{
-        border-top: none;
+        border: none;
         padding: .5em;
     }
     .recipe-menu{
@@ -1342,7 +1356,7 @@ h3 span{
     .recipe-menu_link{
         font-size: 3.3vw;
     }
-    /*------search-------------------------*/
+    /*---- Search ----*/
     .header-background{
         width: auto;
         height: auto;
@@ -1407,7 +1421,7 @@ h3 span{
         width: 100%;
         text-align: center;
     }
-    /*----------profile---------------------------*/
+    /*---- Profile ----*/
    .header-background__profile{
        width: auto;
        height: auto;
@@ -1509,7 +1523,7 @@ h3 span{
     .img-paletas{
         display: none;
     }    
-    /*-----Recipe-------*/
+    /*---- Recipe ----*/
     .recipe-title{
         font-size: 11vw;
     }
@@ -1521,7 +1535,7 @@ h3 span{
         font-size: 2.7vw;
         text-align: left;
     }
-    /*----------------contact-----------------------*/
+    /*---- Contact ----*/
 
     .body-contact{
         background-image: none;
@@ -1548,19 +1562,23 @@ h3 span{
     /*---- Login ----*/
     .cuadro-login{
         width: 80%;
-        margin: 1em auto;
-    }
-    .icono-login{
-        width: 50%;
+        margin: 3em auto 5.5em;
     }
     #form-login__p{
-        font-size: 3vw;
+        font-size: 3.3vw;
         text-align: left;
+    }
+    .btn-login{
+        font-size: 5vw;
+        width: 20%;
     }
 
 }
-@media (max-width: 375px) and (max-height: 667px){
-    /*----search----*/
+@media (max-width: 375px){
+    .main-nav__burger{
+        margin: .4em .1em;  
+    }
+    /*---- Search ----*/
     .container-search {
         margin-top: auto;
         left:3.5%;
@@ -1569,14 +1587,20 @@ h3 span{
         margin-left: 0em !important;
         font-size: 11px !important;
     }
-    /*----profile-----*/
+    /*---- Profile ----*/
     .input-profile{
         margin-left: 16%!important;
         width: inherit!important;
     }
-}
-@media (max-width: 349.98px) {
-    .main-nav__input{
+        .main-nav__input{
         width: 61%;   
+    }
+    /*---- Login ----*/
+    .cuadro-login{
+        width: 90%;
+        margin: 2em auto;
+    }
+    #form-login__p{
+        font-size: 3.7vw;
     }
 }
