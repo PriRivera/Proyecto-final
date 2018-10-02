@@ -696,7 +696,7 @@ h3 span{
 .main-h1__profile{
     font-family: 'Dejavu-Sans-Condensed';
     color: #731921;
-    margin: 1.5em 0em 0em 11em;
+    margin: 1.5em 0em 0em 3em;
     font-size: 51px;
     display: inline-block;
 }
@@ -722,7 +722,7 @@ h3 span{
     color: #6B6661;
 }
 .search-content-profile{
-    margin-top: -6em;
+    margin-top: -4em;
 }
 .search-content-favorites{
     margin-top: 0.5em;
@@ -857,12 +857,13 @@ h3 span{
     }
     /*-----profile-------*/
     .profile-block{
+        height: 245px;
     }
     .input-profile {
         margin-left: -0.3em;
     }
     .main-h1__profile{
-        margin: 1em 0em 1em 7em;
+        margin: 1em 0em 0em 7em;
     }
     .profile-img__names{
         position: absolute;
@@ -990,12 +991,6 @@ h3 span{
         width: 100%;
         height: auto;
     }
-    .main-nav__button-search {
-        /*float: right;
-        padding: 18px 23px;
-        margin-right: -3.6em;
-        margin-top: -3em;*/
-    }
     .main-nav__input-search{
         padding-left: 0px;
         padding-right: 7em;
@@ -1036,7 +1031,7 @@ h3 span{
     /*------------------profile--------------------------*/
     .header-background__profile{
         height: auto;
-        width: 134%;
+        width: auto;
     }
     .input-profile{
         margin-left: 0.7em;
@@ -1045,15 +1040,15 @@ h3 span{
         height: 236px;
     }
     .main-h1__profile{
-        margin: 1em 0em 0em 7em;
+        margin: 1em 0em 0em 5em;
     }
     .text-img__background{
         height: 24%;
         width: 33%;
     }
     .profile-img__names{
-        font-size: 26px;
-        position: relative;
+        font-size: 20px;
+        position: absolute;
         margin: 0.5em;
     }
     .search-content_item{
@@ -1065,6 +1060,12 @@ h3 span{
     }
     .img-paletas{
         display: none;
+    }
+    .responsive-big_text{
+        font-size: 94%;
+    }
+    #add-id{
+        margin-top: -2.5em;
     }
     /*-----Recipe-------*/
     .recipe-sector{
@@ -1216,10 +1217,10 @@ h3 span{
         margin: 0em;
     }
     .main-nav__button-search{
+        margin-top: auto;
         -webkit-border-radius: 0px;
     }
-    .search-bar{
-       
+    .search-bar{ 
         margin-left: 0em;
     }
     /*----------------contact-----------------------*/
@@ -1253,6 +1254,16 @@ h3 span{
         display: block;
         font-size: 3vw;
         margin: auto;
+    }
+    /*-----------profile------------*/
+    .main-h1__profile{
+        margin: 0.5em 4em 0em;
+    }
+    .profile-img__names{
+        font-size: 16px;
+    }
+    #add-id{
+        margin-top: -4em;
     }
 }
 @media (max-width: 575.98px) {
@@ -1440,6 +1451,7 @@ h3 span{
     .main-h1__profile {
         margin: 2em 3.5em 0em;
         font-size: 153%;
+        text-align: center;
     }
     .inside-text{
         display: none;
@@ -1455,10 +1467,19 @@ h3 span{
         position: absolute;
         margin: 0.5em;
         font-size: initial;
+        text-align: center;
+    }
+    .responsive-big_text{
+        text-align: left;
+        font-size: 64%;
+        margin: auto;  
     }
     .style{
         font-size: 77px!important;
         padding: 0.5em;
+    }
+    .search-content-profile{
+        margin: auto;
     }
     .search-content_img {
         width: 100%;
@@ -1481,6 +1502,9 @@ h3 span{
     }
     .plus{
         padding: 19%;
+    }
+    #add-id{
+        margin: 0.5em;
     }
     .img-paletas{
         display: none;

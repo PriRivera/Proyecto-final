@@ -15,6 +15,7 @@ btnLogout.click(function(){
 });
 
 //Enter text area
+/*
 var textArea = document.getElementById("textArea");
 textArea.addEventListener("keyup", function(event) {
   event.preventDefault();
@@ -28,4 +29,4 @@ textArea.addEventListener("keyup", function(event) {
 function guardarDatos()
 {
     console.log(textArea.value);
-}
+}*/
