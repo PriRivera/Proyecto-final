@@ -43,13 +43,143 @@ th{
 .main-nav{    
     background: #242124;
 }
-.main-nav__burger{
+.burger{
     display: none;
+    padding: .7em;
+}
+.burger__button{
+    display: block;
+    margin: 0;
+    width: 10vw;
+    height: 7vw;
+    position: absolute;
+    z-index: 3;  
+    cursor: pointer;    
+    opacity: 0; 
+}
+.burger__span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+    background: #cdcdcd;
+    border-radius: 3px;    
+    transform-origin: 4px 0px;    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+.burger__span:first-child{
+    transform-origin: 0% 0%;
+}
+.burger__span:nth-last-child(2){
+    transform-origin: 0% 100%;
+}
+.burger__button:checked ~ span{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #242124;
+}
+.burger__button:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+.burger__button:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+}
+.burger__button:checked ~ ul{
+    transform: none;
+}
+.burger-menu{
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+.burger-menu__link{
+    text-decoration: none;
+    color: #242124;    
+    transition: color 0.3s ease;
+}
+.burger-menu__link:hover{
+    color: #731921;
+}
+.burger-menu__li{
+    padding: 10px 0;
+    font-size: 7vw;
 }
 .logo{
     max-width: 5em;
     margin: .5em 3em 0em;
     cursor: pointer;
+}
+.main-nav__search-container{
+    position: absolute;
+    transform: translate(0%, -50%);
+    background: #302E30;
+    height: 43px;
+    border-radius: 0px;
+    display: inline-block;
+    margin-left: -1em;
+    margin-top: 1.5em;
+    width: 40%;
+}
+.search-text{
+    color: #302E30;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+   -webkit-border-radius: 0px;
+    font-family: 'Dejavu-Sans-Condensed';
+    transition: 1s;
+    line-height: 44px;
+    width: 1px;
+    padding: 0;
+}
+.search-text:focus{
+    width: 85%;
+    padding: 0 6px;
+    cursor: pointer;
+    color: #fff;
+}
+.main-nav__search-container:hover > .search-text{
+    width: 85%;
+    padding: 0 6px;
+    cursor: pointer;
+    color: #fff;
+}
+.main-nav__button{
+    float: right;
+    color: #b11921;
+    width: 40px;
+    height: 40px;
+    background: #302E30;
+    border-radius: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 1px;
+}
+.main-nav__button:hover{
+    background: #fff;
+}
+.main-nav__link:hover{
+    color: #b11921;
 }
 .main-nav__list{
     float: right;
@@ -64,6 +194,9 @@ th{
     font-family: 'BlackChancery';
     font-size: 1.3em;
     color: #fff;
+}
+.main-nav__link:hover{
+    color: #b11921;
 }
 .main-nav__link--right{
     display: none;
@@ -98,39 +231,11 @@ th{
     text-decoration: none;
     display: block;
 }
-.dropdown-content a:hover {background-color: #ddd;}
-.dropdown:hover .dropdown-content {display: block;}
-.main-nav__search-container{
-    text-align: center;
-    display: inline-block;
-    position: absolute;
-    margin-left: 1.5em;
-    margin-top: 0.5em; 
+.dropdown-content a:hover {
+    background-color: #ddd;
 }
-.main-nav__input{
-    padding: 6px;
-    padding-right: 6em;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-   -webkit-border-radius: 0px;
-    font-family: 'Dejavu-Sans-Condensed';
-}
-.main-nav__button{
-  float: right;
-  padding: 6px 13px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-.main-nav__button:hover{
-    background: #ccc;
-}
-.main-nav__link:hover{
-    color: #b11921;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 h3{
     margin: 0;  
@@ -551,7 +656,6 @@ h3 span{
     margin-left: 7.5em;
     margin-top: 2em;
 }
-
 .sub-menu_link-search{
     display: block;
     margin: 0px 85px;
@@ -744,7 +848,6 @@ h3 span{
     margin: 16px 17px;
     display: inline-block;
 }
-
 .text-img__background{
     position: absolute;
     height: auto;
@@ -765,7 +868,6 @@ h3 span{
     padding: 3.5em 2.4em;
     font-size: 30px;
 }
-
 /*---- Recipe ----*/
 .recipe-sector{
     width: 85%;
@@ -810,22 +912,9 @@ h3 span{
 
 @media (max-width: 1199.98px) {
     /*---- Estilos genericos ----*/
-    .main-nav__search-container{
-        margin-left: 0;
-        width: 38%;
-    }
-    .main-nav__input{
-        padding-right: 0;
-        width: 74%;
-        float: left;
-    }
-    .main-nav__button{
-        float: left;
-    }
-    .footer-imgs{   
+    .footer-imgs{
         max-width: 31%;
     }
-
     /*---- Index ----*/
     .sub-menu{
         margin-top: 6em;
@@ -941,18 +1030,15 @@ h3 span{
     }
 }
 @media (max-width: 991.98px) {
-    .main-nav__list{
-        display: none;
+    /*---- Estilos genericos ----*/
+    .logo{
+        margin: .5em 2em 0;
     }
-    .main-nav__link--right{
-        display: inline-block;
-        margin: .5em 1.5em;
-        float: right;
+    .main-nav__search-container{
+        width: auto;
     }
-    .main-nav__dropdown--display{
-        display: inline-block;
-        margin: .5em 1.5em;
-        float: right;
+    .main-nav__search-container:hover > .search-text{
+        width: 20vw;
     }
     .main-footer {
         width: 100%;
@@ -1083,7 +1169,7 @@ h3 span{
         width: 90%;
     }
     .recipe-title{
-        margin-top: 1em; 
+        margin-top: 1em;
     }
     /*---- Submit ----*/
     .input-quantity{
@@ -1095,7 +1181,6 @@ h3 span{
     /*---- Contact ----*/
     .body-contact{
         background-image: none;
-        
     }
     .cuadro-contact{
         width: auto;
@@ -1128,11 +1213,27 @@ h3 span{
     }
 }
 @media (max-width: 767.98px) {
+    .main-nav__list{
+        display: none;
+    }
+    .burger{
+        display: inline-block;
+    }
+    .burger-menu{
+        width: 30%;
+    }
+    .burger-menu__li{
+        font-size: 4vw;
+    }
     .logo{
         margin: .5em 1.5em 0;
-    }
+        float: right;
+    }    
     .main-nav__search-container{
-        width: 60%;
+        margin-left: 3vw;
+    }
+    .main-nav__search-container:hover > .search-text{
+        width: 40vw;
     }
     h3{
         font-size: 4vw;
@@ -1150,7 +1251,7 @@ h3 span{
         font-size: 3vw;
     }
     .sub-menu{
-        column-gap: 0%
+        column-gap: 0%;
     }
     .main-recipies{
         margin: 0;
@@ -1169,7 +1270,7 @@ h3 span{
         width: 95%;
     }
     .recipe-title{
-        margin: .5em 0; 
+        margin: .5em 0;
     }
     .bloque-izquierda{
         display: block;
@@ -1209,7 +1310,8 @@ h3 span{
     }
     #bloque-derecha{
         width: 90%;
-    }#bloque-derecha__input{
+    }
+    #bloque-derecha__input{
         width: 100%;
     }
     .bloque-aniadir{
@@ -1224,14 +1326,14 @@ h3 span{
         padding-right: 5em;
         -webkit-border-radius: 0px;
     }
-    .container-search{   
+    .container-search{
         margin: 0em;
     }
     .main-nav__button-search{
         margin-top: auto;
         -webkit-border-radius: 0px;
     }
-    .search-bar{ 
+    .search-bar{
         margin-left: 0em;
     }
     /*---- Contact ----*/
@@ -1278,37 +1380,22 @@ h3 span{
         margin-top: -4em;
     }
 }
-@media (max-width: 575.98px) {
-    .main-nav__burger{
-        display: inline-block;
-        margin: .5em .3em;
-        background: none;
-        border: none;
-        font-size: 1.5em;
-        color: #fff;
-    }
-    .logo{
-        display: none;
-    }
+@media (max-width: 575.98px) {  
+    .burger{padding: .8em .6em .4em;}
+    .burger-menu{width: 50%;}
+    .burger-menu__li{font-size: 6vw;}
+    .logo{display: none;}
     .main-nav__search-container{
-        margin-top: .4em;
+        margin-left: 1vw;
     }
-    .main-nav__input{
-        width: 50%;
-    }
-    .main-nav__link--right{
-        margin: .5em .6em;
-    }
-    .main-nav__dropdown--display{
-        margin: .5em 0em;        
+    .main-nav__search-container:hover > .search-text{
+        width: 60vw;
     }
     .main-footer {
         width: 100%;
         height: auto;
     }
-    .footer-p{
-        display: none;
-    }
+    .footer-p{display: none;}
     .footer-imgs {
         display: inline-block;
         max-width: max-content;
@@ -1320,42 +1407,28 @@ h3 span{
         margin: 0.5em 2em;
         max-width: 30%;
     }
-    .footer-li_img {
-        max-width: 8%;
-    }
-    .footer-li_link {
-        text-decoration: none;
-    }
+    .footer-li_img {max-width: 8%;}
+    .footer-li_link {text-decoration: none;}
     /*---- Index ----*/
     .mobile-logo{
         display: inline-block;
         width: 40%;
         margin: 5% 30% 0%;
     }
-    .main-slider {
-        padding: 3em 0 0 0;
-    }
+    .main-slider {padding: 3em 0 0 0;}
     .sub-menu{
         width: 100%;
         margin: 1em .5em 0 0;
         column-gap: 2%;
     }
-    .sub-menu_item{
-        height: 2em;
-    } 
-    .sub-menu_item:hover{
-        height: 2em;
-    }
+    .sub-menu_item{height: 2em;} 
+    .sub-menu_item:hover{height: 2em;}
     .main-recipies{
         border: none;
         padding: .5em;
     }
-    .recipe-menu{
-        columns: 2;
-    }
-    .recipe-menu_link{
-        font-size: 3.3vw;
-    }
+    .recipe-menu{columns: 2;}
+    .recipe-menu_link{font-size: 3.3vw;}
     /*---- Search ----*/
     .header-background{
         width: auto;
@@ -1366,9 +1439,7 @@ h3 span{
         font-size: inherit;
         display: block;
     }
-    .search-bar{
-        width: max-content;
-    }
+    .search-bar{width: max-content;}
     .main-nav__input-search{
         font-size: 10px;
         padding-left: 8px;
@@ -1575,9 +1646,6 @@ h3 span{
 
 }
 @media (max-width: 375px){
-    .main-nav__burger{
-        margin: .4em .1em;  
-    }
     /*---- Search ----*/
     .container-search {
         margin-top: auto;
