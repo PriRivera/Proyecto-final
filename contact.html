@@ -10,37 +10,40 @@
 </head>
 <body class="body-contact">
     <header>
-        <nav class="main-nav">
-            <button class="main-nav__burger"><i class="fa fa-bars"></i></button>
+        <nav class="main-nav">            
+            <div class="burger">
+                <input type="checkbox" class="burger__button">
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <span class="burger__span"></span>
+                <ul class="burger-menu">
+                    <a href="index.html" class="burger-menu__link"><li class="burger-menu__li">Home</li></a>
+                    <a href="contact.html" class="burger-menu__link"><li class="burger-menu__li">Contact</li></a>
+                    <a href="login.html" class="burger-menu__link"><li class="burger-menu__li">Login</li></a>
+                    <a href="profile.html" class="burger-menu__link"><li class="burger-menu__li">Profile</li></a>
+                    <a href="submit.html" class="burger-menu__link"><li class="burger-menu__li">New recipe</li></a>
+                    <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                </ul>
+            </div>
+
             <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
-                <form action="">
-                  <input class="main-nav__input" type="text" placeholder="Search.." name="search">
-                  <button class="main-nav__button" type="submit"><i class="fa fa-search"></i></button>
-                 </form>
-              </div>
+                <input class="search-text" type="text" placeholder="Search.." name="search">
+                <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
+            </div>
             <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
-                <li class="main-nav__item"><a class="main-nav__link"href="login.html">Login</a></li>
-                <div id="logedin" class="main-nav__item  dropdown">
-                    <button class="dropbtn">Hiram</button>
-                    <div class="dropdown-content">
-                        <a href="profile.html" class="dropdown-content__a">Profile</a>
-                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
-                        <a id="logout" href="#" class="dropdown-content__a">Log out</a>
+                    <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link"href="login.html">Login</a></li>
+                    <div id="logedin" class="main-nav__item  dropdown">
+                        <button class="dropbtn">Hiram</button>
+                        <div class="dropdown-content">
+                            <a href="profile.html" class="dropdown-content__a">Profile</a>
+                            <a href="submit.html" class="dropdown-content__a">New recipe</a>
+                            <a id="logout" href="#" class="dropdown-content__a">Log out</a>
+                        </div>
                     </div>
-                </div>
             </ul>
-            <a class="main-nav__link main-nav__link--right"href="login.html">Login</a>
-            <div id="logedin" class="main-nav__item main-nav__link--right dropdown">
-                    <button class="dropbtn">Hiram</button>
-                    <div class="dropdown-content">
-                        <a href="profile.html" class="dropdown-content__a">Profile</a>
-                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
-                        <a id="logout" href="#" class="dropdown-content__a">Log out</a>
-                    </div>
-                </div>
         </nav>
     </header>
     <section class="cuadro-contact">
