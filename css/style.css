@@ -590,7 +590,7 @@ h3 span{
 .main-title{  
     display: block;
     max-width: 25%;
-    margin: 1em auto;
+    margin: 4em auto 2em;
 }
 .recipe-form{
     text-align: center;
@@ -944,6 +944,8 @@ h3 span{
     font-size: 72px;
     text-align: center;
     color: #731921;
+    margin-top:2em;
+
 }
 .recipe-image--container{
     max-width: 85%;
@@ -1292,6 +1294,7 @@ h3 span{
     }
     .burger-menu{
         width: 30%;
+        height: auto;
     }
     .burger-menu__li{
         font-size: 4vw;
@@ -1341,7 +1344,7 @@ h3 span{
         width: 95%;
     }
     .recipe-title{
-        margin: .5em 0;
+        margin: 2em 0 0.5em;
     }
     .bloque-izquierda{
         display: block;
@@ -1465,7 +1468,7 @@ h3 span{
     }
     .burger-menu{
         width: 50%;
-        height: -webkit-fill-available;
+        height: auto;
 
     }
     .burger-menu__li{
