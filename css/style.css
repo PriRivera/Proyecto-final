@@ -273,8 +273,6 @@ th{
     color: #fff;
     width: 40px;
     height: 40px;
-   /* margin-top: 5px;
-    margin-right: 6px;*/
     background: #302E30;
     border-radius: 0px;
     cursor: pointer;
@@ -781,7 +779,7 @@ h3 span{
     border-radius: 1em;
     width: 70%;
     height: 676px;
-    margin: 4em 11em;
+    margin: 10em 11em;
 }
 .form-contact{
     padding-top: 0em;
@@ -817,6 +815,9 @@ h3 span{
     background-image: no-repeat;
     background-size: cover;
     height: 428px;
+}
+.main-profile_div{
+    text-align: inherit;
 }
 .profile-block{
     float: left;
@@ -1064,7 +1065,7 @@ h3 span{
     /*---- Contact ----*/
     .cuadro-contact{
         height: 771px;
-        margin: 10em;
+        margin: 12em 10em;
     }
     .p-have{
         font-size: 42px;
@@ -1255,7 +1256,7 @@ h3 span{
     .cuadro-contact{
         width: auto;
         height: 799px;
-        margin: auto;
+        margin: 7em auto;
         border-radius: 0px;
     }
     .p-have{
@@ -1400,7 +1401,7 @@ h3 span{
         margin: 0em;
     }
     .main-nav__button-search{
-        margin-top: auto;
+        margin-left: -2px;
         -webkit-border-radius: 0px;
         padding-bottom: 16px;
     }
@@ -1408,7 +1409,6 @@ h3 span{
         margin-left: 0em;
     }
     /*---- Contact ----*/
-
     .body-contact{
         background-image: none;
     }
@@ -1419,7 +1419,7 @@ h3 span{
     }
     .p-have{
         padding-left: 0em;
-        padding-top: 1em;
+        padding-top: 2em;
     }
     .form-contact{
         margin-left: 0em;
@@ -1444,6 +1444,14 @@ h3 span{
     .main-h1__profile{
         margin: 0.5em 4em 0em;
     }
+    .main-name{
+        margin: 0.5em 0.5em 0em;
+        padding-top: 68px;
+    }
+    .main-profile_div{
+        text-align: center;
+        padding-right: 4em;
+    }
     .profile-img__names{
         font-size: 16px;
     }
@@ -1452,9 +1460,17 @@ h3 span{
     }
 }
 @media (max-width: 575.98px) {  
-    .burger{padding: .8em .6em .4em;}
-    .burger-menu{width: 50%;}
-    .burger-menu__li{font-size: 6vw;}
+    .burger{
+     padding: .8em .6em .4em;
+    }
+    .burger-menu{
+        width: 50%;
+        height: -webkit-fill-available;
+
+    }
+    .burger-menu__li{
+        font-size: 6vw;
+    }
     .logo{display: none;}
     .main-nav__search-container{
         margin-left: 1vw;
@@ -1486,17 +1502,20 @@ h3 span{
         width: 40%;
         margin: 5% 30% 0%;
     }
-    .main-slider {padding: 3em 0 0 0;}
+    .main-slider {
+        padding: 3em 0 0 0;
+    }
     .sub-menu{
         width: 100%;
         margin: 1em .5em 0 0;
-        column-gap: 0%;
+        column-gap: 0px;
     }
     .sub-menu_item{height: 2em;} 
     .sub-menu_item:hover{height: 2em;}
     .main-recipies{
         border: none;
         padding: .5em;
+        height: 29em;
     }
     .sub-menu_link{
         font-size: 3.5vw;
@@ -1521,7 +1540,7 @@ h3 span{
         border-radius: 0%;
     }
     .container-search{
-        margin: 0em 3em;
+        margin: 0em 1em;
     }
     .main-nav__button-search{
         padding: 6px 23px;
@@ -1571,8 +1590,12 @@ h3 span{
        width: auto;
        height: auto;
    }
+   .main-profile_div{
+       text-align: center;
+       padding: 0em;
+   }
     .profile-block{
-        margin:3.5em 3.7em 0.5em;
+        margin:4em 4.5em 0em;
         width: 53%;
         height: 44%;
     }
@@ -1586,7 +1609,6 @@ h3 span{
     }
     .main-name {
         font-size: 2em;
-        margin: 0% 23%;
     }
     .img-paletas{
         display: none;
@@ -1719,6 +1741,7 @@ h3 span{
     }
 
 }
+
 @media (max-width: 375px){
     /*---- Search ----*/
     .container-search {
@@ -1736,6 +1759,9 @@ h3 span{
     }
         .main-nav__input{
         width: 61%;   
+    }
+    .profile-block{
+        margin: 4em 3.5em 0.5em!important;
     }
     /*---- Login ----*/
     .cuadro-login{
