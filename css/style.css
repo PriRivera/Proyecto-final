@@ -150,7 +150,7 @@ th{
     font-family: 'Dejavu-Sans-Condensed';
     transition: 1s;
     line-height: 44px;
-    width: 1px;
+    width: 0px;
     padding: 0;
 }
 .search-text:focus{
@@ -1518,7 +1518,6 @@ h3 span{
     .main-recipies{
         border: none;
         padding: .5em;
-        height: 29em;
     }
     .sub-menu_link{
         font-size: 3.5vw;
@@ -1706,7 +1705,6 @@ h3 span{
         text-align: left;
     }
     /*---- Contact ----*/
-
     .body-contact{
         background-image: none;
     }
@@ -1725,7 +1723,6 @@ h3 span{
     .send-btn{
         margin: 0em 4em;
     }
-    
     #contact_imput{
         width: 100%;
     }
@@ -1742,9 +1739,7 @@ h3 span{
         font-size: 5vw;
         width: 20%;
     }
-
 }
-
 @media (max-width: 375px){
     /*---- Search ----*/
     .container-search {
