@@ -423,7 +423,6 @@ h3 span{
 .main-recipies{
     margin: 9em 3em;
     padding: 2em;
-    height: auto;
     position: relative;
     text-align: right;
     border-style: groove;
@@ -485,7 +484,7 @@ h3 span{
 }
 .cuadro-login{
     width: 64%; 
-    margin: 6em auto 10em;
+    margin: 9em auto 10em;
     text-align: center;
     background: #fff;
     border-radius: 2%;
@@ -1030,7 +1029,7 @@ h3 span{
         margin: 31% auto;
     }
     .icono-login{
-        width: 53%;
+        width: 37%;
     }
     .btn-login{
         font-size: 3vw;
@@ -1040,6 +1039,9 @@ h3 span{
         font-size: 2vw;
         margin-left: 0em;
         left: auto;
+    }
+    .cuadro-registro{
+        margin: 9em auto;
     }
 }
 @media (max-width: 991.98px) {
@@ -1219,7 +1221,7 @@ h3 span{
     }
     /*---- Login ----*/
     .icono-login{
-        width: 53%;
+        width: 38%;
     }
     #form-login{
         margin: 2em;
@@ -1270,7 +1272,7 @@ h3 span{
     }
     .sub-menu{
         column-gap: 0%;
-        width: auto;
+        width: inherit;
     }
     .main-recipies{
         margin: 0;
@@ -1376,8 +1378,11 @@ h3 span{
         margin: 0em 4em;
     }
     /*---- Login ----*/
+    .body-Login{
+        background: none;
+    }
     .icono-login{
-        width: 63%;
+        width: 38%%;
     }
     #form-login{
         margin: 1em;
@@ -1387,6 +1392,13 @@ h3 span{
         font-size: 4vw;
         margin: 1em auto;
         left: inherit;
+    }
+    .btn-register{
+        font-size: 5vw;
+        width: auto;
+    }
+    .cuadro-login{
+        margin: 2em auto;
     }
     /*---- Profile ----*/
     .main-h1__profile{
@@ -1463,6 +1475,7 @@ h3 span{
     .main-recipies{
         border: none;
         padding: .5em;
+        height: 29em;
     }
     .sub-menu_link{
         font-size: 3.5vw;
@@ -1674,7 +1687,7 @@ h3 span{
     /*---- Login ----*/
     .cuadro-login{
         width: 80%;
-        margin: 3em auto 5.5em;
+        margin: 4em auto;
     }
     #form-login__p{
         font-size: 3.3vw;
@@ -1683,6 +1696,10 @@ h3 span{
     .btn-login{
         font-size: 5vw;
         width: 20%;
+    }
+    .cuadro-registro{
+        width: 87%;
+        margin: 2em auto;
     }
 }
 @media (max-width: 375px){
