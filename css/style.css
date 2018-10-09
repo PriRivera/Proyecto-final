@@ -234,63 +234,6 @@ th{
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
-
-.main-nav__search-container{
-    position: absolute;
-    transform: translate(0%, -50%);
-    background: #302E30;
-    height: 43px;
-    border-radius: 0px;
-    display: inline-block;
-    margin-left: -1em;
-    margin-top: 1.5em;
-}
-.search-text{
-    color: #302E30;
-    font-size: 17px;
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-   -webkit-border-radius: 0px;
-    font-family: 'Dejavu-Sans-Condensed';
-    transition: 1s;
-    line-height: 44px;
-    width: 1px;
-    padding: 0;
-}
-.search-text:hover{
-    width: 240px;
-    padding: 0 6px;
-    cursor: pointer;
-    color: #fff;
-}
-.main-nav__search-container:hover > .search-btn{
-    background: #fff;
-}
-.main-nav__button{
-    float: right;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    background: #302E30;
-    border-radius: 0px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 1px;
-}
-.main-nav__button:hover{
-    background: #b11921;
-}
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 h3{
     margin: 0;  
     font-family: 'Dejavu-Sans-ExtraLight';
@@ -1294,7 +1237,7 @@ h3 span{
     }
     .burger-menu{
         width: 30%;
-        height: auto;
+        height: 30em;
     }
     .burger-menu__li{
         font-size: 4vw;
@@ -1468,7 +1411,7 @@ h3 span{
     }
     .burger-menu{
         width: 50%;
-        height: auto;
+        height: 30em;
 
     }
     .burger-menu__li{
