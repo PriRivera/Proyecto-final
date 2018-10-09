@@ -1276,6 +1276,7 @@ h3 span{
     }
     .main-recipies{
         margin: 0;
+        height: 20em;
     }
     .recipe-img{
         display: none;
