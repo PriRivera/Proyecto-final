@@ -423,6 +423,7 @@ h3 span{
 .main-recipies{
     margin: 9em 3em;
     padding: 2em;
+    height: auto;
     position: relative;
     text-align: right;
     border-style: groove;
@@ -1269,6 +1270,7 @@ h3 span{
     }
     .sub-menu{
         column-gap: 0%;
+        width: auto;
     }
     .main-recipies{
         margin: 0;
