@@ -50,26 +50,26 @@
     <section>
         <img class="main-title" src="img/new-recipe.png" alt="New recipe title">
         <form class="recipe-form" action="">
-            <div class="bloque-izquierda">
-                <div class="bloque-imagen border">
+            <div class="left-block">
+                <div class="img-block border">
                     <i class="fa fa-file-picture-o" style="font-size:15vw;color:#6B6661"></i>
-                    <p class="bloque-imagen__p">Drop an image here <br> or</p>
+                    <p class="img-block__p">Drop an image here <br> or</p>
                     <input type="file" id="file" name="Recipe photo" class="file-chooser">
                     <label for=file class="main-btn main-btn--size"> Choose a file..</label>
                 </div>                
             </div>
-            <div class="bloque-derecha" id="bloque-derecha">
+            <div class="right-block" id="right-block">
                 <h3><span>Name</span> for your recipe.</h3>
-                <input class="form-texto border" type="text" name="" id="bloque-derecha__input" placeholder="Title" autofocus>
+                <input class="form-text border" type="text" name="" id="right-block__input" placeholder="Title" autofocus>
                 <br><br><br>
                 <h3><span>Description</span> to show.</h3>
-                <textarea class="form-texto text-area border" name="" id="bloque-derecha__input" cols="30" rows="10" placeholder="Small and clear description."></textarea>
+                <textarea class="form-text text-area border" name="" id="right-block__input" cols="30" rows="10" placeholder="Small and clear description."></textarea>
             </div>
-            <div class="bloque-aniadir">
+            <div class="add-block">
                 <br><br>
                 <h3><span>Ingredients</span> to be used.</h3> <br>
-                <div class="ingrediente">
-                    <div class="form-texto contenedor-generico border">
+                <div class="ingredient">
+                    <div class="form-text generic-container border">
                         <input class="input-base input-name" type="text" placeholder="Ingredient name">
                         <input class="input-base input-quantity" type="number" min="0" step="1" placeholder="0">
                         <input class="input-base input-unit" list="medidas" placeholder="Measure">

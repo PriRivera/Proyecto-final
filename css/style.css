@@ -251,7 +251,7 @@ h3 span{
 .file-chooser{
     display: none;
 }
-.form-texto{
+.form-text{
     width: 78%;
     padding: 6px;
     margin: .5em 0em;
@@ -282,13 +282,13 @@ h3 span{
     font-family: 'Dejavu-Sans-Condensed';
     cursor: pointer;
 }
-.bloque-izquierda{
+.left-block{
     display: inline-block;
     width: 48%;
     float: left;
     margin-left: .5em;
 }
-.bloque-derecha{
+.right-block{
     display: inline-block;
     width: 48%;
     text-align: left;
@@ -474,7 +474,7 @@ h3 span{
     background: url("../img/fondoLogin.png");
     background-size: cover;
 }
-.cuadro-registro{
+.registry-box{
     display: none;  
     width: 64%; 
     margin: 4em auto;
@@ -482,9 +482,9 @@ h3 span{
     background: #fff;
     border-radius: 2%;
 }
-.cuadro-login{
+.login-box{
     width: 64%; 
-    margin: 6em auto 10em;
+    margin: 9em auto 10em;
     text-align: center;
     background: #fff;
     border-radius: 2%;
@@ -493,7 +493,7 @@ h3 span{
     margin: 1em 3em 0;
     text-align: left;
 }
-.icono-login{
+.login-icon{
     display: block;
     width: 14%;
     margin: auto;
@@ -538,24 +538,21 @@ h3 span{
 .recipe-form{
     text-align: center;
 }
-.bloque-imagen{
+.img-block{
     width: 50%;
     height: auto;
     margin: auto;
     background: #fff;
 }
-.imagen-vacia{
-    margin: 3em 2em 0em;
-}
-.bloque-aniadir{
+.add-block{
     display: inline-block;
     width: 80%;
     text-align: left;
 }
-.ingrediente{
+.ingredient{
     width: 100%;
 }
-.contenedor-generico{
+.generic-container{
     display: inline-block;
     width: 90%;
     background: #fff;
@@ -717,7 +714,7 @@ h3 span{
     background-size: cover;
     width: 100%;
 }
-.cuadro-contact{
+.contact-box{
     background: #F1F1F1;
     border-radius: 1em;
     width: 70%;
@@ -901,7 +898,7 @@ h3 span{
     display: block;
     width: 100%;
 }
-.bloque-central{
+.central-block{
     width: 100%;
 }
 .ingredient-table{
@@ -920,7 +917,7 @@ h3 span{
 }
 
 @media (max-width: 1199.98px) {
-    /*---- Estilos genericos ----*/
+    /*---- Generic styles ----*/
     .footer-imgs{
         max-width: 31%;
     }
@@ -995,7 +992,7 @@ h3 span{
         display: none;
     }
     /*---- Submit ----*/
-    .bloque-imagen__p{
+    .img-block__p{
         font-size: 1.5vw;
     }
     .main-btn--size{
@@ -1008,7 +1005,7 @@ h3 span{
         font-size: 2.5vw;
     }
     /*---- Contact ----*/
-    .cuadro-contact{
+    .contact-box{
         height: 771px;
         margin: 12em 10em;
     }
@@ -1025,10 +1022,10 @@ h3 span{
         padding-bottom: 10em;
     }
     /*---- Login ----*/
-    .cuadro-login{
+    .login-box{
         margin: 31% auto;
     }
-    .icono-login{
+    .login-icon{
         width: 53%;
     }
     .btn-login{
@@ -1040,9 +1037,12 @@ h3 span{
         margin-left: 0em;
         left: auto;
     }
+    .cuadro-registro{
+        margin: 9em auto;
+    }
 }
 @media (max-width: 991.98px) {
-    /*---- Estilos genericos ----*/
+    /*---- Generic styles ----*/
     .logo{
         margin: .5em 2em 0;
     }
@@ -1171,7 +1171,7 @@ h3 span{
         margin-top: 1em;
         padding: 0.5em;
     }
-    .img-paletas{
+    .spatulas-img{
         display: none;
     }
     .responsive-big_text{
@@ -1198,7 +1198,7 @@ h3 span{
     .body-contact{
         background-image: none;
     }
-    .cuadro-contact{
+    .contact-box{
         width: auto;
         height: 799px;
         margin: 7em auto;
@@ -1218,7 +1218,7 @@ h3 span{
     }
     /*---- Login ----*/
     .icono-login{
-        width: 53%;
+        width: 38%;
     }
     #form-login{
         margin: 2em;
@@ -1259,7 +1259,7 @@ h3 span{
         display: none;
     }
     /*---- Index ----*/
-     .slider-background{
+    .slider-background{
         background: none;
         border-width: 0px;
     }
@@ -1269,9 +1269,11 @@ h3 span{
     }
     .sub-menu{
         column-gap: 0%;
+        width: inherit;
     }
     .main-recipies{
         margin: 0;
+        height: 20em;
     }
     .recipe-img{
         display: none;
@@ -1289,7 +1291,7 @@ h3 span{
     .recipe-title{
         margin: 2em 0 0.5em;
     }
-    .bloque-izquierda{
+    .left-block{
         display: block;
         float: none;
         width:100%;
@@ -1299,7 +1301,7 @@ h3 span{
         width: 60%;
         margin: auto;
     }
-    .bloque-derecha{
+    .right-block{
         margin-top: 3em;
         width: 100%;
     }
@@ -1325,13 +1327,13 @@ h3 span{
     .form-steps{
         font-size: 2.7vw;
     }
-    #bloque-derecha{
+    #right-block{
         width: 90%;
     }
-    #bloque-derecha__input{
+    #right-block__input{
         width: 100%;
     }
-    .bloque-aniadir{
+    .add-block{
         width: 90%;
     }
     /*---- Search ----*/
@@ -1358,7 +1360,7 @@ h3 span{
     .body-contact{
         background-image: none;
     }
-    .cuadro-contact{
+    .contact-box{
         width: fit-content;
         height: 613px;
         margin: auto;
@@ -1374,8 +1376,14 @@ h3 span{
         margin: 0em 4em;
     }
     /*---- Login ----*/
-    .icono-login{
+    .login-icon{
         width: 63%;
+    }
+    .body-Login{
+        background: none;
+    }
+    .icono-login{
+        width: 38%;
     }
     #form-login{
         margin: 1em;
@@ -1385,6 +1393,13 @@ h3 span{
         font-size: 4vw;
         margin: 1em auto;
         left: inherit;
+    }
+    .btn-register{
+        font-size: 5vw;
+        width: auto;
+    }
+    .cuadro-login{
+        margin: 2em auto;
     }
     /*---- Profile ----*/
     .main-h1__profile{
@@ -1461,6 +1476,7 @@ h3 span{
     .main-recipies{
         border: none;
         padding: .5em;
+        height: 29em;
     }
     .sub-menu_link{
         font-size: 3.5vw;
@@ -1555,10 +1571,10 @@ h3 span{
     .main-name {
         font-size: 2em;
     }
-    .img-paletas{
+    .spatulas-img{
         display: none;
     }
-    .form-texto {
+    .form-text {
         margin: auto;
         font-size: 18px;
         display: inline-block;
@@ -1643,7 +1659,7 @@ h3 span{
         width:90%;
     }
     /*---- Submit ----*/
-    #bloque-derecha__input{
+    #right-block__input{
         font-size: 2.7vw;
         text-align: left;
     }
@@ -1651,7 +1667,7 @@ h3 span{
     .body-contact{
         background-image: none;
     }
-    .cuadro-contact{
+    .contact-box{
         width: fit-content;
         height: 799px;
         margin: auto;
@@ -1670,9 +1686,9 @@ h3 span{
         width: 100%;
     }
     /*---- Login ----*/
-    .cuadro-login{
+    .login-box{
         width: 80%;
-        margin: 3em auto 5.5em;
+        margin: 4em auto;
     }
     #form-login__p{
         font-size: 3.3vw;
@@ -1681,6 +1697,10 @@ h3 span{
     .btn-login{
         font-size: 5vw;
         width: 20%;
+    }
+    .registry-box{
+        width: 87%;
+        margin: 2em auto;
     }
 }
 @media (max-width: 375px){
@@ -1698,14 +1718,14 @@ h3 span{
         margin-left: 16%!important;
         width: inherit!important;
     }
-        .main-nav__input{
+    .main-nav__input{
         width: 61%;   
     }
     .profile-block{
         margin: 4em 3.5em 0.5em!important;
     }
     /*---- Login ----*/
-    .cuadro-login{
+    .login-box{
         width: 90%;
         margin: 2em auto;
     }
