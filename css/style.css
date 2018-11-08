@@ -1025,8 +1025,13 @@ h3 span{
     .login-box{
         margin: 31% auto;
     }
+<<<<<<< HEAD
     .login-icon{
         width: 53%;
+=======
+    .icono-login{
+        width: 37%;
+>>>>>>> ecb8dba360fb6daa8c3c644e5a6b1570df6e6c81
     }
     .btn-login{
         font-size: 3vw;
@@ -1376,8 +1381,16 @@ h3 span{
         margin: 0em 4em;
     }
     /*---- Login ----*/
+<<<<<<< HEAD
     .login-icon{
         width: 63%;
+=======
+    .body-Login{
+        background: none;
+    }
+    .icono-login{
+        width: 38%%;
+>>>>>>> ecb8dba360fb6daa8c3c644e5a6b1570df6e6c81
     }
     .body-Login{
         background: none;
@@ -1698,7 +1711,11 @@ h3 span{
         font-size: 5vw;
         width: 20%;
     }
+<<<<<<< HEAD
     .registry-box{
+=======
+    .cuadro-registro{
+>>>>>>> ecb8dba360fb6daa8c3c644e5a6b1570df6e6c81
         width: 87%;
         margin: 2em auto;
     }
