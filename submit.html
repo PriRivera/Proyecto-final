@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Submit a new recipe"> <!--Aiuda-->
+    <meta name="description" content="Submit a new recipe">
+    <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Icon Library-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.min.js"></script>
     <title>Submit recipe</title>
 </head>
+
 <body>
     <header>
-        <nav class="main-nav">            
+        <nav class="main-nav">
             <div class="burger">
                 <input type="checkbox" class="burger__button">
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <ul class="burger-menu">
-                    <a href="index.html" class="burger-menu__link"><li class="burger-menu__li">Home</li></a>
-                    <a href="contact.html" class="burger-menu__link"><li class="burger-menu__li">Contact</li></a>
-                    <a href="login.html" class="burger-menu__link"><li class="burger-menu__li">Login</li></a>
-                    <a href="profile.html" class="burger-menu__link"><li class="burger-menu__li">Profile</li></a>
-                    <a href="submit.html" class="burger-menu__link"><li class="burger-menu__li">New recipe</li></a>
-                    <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                    <a href="index.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Home</li>
+                    </a>
+                    <a href="contact.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Contact</li>
+                    </a>
+                    <a href="login.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Login</li>
+                    </a>
+                    <a href="profile.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Profile</li>
+                    </a>
+                    <a href="submit.html" class="burger-menu__link">
+                        <li class="burger-menu__li">New recipe</li>
+                    </a>
+                    <a href="#" class="burger-menu__link">
+                        <li class="burger-menu__li">Logout</li>
+                    </a>
                 </ul>
             </div>
 
@@ -32,31 +50,31 @@
                 <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
             </div>
             <ul class="main-nav__list">
-                    <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link"href="login.html">Login</a></li>
-                    <div id="logedin" class="main-nav__item  dropdown">
-                        <button class="dropbtn">Hiram</button>
-                        <div class="dropdown-content">
-                            <a href="profile.html" class="dropdown-content__a">Profile</a>
-                            <a href="submit.html" class="dropdown-content__a">New recipe</a>
-                            <a id="logout" href="#" class="dropdown-content__a">Log out</a>
-                        </div>
+                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="login.html">Login</a></li>
+                <div id="logedin" class="main-nav__item  dropdown">
+                    <button class="dropbtn">Hiram</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html" class="dropdown-content__a">Profile</a>
+                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
+                        <a id="logout" href="#" class="dropdown-content__a">Log out</a>
                     </div>
+                </div>
             </ul>
         </nav>
     </header>
 
     <section>
         <img class="main-title" src="img/new-recipe.png" alt="New recipe title">
-        <form class="recipe-form" action="">
+        <form class="recipe-form" action="ingredients.php" method="post">
             <div class="left-block">
                 <div class="img-block border">
                     <i class="fa fa-file-picture-o" style="font-size:15vw;color:#6B6661"></i>
                     <p class="img-block__p">Drop an image here <br> or</p>
                     <input type="file" id="file" name="Recipe photo" class="file-chooser">
                     <label for=file class="main-btn main-btn--size"> Choose a file..</label>
-                </div>                
+                </div>
             </div>
             <div class="right-block" id="right-block">
                 <h3><span>Name</span> for your recipe.</h3>
@@ -65,16 +83,18 @@
                 <h3><span>Description</span> to show.</h3>
                 <textarea class="form-text text-area border" name="" id="right-block__input" cols="30" rows="10" placeholder="Small and clear description."></textarea>
             </div>
+
             <div class="add-block">
                 <br><br>
                 <h3><span>Ingredients</span> to be used.</h3> <br>
-                <div class="ingredient">
+                <ul id="ingredient-container" class="ingredient"></ul>
+                <div id="ingredient" class="ingredient">
                     <div class="form-text generic-container border">
-                        <input class="input-base input-name" type="text" placeholder="Ingredient name">
-                        <input class="input-base input-quantity" type="number" min="0" step="1" placeholder="0">
-                        <input class="input-base input-unit" list="medidas" placeholder="Measure">
+                        <input id="ingredient_name" class="input-base input-name" type="text" placeholder="Ingredient name">
+                        <input id="quantity" class="input-base input-quantity" type="number" min="0" step="1" placeholder="0">
+                        <input id="measure" class="input-base input-unit" list="medidas" placeholder="Measure">
                     </div>
-                    <a href=""><img class="input-delete" src="img/delete.png" alt=""></a>
+
                 </div>
                 <datalist id="medidas">
                     <option value="Grams">
@@ -86,7 +106,7 @@
                     <option value="Tablespoon"> 
                     <option value="Units"> 
                 </datalist>
-                <button class="main-btn btn-submit">Add an ingredient</button>
+                <input id="add-ingredient-btn" class="main-btn btn-submit" type="button" value="Add ingredient">
                 <br><br>
                 <h3><span>Preparation</span> instructions.</h3>
                 <textarea class="form-steps text-area border" name="" id="" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>
@@ -94,18 +114,29 @@
             </div>
         </form>
     </section>
+    <script src="js/new-recipe.js">
+    </script>
 
     <footer class="main-footer">
         <nav class="footer-nav">
             <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <ul class="footer-imgs">
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/fb.png" alt="facebook"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
-            </ul>   
-            <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
-        </nav>    
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/fb.png" alt="facebook"></a>
+                </li>
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a>
+                </li>
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a>
+                </li>
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a>
+                </li>
+            </ul>
+            <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p>
+        </nav>
     </footer>
 </body>
+
 </html>
