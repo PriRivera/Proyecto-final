@@ -1,4 +1,4 @@
-            @font-face {
+@font-face {
     font-family: 'BlackChancery';
     src: url('./webfonts/blkchcry-webfont.eot');
     src: url('./webfonts/blkchcry-webfont.eot?#iefix') format('embedded-opentype'), url('./webfonts/blkchcry-webfont.woff') format('woff'), url('./webfonts/blkchcry-webfont.ttf') format('truetype'), url('./webfonts/blkchcry-webfont.svg#webfont') format('svg');
@@ -702,6 +702,7 @@ h3 span {
 }
 
 .input-delete {
+    background-image: url("../img/delete.png");
     display: inline-block;
     width: 30px;
     height: auto;
@@ -1203,738 +1204,729 @@ h3 span {
     .login-box {
         margin: 31% auto;
     }
-    <<<<<<< HEAD .login-icon {
+    .login-icon {
         width: 53%;
-        =======.icono-login {
-            width: 37%;
-            >>>>>>>ecb8dba360fb6daa8c3c644e5a6b1570df6e6c81
-        }
-        .btn-login {
-            font-size: 3vw;
-            left: 5vw;
-        }
-        .btn-register {
-            font-size: 2vw;
-            margin-left: 0em;
-            left: auto;
-        }
-        .cuadro-registro {
-            margin: 9em auto;
-        }
     }
-    @media (max-width: 991.98px) {
-        /*---- Generic styles ----*/
-        .logo {
-            margin: .5em 2em 0;
-        }
-        .main-nav__search-container {
-            width: auto;
-        }
-        .main-nav__search-container:hover>.search-text {
-            width: 20vw;
-        }
-        .main-footer {
-            width: 100%;
-            height: auto;
-        }
-        .footer-p {
-            display: none;
-        }
-        /*---- Index ----*/
-        .slider-background {
-            border-width: 5px;
-        }
-        .main-slider {
-            width: 94%;
-            padding: 3em 0 3em 0;
-        }
-        .main-recipies {
-            margin: 0;
-        }
-        .sub-menu {
-            width: 92%;
-            margin: 3em 1em 0em 1em;
-            padding: 0;
-            position: relative;
-            float: unset;
-            text-align: right;
-            columns: 5;
-            list-style: none;
-        }
-        .sub-menu_item {
-            display: list-item;
-            height: 3em;
-            margin: auto;
-            width: inherit;
-            background: #731921;
-        }
-        .sub-menu_link {
-            margin: auto;
-            position: unset;
-            padding: .7em 0 0 0;
-        }
-        .red-block {
-            display: none;
-        }
-        /*---- Search ----*/
-        .header-background {
-            width: 100%;
-            height: auto;
-        }
-        .main-nav__input-search {
-            padding-left: 0px;
-            padding-right: 7em;
-        }
-        .main-nav__button-search {
-            padding-bottom: 16.1px;
-        }
-        .main-text {
-            margin-left: 0.5em;
-            font-size: 27px;
-            margin-top: 4em;
-            padding-top: 3em;
-        }
-        .search-menu {
-            margin-left: -33px;
-        }
-        .sub-menu_link-search {
-            margin: 1em 1em;
-        }
-        .search-content_img {
-            width: 105%;
-            margin: 12px -1px;
-            display: block;
-        }
-        .search-content_item {
-            width: 25%;
-            margin: 16px 18px;
-            display: inline-block;
-        }
-        .search-description__margin {
-            margin: 0em 77px;
-            padding: 0em;
-        }
-        .search-content {
-            width: 100%;
-            height: auto;
-            margin-top: 3em;
-            margin-bottom: 4em;
-            margin-right: 1em;
-            padding: 0em;
-        }
-        /*---- Profile ----*/
-        .header-background__profile {
-            height: auto;
-            width: auto;
-        }
-        .input-profile {
-            margin-left: 0.7em;
-        }
-        .profile-block {
-            height: 236px;
-        }
-        .main-h1__profile {
-            margin: 1em 0em 0em 5em;
-        }
-        .text-img__background {
-            height: 24%;
-            width: 33%;
-        }
-        .profile-img__names {
-            font-size: 20px;
-            position: absolute;
-            margin: 0.5em;
-        }
-        .search-content_item {
-            margin: 0em 1em;
-        }
-        .profile-item {
-            margin-top: 1em;
-            padding: 0.5em;
-        }
-        .spatulas-img {
-            display: none;
-        }
-        .responsive-big_text {
-            font-size: 94%;
-        }
-        #add-id {
-            margin-top: -2.5em;
-        }
-        /*---- Recipe ----*/
-        .recipe-sector {
-            width: 90%;
-        }
-        .recipe-title {
-            margin-top: 1em;
-        }
-        /*---- Submit ----*/
-        .input-quantity {
-            width: 17%;
-        }
-        .input-unit {
-            width: 17%;
-        }
-        /*---- Contact ----*/
-        .body-contact {
-            background-image: none;
-        }
-        .contact-box {
-            width: auto;
-            height: 799px;
-            margin: 7em auto;
-            border-radius: 0px;
-        }
-        .p-have {
-            padding-left: 0em;
-            padding-top: 4em;
-        }
-        .form-contact {
-            margin-left: 2em;
-            margin-top: 1em;
-            width: auto;
-        }
-        .send-btn {
-            margin: 0em 4em;
-        }
-        /*---- Login ----*/
-        .icono-login {
-            width: 38%;
-        }
-        #form-login {
-            margin: 2em;
-        }
-        .btn-login {
-            font-size: 2.5vw;
-            left: 4vw;
-        }
+    .btn-login {
+        font-size: 3vw;
+        left: 5vw;
     }
-    @media (max-width: 767.98px) {
-        .main-nav__list {
-            display: none;
-        }
-        .burger {
-            display: inline-block;
-        }
-        .burger-menu {
-            width: 30%;
-            height: 30em;
-        }
-        .burger-menu__li {
-            font-size: 4vw;
-        }
-        .logo {
-            margin: .5em 1.5em 0;
-            float: right;
-        }
-        .main-nav__search-container {
-            margin-left: 3vw;
-        }
-        .main-nav__search-container:hover>.search-text {
-            width: 40vw;
-        }
-        h3 {
-            font-size: 4vw;
-        }
-        .footer-p {
-            display: none;
-        }
-        /*---- Index ----*/
-        .slider-background {
-            background: none;
-            border-width: 0px;
-        }
-        .sub-menu_link {
-            padding-top: 0.8em;
-            font-size: 4vw;
-        }
-        .sub-menu {
-            column-gap: 0%;
-            width: inherit;
-        }
-        .main-recipies {
-            margin: 0;
-            height: 20em;
-        }
-        .recipe-img {
-            display: none;
-        }
-        .recipe-menu {
-            width: 94%;
-        }
-        .recipe-menu_link {
-            font-size: 2.3vw;
-        }
-        /*---- Recipe ----*/
-        .recipe-sector {
-            width: 95%;
-        }
-        .recipe-title {
-            margin: 2em 0 0.5em;
-        }
-        .left-block {
-            display: block;
-            float: none;
-            width: 100%;
-            margin: auto;
-        }
-        .recipe-image--container {
-            width: 60%;
-            margin: auto;
-        }
-        .right-block {
-            margin-top: 3em;
-            width: 100%;
-        }
-        /*---- Submit ----*/
-        .main-title {
-            max-width: 40%;
-        }
-        .input-name {
-            font-size: 2.7vw;
-        }
-        .input-quantity {
-            font-size: 2.7vw;
-            width: 16%;
-        }
-        .input-unit {
-            font-size: 2.4vw;
-            width: 20%;
-        }
-        .input-delete {
-            width: 4vw;
-            margin-left: .5em;
-        }
-        .form-steps {
-            font-size: 2.7vw;
-        }
-        #right-block {
-            width: 90%;
-        }
-        #right-block__input {
-            width: 100%;
-        }
-        .add-block {
-            width: 90%;
-        }
-        /*---- Search ----*/
-        .search-menu {
-            margin-left: inherit;
-            font-size: inherit;
-        }
-        .main-nav__input-search {
-            padding-right: 5em;
-            -webkit-border-radius: 0px;
-        }
-        .container-search {
-            margin: 0em;
-        }
-        .main-nav__button-search {
-            margin-left: -2px;
-            -webkit-border-radius: 0px;
-            padding-bottom: 16px;
-        }
-        .search-bar {
-            margin-left: 0em;
-        }
-        /*---- Contact ----*/
-        .body-contact {
-            background-image: none;
-        }
-        .contact-box {
-            width: fit-content;
-            height: 613px;
-            margin: auto;
-        }
-        .p-have {
-            padding-left: 0em;
-            padding-top: 2em;
-        }
-        .form-contact {
-            margin-left: 0em;
-        }
-        .send-btn {
-            margin: 0em 4em;
-        }
-        /*---- Login ----*/
-        <<<<<<< HEAD .login-icon {
-            width: 63%;
-            =======.body-Login {
-                background: none;
-            }
-            .icono-login {
-                width: 38%%;
-                >>>>>>>ecb8dba360fb6daa8c3c644e5a6b1570df6e6c81
-            }
-            .body-Login {
-                background: none;
-            }
-            .icono-login {
-                width: 38%;
-            }
-            #form-login {
-                margin: 1em;
-            }
-            .btn-login {
-                display: inline-block;
-                font-size: 4vw;
-                margin: 1em auto;
-                left: inherit;
-            }
-            .btn-register {
-                font-size: 5vw;
-                width: auto;
-            }
-            .cuadro-login {
-                margin: 2em auto;
-            }
-            /*---- Profile ----*/
-            .main-h1__profile {
-                margin: 0.5em 4em 0em;
-            }
-            .main-name {
-                margin: 0.5em 0.5em 0em;
-                padding-top: 68px;
-            }
-            .main-profile_div {
-                text-align: center;
-                padding-right: 4em;
-            }
-            .profile-img__names {
-                font-size: 16px;
-            }
-            #add-id {
-                margin-top: -4em;
-            }
-        }
-        @media (max-width: 575.98px) {
-            .burger {
-                padding: .8em .6em .4em;
-            }
-            .burger-menu {
-                width: 50%;
-                height: 30em;
-            }
-            .burger-menu__li {
-                font-size: 6vw;
-            }
-            .logo {
-                display: none;
-            }
-            .main-nav__search-container {
-                margin-left: 1vw;
-            }
-            .main-nav__search-container:hover>.search-text {
-                width: 60vw;
-            }
-            .main-footer {
-                width: 100%;
-                height: auto;
-            }
-            .footer-p {
-                display: none;
-            }
-            .footer-imgs {
-                display: inline-block;
-                max-width: max-content;
-                margin: 0em 0em 1em 0em;
-            }
-            .footer-logo {
-                display: inline-block;
-                float: inherit;
-                margin: 0.5em 2em;
-                max-width: 30%;
-            }
-            .footer-li_img {
-                max-width: 8%;
-            }
-            .footer-li_link {
-                text-decoration: none;
-            }
-            /*---- Index ----*/
-            .mobile-logo {
-                display: inline-block;
-                width: 40%;
-                margin: 5% 30% 0%;
-            }
-            .main-slider {
-                padding: 3em 0 0 0;
-            }
-            .sub-menu {
-                width: 100%;
-                margin: 1em .5em 0 0;
-                column-gap: 0px;
-            }
-            .sub-menu_item {
-                height: 2em;
-            }
-            .sub-menu_item:hover {
-                height: 2em;
-            }
-            .main-recipies {
-                border: none;
-                padding: .5em;
-                height: 29em;
-            }
-            .sub-menu_link {
-                font-size: 3.5vw;
-            }
-            .recipe-menu {
-                columns: 2;
-            }
-            .recipe-menu_link {
-                font-size: 3.3vw;
-            }
-            /*---- Search ----*/
-            .header-background {
-                width: auto;
-                height: auto;
-            }
-            .main-text {
-                margin: 1em 4em 0em;
-                font-size: inherit;
-                display: block;
-            }
-            .search-bar {
-                width: max-content;
-            }
-            .main-nav__input-search {
-                font-size: 10px;
-                padding-left: 8px;
-                padding-right: 6em;
-                border-radius: 0%;
-            }
-            .container-search {
-                margin: 0em 1em;
-            }
-            .main-nav__button-search {
-                padding: 6px 23px;
-                margin: 0em;
-                display: inline-block;
-            }
-            .sub-menu_link-search {
-                float: left;
-                padding: 0em;
-                margin-left: 5px;
-                font-size: 77%;
-            }
-            .search-menu {
-                display: -webkit-inline-box;
-                margin-top: 2em;
-                margin-left: 0em;
-                padding: 0em;
-            }
-            .search-content {
-                width: auto;
-                height: auto;
-                margin: 0em 0em 1em 1.5em;
-                padding: 0em;
-            }
-            .search-content_item {
-                width: 42%;
-                margin: auto;
-                display: inline-block;
-                margin: 1em 1em 0em 0em;
-            }
-            .search-content_img {
-                width: 100%;
-                margin: 0px 8px 0px 12px;
-                display: inline-block;
-            }
-            .search-description__margin {
-                margin: 1px 29px;
-                padding: 0em;
-                font-size: 72%;
-            }
-            .search-div {
-                width: 100%;
-                text-align: center;
-            }
-            /*---- Profile ----*/
-            .header-background__profile {
-                width: auto;
-                height: auto;
-            }
-            .main-profile_div {
-                text-align: center;
-                padding: 0em;
-            }
-            .profile-block {
-                margin: 4em 4.5em 0em;
-                width: 53%;
-                height: 44%;
-            }
-            .p-drop {
-                font-size: 15px;
-                text-align: center;
-                margin: 4px;
-            }
-            .input-profile {
-                margin-left: -5%;
-            }
-            .main-name {
-                font-size: 2em;
-            }
-            .spatulas-img {
-                display: none;
-            }
-            .form-text {
-                margin: auto;
-                font-size: 18px;
-                display: inline-block;
-                text-align: center;
-            }
-            .account-description--textarea {
-                width: 50%;
-                padding-bottom: 2em;
-                font-size: 19px;
-                margin: 1em 4em;
-            }
-            .save-btn {
-                margin: 4.5em -3.8em;
-                font-size: 91%;
-            }
-            .main-h1__profile {
-                margin: 2em 3.5em 0em;
-                font-size: 153%;
-                text-align: center;
-            }
-            .inside-text {
-                display: none;
-            }
-            .text-img__background {
-                display: none;
-            }
-            .profile-content-img {
-                margin: 6px 15px;
-                display: inline;
-            }
-            .profile-img__names {
-                position: absolute;
-                margin: 0.5em;
-                font-size: initial;
-                text-align: center;
-            }
-            .responsive-big_text {
-                text-align: left;
-                font-size: 64%;
-                margin: auto;
-            }
-            .style {
-                font-size: 77px!important;
-                padding: 0.5em;
-            }
-            .search-content-profile {
-                margin: auto;
-            }
-            .search-content_img {
-                width: 100%;
-                margin: 14px 0px 0px 1px;
-            }
-            .profile-item {
-                height: 130px;
-                top: 0.2em;
-                left: 0.1em;
-            }
-            .main-h2__profile {
-                font-size: 1.4em;
-            }
-            .main-heart {
-                margin-top: 1em;
-                margin-left: 1%;
-            }
-            .search-content-favorites {
-                margin: 0em 0.5em 4em;
-            }
-            .plus {
-                padding: 19%;
-            }
-            #add-id {
-                margin: 0.5em;
-            }
-            .img-paletas {
-                display: none;
-            }
-            /*---- Recipe ----*/
-            .recipe-title {
-                font-size: 11vw;
-            }
-            .recipe-image--container {
-                width: 90%;
-            }
-            /*---- Submit ----*/
-            #right-block__input {
-                font-size: 2.7vw;
-                text-align: left;
-            }
-            /*---- Contact ----*/
-            .body-contact {
-                background-image: none;
-            }
-            .contact-box {
-                width: fit-content;
-                height: 799px;
-                margin: auto;
-            }
-            .p-have {
-                padding-left: 0em;
-                padding-top: 3em;
-            }
-            .form-contact {
-                margin-left: 0em;
-            }
-            .send-btn {
-                margin: 0em 4em;
-            }
-            #contact_imput {
-                width: 100%;
-            }
-            /*---- Login ----*/
-            .login-box {
-                width: 80%;
-                margin: 4em auto;
-            }
-            #form-login__p {
-                font-size: 3.3vw;
-                text-align: left;
-            }
-            .btn-login {
-                font-size: 5vw;
-                width: 20%;
-            }
-            <<<<<<< HEAD .registry-box {
-                =======.cuadro-registro {
-                    >>>>>>>ecb8dba360fb6daa8c3c644e5a6b1570df6e6c81 width: 87%;
-                    margin: 2em auto;
-                }
-            }
-            @media (max-width: 375px) {
-                /*---- Search ----*/
-                .container-search {
-                    margin-top: auto;
-                    margin-left: 1.5em;
-                }
-                .search-menu {
-                    margin-left: 0em !important;
-                    font-size: 16px !important;
-                }
-                /*---- Profile ----*/
-                .input-profile {
-                    margin-left: 16%!important;
-                    width: inherit!important;
-                }
-                .main-nav__input {
-                    width: 61%;
-                }
-                .profile-block {
-                    margin: 4em 3.5em 0.5em!important;
-                }
-                /*---- Login ----*/
-                .login-box {
-                    width: 90%;
-                    margin: 2em auto;
-                }
-                #form-login__p {
-                    font-size: 3.7vw;
-                }
-            }
+    .btn-register {
+        font-size: 2vw;
+        margin-left: 0em;
+        left: auto;
+    }
+    .cuadro-registro {
+        margin: 9em auto;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /*---- Generic styles ----*/
+    .logo {
+        margin: .5em 2em 0;
+    }
+    .main-nav__search-container {
+        width: auto;
+    }
+    .main-nav__search-container:hover>.search-text {
+        width: 20vw;
+    }
+    .main-footer {
+        width: 100%;
+        height: auto;
+    }
+    .footer-p {
+        display: none;
+    }
+    /*---- Index ----*/
+    .slider-background {
+        border-width: 5px;
+    }
+    .main-slider {
+        width: 94%;
+        padding: 3em 0 3em 0;
+    }
+    .main-recipies {
+        margin: 0;
+    }
+    .sub-menu {
+        width: 92%;
+        margin: 3em 1em 0em 1em;
+        padding: 0;
+        position: relative;
+        float: unset;
+        text-align: right;
+        columns: 5;
+        list-style: none;
+    }
+    .sub-menu_item {
+        display: list-item;
+        height: 3em;
+        margin: auto;
+        width: inherit;
+        background: #731921;
+    }
+    .sub-menu_link {
+        margin: auto;
+        position: unset;
+        padding: .7em 0 0 0;
+    }
+    .red-block {
+        display: none;
+    }
+    /*---- Search ----*/
+    .header-background {
+        width: 100%;
+        height: auto;
+    }
+    .main-nav__input-search {
+        padding-left: 0px;
+        padding-right: 7em;
+    }
+    .main-nav__button-search {
+        padding-bottom: 16.1px;
+    }
+    .main-text {
+        margin-left: 0.5em;
+        font-size: 27px;
+        margin-top: 4em;
+        padding-top: 3em;
+    }
+    .search-menu {
+        margin-left: -33px;
+    }
+    .sub-menu_link-search {
+        margin: 1em 1em;
+    }
+    .search-content_img {
+        width: 105%;
+        margin: 12px -1px;
+        display: block;
+    }
+    .search-content_item {
+        width: 25%;
+        margin: 16px 18px;
+        display: inline-block;
+    }
+    .search-description__margin {
+        margin: 0em 77px;
+        padding: 0em;
+    }
+    .search-content {
+        width: 100%;
+        height: auto;
+        margin-top: 3em;
+        margin-bottom: 4em;
+        margin-right: 1em;
+        padding: 0em;
+    }
+    /*---- Profile ----*/
+    .header-background__profile {
+        height: auto;
+        width: auto;
+    }
+    .input-profile {
+        margin-left: 0.7em;
+    }
+    .profile-block {
+        height: 236px;
+    }
+    .main-h1__profile {
+        margin: 1em 0em 0em 5em;
+    }
+    .text-img__background {
+        height: 24%;
+        width: 33%;
+    }
+    .profile-img__names {
+        font-size: 20px;
+        position: absolute;
+        margin: 0.5em;
+    }
+    .search-content_item {
+        margin: 0em 1em;
+    }
+    .profile-item {
+        margin-top: 1em;
+        padding: 0.5em;
+    }
+    .spatulas-img {
+        display: none;
+    }
+    .responsive-big_text {
+        font-size: 94%;
+    }
+    #add-id {
+        margin-top: -2.5em;
+    }
+    /*---- Recipe ----*/
+    .recipe-sector {
+        width: 90%;
+    }
+    .recipe-title {
+        margin-top: 1em;
+    }
+    /*---- Submit ----*/
+    .input-quantity {
+        width: 17%;
+    }
+    .input-unit {
+        width: 17%;
+    }
+    /*---- Contact ----*/
+    .body-contact {
+        background-image: none;
+    }
+    .contact-box {
+        width: auto;
+        height: 799px;
+        margin: 7em auto;
+        border-radius: 0px;
+    }
+    .p-have {
+        padding-left: 0em;
+        padding-top: 4em;
+    }
+    .form-contact {
+        margin-left: 2em;
+        margin-top: 1em;
+        width: auto;
+    }
+    .send-btn {
+        margin: 0em 4em;
+    }
+    /*---- Login ----*/
+    .login-icon {
+        width: 38%;
+    }
+    #form-login {
+        margin: 2em;
+    }
+    .btn-login {
+        font-size: 2.5vw;
+        left: 4vw;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .main-nav__list {
+        display: none;
+    }
+    .burger {
+        display: inline-block;
+    }
+    .burger-menu {
+        width: 30%;
+        height: 30em;
+    }
+    .burger-menu__li {
+        font-size: 4vw;
+    }
+    .logo {
+        margin: .5em 1.5em 0;
+        float: right;
+    }
+    .main-nav__search-container {
+        margin-left: 3vw;
+    }
+    .main-nav__search-container:hover>.search-text {
+        width: 40vw;
+    }
+    h3 {
+        font-size: 4vw;
+    }
+    .footer-p {
+        display: none;
+    }
+    /*---- Index ----*/
+    .slider-background {
+        background: none;
+        border-width: 0px;
+    }
+    .sub-menu_link {
+        padding-top: 0.8em;
+        font-size: 4vw;
+    }
+    .sub-menu {
+        column-gap: 0%;
+        width: inherit;
+    }
+    .main-recipies {
+        margin: 0;
+        height: 20em;
+    }
+    .recipe-img {
+        display: none;
+    }
+    .recipe-menu {
+        width: 94%;
+    }
+    .recipe-menu_link {
+        font-size: 2.3vw;
+    }
+    /*---- Recipe ----*/
+    .recipe-sector {
+        width: 95%;
+    }
+    .recipe-title {
+        margin: 2em 0 0.5em;
+    }
+    .left-block {
+        display: block;
+        float: none;
+        width: 100%;
+        margin: auto;
+    }
+    .recipe-image--container {
+        width: 60%;
+        margin: auto;
+    }
+    .right-block {
+        margin-top: 3em;
+        width: 100%;
+    }
+    /*---- Submit ----*/
+    .main-title {
+        max-width: 40%;
+    }
+    .input-name {
+        font-size: 2.7vw;
+    }
+    .input-quantity {
+        font-size: 2.7vw;
+        width: 16%;
+    }
+    .input-unit {
+        font-size: 2.4vw;
+        width: 20%;
+    }
+    .input-delete {
+        width: 4vw;
+        margin-left: .5em;
+    }
+    .form-steps {
+        font-size: 2.7vw;
+    }
+    #right-block {
+        width: 90%;
+    }
+    #right-block__input {
+        width: 100%;
+    }
+    .add-block {
+        width: 90%;
+    }
+    /*---- Search ----*/
+    .search-menu {
+        margin-left: inherit;
+        font-size: inherit;
+    }
+    .main-nav__input-search {
+        padding-right: 5em;
+        -webkit-border-radius: 0px;
+    }
+    .container-search {
+        margin: 0em;
+    }
+    .main-nav__button-search {
+        margin-left: -2px;
+        -webkit-border-radius: 0px;
+        padding-bottom: 16px;
+    }
+    .search-bar {
+        margin-left: 0em;
+    }
+    /*---- Contact ----*/
+    .body-contact {
+        background-image: none;
+    }
+    .contact-box {
+        width: fit-content;
+        height: 613px;
+        margin: auto;
+    }
+    .p-have {
+        padding-left: 0em;
+        padding-top: 2em;
+    }
+    .form-contact {
+        margin-left: 0em;
+    }
+    .send-btn {
+        margin: 0em 4em;
+    }
+    /*---- Login ----*/
+    .login-icon {
+        width: 63%;
+    }
+    .body-Login {
+        background: none;
+    }
+    #form-login {
+        margin: 1em;
+    }
+    .btn-login {
+        display: inline-block;
+        font-size: 4vw;
+        margin: 1em auto;
+        left: inherit;
+    }
+    .btn-register {
+        font-size: 5vw;
+        width: auto;
+    }
+    .cuadro-login {
+        margin: 2em auto;
+    }
+    /*---- Profile ----*/
+    .main-h1__profile {
+        margin: 0.5em 4em 0em;
+    }
+    .main-name {
+        margin: 0.5em 0.5em 0em;
+        padding-top: 68px;
+    }
+    .main-profile_div {
+        text-align: center;
+        padding-right: 4em;
+    }
+    .profile-img__names {
+        font-size: 16px;
+    }
+    #add-id {
+        margin-top: -4em;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .burger {
+        padding: .8em .6em .4em;
+    }
+    .burger-menu {
+        width: 50%;
+        height: 30em;
+    }
+    .burger-menu__li {
+        font-size: 6vw;
+    }
+    .logo {
+        display: none;
+    }
+    .main-nav__search-container {
+        margin-left: 1vw;
+    }
+    .main-nav__search-container:hover>.search-text {
+        width: 60vw;
+    }
+    .main-footer {
+        width: 100%;
+        height: auto;
+    }
+    .footer-p {
+        display: none;
+    }
+    .footer-imgs {
+        display: inline-block;
+        max-width: max-content;
+        margin: 0em 0em 1em 0em;
+    }
+    .footer-logo {
+        display: inline-block;
+        float: inherit;
+        margin: 0.5em 2em;
+        max-width: 30%;
+    }
+    .footer-li_img {
+        max-width: 8%;
+    }
+    .footer-li_link {
+        text-decoration: none;
+    }
+    /*---- Index ----*/
+    .mobile-logo {
+        display: inline-block;
+        width: 40%;
+        margin: 5% 30% 0%;
+    }
+    .main-slider {
+        padding: 3em 0 0 0;
+    }
+    .sub-menu {
+        width: 100%;
+        margin: 1em .5em 0 0;
+        column-gap: 0px;
+    }
+    .sub-menu_item {
+        height: 2em;
+    }
+    .sub-menu_item:hover {
+        height: 2em;
+    }
+    .main-recipies {
+        border: none;
+        padding: .5em;
+        height: 29em;
+    }
+    .sub-menu_link {
+        font-size: 3.5vw;
+    }
+    .recipe-menu {
+        columns: 2;
+    }
+    .recipe-menu_link {
+        font-size: 3.3vw;
+    }
+    /*---- Search ----*/
+    .header-background {
+        width: auto;
+        height: auto;
+    }
+    .main-text {
+        margin: 1em 4em 0em;
+        font-size: inherit;
+        display: block;
+    }
+    .search-bar {
+        width: max-content;
+    }
+    .main-nav__input-search {
+        font-size: 10px;
+        padding-left: 8px;
+        padding-right: 6em;
+        border-radius: 0%;
+    }
+    .container-search {
+        margin: 0em 1em;
+    }
+    .main-nav__button-search {
+        padding: 6px 23px;
+        margin: 0em;
+        display: inline-block;
+    }
+    .sub-menu_link-search {
+        float: left;
+        padding: 0em;
+        margin-left: 5px;
+        font-size: 77%;
+    }
+    .search-menu {
+        display: -webkit-inline-box;
+        margin-top: 2em;
+        margin-left: 0em;
+        padding: 0em;
+    }
+    .search-content {
+        width: auto;
+        height: auto;
+        margin: 0em 0em 1em 1.5em;
+        padding: 0em;
+    }
+    .search-content_item {
+        width: 42%;
+        margin: auto;
+        display: inline-block;
+        margin: 1em 1em 0em 0em;
+    }
+    .search-content_img {
+        width: 100%;
+        margin: 0px 8px 0px 12px;
+        display: inline-block;
+    }
+    .search-description__margin {
+        margin: 1px 29px;
+        padding: 0em;
+        font-size: 72%;
+    }
+    .search-div {
+        width: 100%;
+        text-align: center;
+    }
+    /*---- Profile ----*/
+    .header-background__profile {
+        width: auto;
+        height: auto;
+    }
+    .main-profile_div {
+        text-align: center;
+        padding: 0em;
+    }
+    .profile-block {
+        margin: 4em 4.5em 0em;
+        width: 53%;
+        height: 44%;
+    }
+    .p-drop {
+        font-size: 15px;
+        text-align: center;
+        margin: 4px;
+    }
+    .input-profile {
+        margin-left: -5%;
+    }
+    .main-name {
+        font-size: 2em;
+    }
+    .spatulas-img {
+        display: none;
+    }
+    .form-text {
+        margin: auto;
+        font-size: 18px;
+        display: inline-block;
+        text-align: center;
+    }
+    .account-description--textarea {
+        width: 50%;
+        padding-bottom: 2em;
+        font-size: 19px;
+        margin: 1em 4em;
+    }
+    .save-btn {
+        margin: 4.5em -3.8em;
+        font-size: 91%;
+    }
+    .main-h1__profile {
+        margin: 2em 3.5em 0em;
+        font-size: 153%;
+        text-align: center;
+    }
+    .inside-text {
+        display: none;
+    }
+    .text-img__background {
+        display: none;
+    }
+    .profile-content-img {
+        margin: 6px 15px;
+        display: inline;
+    }
+    .profile-img__names {
+        position: absolute;
+        margin: 0.5em;
+        font-size: initial;
+        text-align: center;
+    }
+    .responsive-big_text {
+        text-align: left;
+        font-size: 64%;
+        margin: auto;
+    }
+    .style {
+        font-size: 77px!important;
+        padding: 0.5em;
+    }
+    .search-content-profile {
+        margin: auto;
+    }
+    .search-content_img {
+        width: 100%;
+        margin: 14px 0px 0px 1px;
+    }
+    .profile-item {
+        height: 130px;
+        top: 0.2em;
+        left: 0.1em;
+    }
+    .main-h2__profile {
+        font-size: 1.4em;
+    }
+    .main-heart {
+        margin-top: 1em;
+        margin-left: 1%;
+    }
+    .search-content-favorites {
+        margin: 0em 0.5em 4em;
+    }
+    .plus {
+        padding: 19%;
+    }
+    #add-id {
+        margin: 0.5em;
+    }
+    .img-paletas {
+        display: none;
+    }
+    /*---- Recipe ----*/
+    .recipe-title {
+        font-size: 11vw;
+    }
+    .recipe-image--container {
+        width: 90%;
+    }
+    /*---- Submit ----*/
+    #right-block__input {
+        font-size: 2.7vw;
+        text-align: left;
+    }
+    /*---- Contact ----*/
+    .body-contact {
+        background-image: none;
+    }
+    .contact-box {
+        width: fit-content;
+        height: 799px;
+        margin: auto;
+    }
+    .p-have {
+        padding-left: 0em;
+        padding-top: 3em;
+    }
+    .form-contact {
+        margin-left: 0em;
+    }
+    .send-btn {
+        margin: 0em 4em;
+    }
+    #contact_imput {
+        width: 100%;
+    }
+    /*---- Login ----*/
+    .login-box {
+        width: 80%;
+        margin: 4em auto;
+    }
+    #form-login__p {
+        font-size: 3.3vw;
+        text-align: left;
+    }
+    .btn-login {
+        font-size: 5vw;
+        width: 20%;
+    }
+    .registry-box {
+        width: 87%;
+        margin: 2em auto;
+    }
+}
+
+@media (max-width: 375px) {
+    /*---- Search ----*/
+    .container-search {
+        margin-top: auto;
+        margin-left: 1.5em;
+    }
+    .search-menu {
+        margin-left: 0em !important;
+        font-size: 16px !important;
+    }
+    /*---- Profile ----*/
+    .input-profile {
+        margin-left: 16%!important;
+        width: inherit!important;
+    }
+    .main-nav__input {
+        width: 61%;
+    }
+    .profile-block {
+        margin: 4em 3.5em 0.5em!important;
+    }
+    /*---- Login ----*/
+    .login-box {
+        width: 90%;
+        margin: 2em auto;
+    }
+    #form-login__p {
+        font-size: 3.7vw;
+    }
+}
