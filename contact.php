@@ -1,76 +1,128 @@
+<?php
+
+    namespace Medoo;
+    require 'Medoo.php';
+
+    $database = new Medoo([
+
+        'database_type' => 'mysql',
+        'database_name' => 'secret_du_chef',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+
+    $database->insert("tb_contact", [
+        "name"=> $_POST["name"],
+        "email"=> $_POST["email"],
+        "comments"=>$_POST["comments"]
+    ]);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Contact page"> <!--Aiuda-->
+    <meta name="description" content="Contact page">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Contact</title>
 </head>
+
 <body class="body-contact">
     <header>
-        <nav class="main-nav">            
+        <nav class="main-nav">
             <div class="burger">
                 <input type="checkbox" class="burger__button">
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <ul class="burger-menu">
-                    <a href="index.php" class="burger-menu__link"><li class="burger-menu__li">Home</li></a>
-                    <a href="contact.html" class="burger-menu__link"><li class="burger-menu__li">Contact</li></a>
-                    <a href="login.php" class="burger-menu__link"><li class="burger-menu__li">Login</li></a>
-                    <a href="profile.php" class="burger-menu__link"><li class="burger-menu__li">Profile</li></a>
-                    <a href="submit.php" class="burger-menu__link"><li class="burger-menu__li">New recipe</li></a>
-                    <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                    <a href="index.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Home</li>
+                    </a>
+                    <a href="contact.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Contact</li>
+                    </a>
+                    <a href="login.php" class="burger-menu__link">
+                        <li class="burger-menu__li">Login</li>
+                    </a>
+                    <a href="profile.html" class="burger-menu__link">
+                        <li class="burger-menu__li">Profile</li>
+                    </a>
+                    <a href="submit.html" class="burger-menu__link">
+                        <li class="burger-menu__li">New recipe</li>
+                    </a>
+                    <a href="#" class="burger-menu__link">
+                        <li class="burger-menu__li">Logout</li>
+                    </a>
                 </ul>
             </div>
 
-            <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
                 <input class="search-text" type="text" placeholder="Search.." name="search">
                 <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
             </div>
             <ul class="main-nav__list">
-                    <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link"href="login.php">Login</a></li>
-                    <div id="logedin" class="main-nav__item  dropdown">
-                        <button class="dropbtn">Hiram</button>
-                        <div class="dropdown-content">
-                            <a href="profile.php" class="dropdown-content__a">Profile</a>
-                            <a href="submit.php" class="dropdown-content__a">New recipe</a>
-                            <a id="logout" href="#" class="dropdown-content__a">Log out</a>
-                        </div>
+                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="login.php">Login</a></li>
+                <div id="logedin" class="main-nav__item  dropdown">
+                    <button class="dropbtn">Hiram</button>
+                    <div class="dropdown-content">
+                        <a href="profile.html" class="dropdown-content__a">Profile</a>
+                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
+                        <a id="logout" href="#" class="dropdown-content__a">Log out</a>
                     </div>
+                </div>
             </ul>
         </nav>
     </header>
     <section class="contact-box">
         <p class="p-have">Have <span class="p-have--span">Questions?</span></p>
-        <form class="form-contact">
+        <form  action="contact.php" method="post"  class="form-contact" id="contact-form">
             <label class="form-text">Name:</label><br>
-            <input class="form-login_imput" id="contact_imput" type="text" name="firstname" placeholder="Your name.."> <br>
+            <input class="form-login_imput" id="name" type="text" name="name" placeholder="Your name.." name='validate-name' minlength="1" data-msg="Please enter your name" required> <br>
             <label class="form-text">Email:</label><br>
-            <input class="form-login_imput" id="contact_imput" type="email" name="email" placeholder="Your email.."> <br>
+            <input class="form-login_imput" id="email" type="email" name="email" placeholder="Your email.."  name='validate-email' minlength="1" data-msg="Please enter your email" required> <br>
             <label class="form-text">Comments:</label><br>
-            <input class="form-login_imput comments" id="contact_imput" type="text" name="lastname" placeholder="Give us your feedback.."> <br>
-            <a class="main-btn send-btn">Send</a>
+            <input class="form-login_imput comments" id="comments" type="text" name="comments" placeholder="Give us your feedback.." name='validate-comments' minlength="1" data-msg="Please enter your feedback" required> <br>
+            <input id="send" class="main-btn send-btn" type="submit" value="Send">
         </form>
     </section>
     <footer class="main-footer">
         <nav class="footer-nav">
-            <a href="index.php"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <ul class="footer-imgs">
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/fb.png" alt="facebook"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a></li>
-                <li class="footer-li_item"><a class="footer-li_link"><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
-            </ul>   
-            <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
-        </nav>       
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/fb.png" alt="facebook"></a>
+                </li>
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a>
+                </li>
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a>
+                </li>
+                <li class="footer-li_item">
+                    <a class="footer-li_link"><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a>
+                </li>
+            </ul>
+            <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p>
+        </nav>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/app.js"></script>
-  </body>
-  </html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script>
+        $('document').ready(function() {
+
+            $('#contact-form').validate();
+
+        });
+    </script>
+</body>
+
+</html>
