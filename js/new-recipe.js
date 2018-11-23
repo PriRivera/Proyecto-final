@@ -12,58 +12,63 @@ var selectedmeas = "";
 var el = document.getElementById('ingredient-container');
 var sortable = Sortable.create(el);
 
+function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var item = document.getElementById('preview');
+            item.src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 $('document').ready(function() {
     $('#add-ingredient-btn').click(function() {
         ingredient_name = $('#ingredient_name').val();
         quantity = $('#quantity').val();
         measure = $('#measure').val();
-
+        var ingredient = [ingredient_name, quantity, measure];
         if (isOnEdit) {
             selectedIngr = $('#' + editItemID + " #ingr_name").text(ingredient_name);
             selectedquant = $('#' + editItemID + " #quan").text(quantity);
             selectedmeas = $('#' + editItemID + " #mea").text(measure);
-
-            console.log(editItemID);
+            selectedInput = $('#' + editItemID + ' input').val(ingredient);
             $('#' + editItemID).removeClass('selectedIngr');
             $('#' + editItemID).removeClass('selectedquant');
             $('#' + editItemID).removeClass('selectedmeas');
+            $('#' + editItemID).removeClass('selectedInput');
             $('#add-ingredient-btn').attr('value', 'Add ingredient');
             $('#ingredient_name').val('');
             $('#quantity').val('');
             $('#measure').val('');
-
             isOnEdit = false;
-
         } else {
-
-            $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'> <a id='ingr_name' >" + ingredient_name + "</a> <a id='quan'  >" + quantity + "</a> <a id='mea'  >" + measure + "</a> <span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span> <span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
-
+            $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input type='hidden' name='ingredients[]' value='"+ingredient+"'></input><a id='ingr_name' >" + ingredient_name + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + measure + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span><span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
             $('#edit' + ingrNumber).click(function() {
-
                 isOnEdit = true;
                 editItemID = $(this).closest('li').attr('id');
-
                 selectedIngr = $('#' + editItemID + " #ingr_name").text();
                 selectedquant = $('#' + editItemID + " #quan").text();
                 selectedmeas = $('#' + editItemID + " #mea").text();
-
+                selectedInput = $('#' + editItemID + ' input').val();
                 $('li').removeClass('selectedIngr');
                 $(this).closest('li').addClass('selectedIngr');
                 $('#ingredient_name').val(selectedIngr);
-                //console.log(selectedIngr);
 
                 $('li').removeClass('selectedquant');
                 $(this).closest('li').addClass('selectedquant');
                 $('#quantity').val(selectedquant);
-                //console.log(selectedquant);
 
                 $('li').removeClass('selectedmeas');
                 $(this).closest('li').addClass('selectedmeas');
                 $('#measure').val(selectedmeas);
-                //console.log(selectedmeas);
+
+                $('li').removeClass('selectedInput');
+                $(this).closest('li').addClass('selectedInput');
+                $('input').val(selectedInput);
 
                 $('#add-ingredient-btn').attr('value', 'Update ingredient');
-
             });
 
             $('#delete' + ingrNumber).click(function() {
@@ -74,47 +79,6 @@ $('document').ready(function() {
             $('#measure').val('');
             ingrNumber++;
         }
-    });
-    $('#submit-recipe').click(function(){
-        var file = $('#file')[0];
-        file = file.files[0];
-        formData = new FormData(file);
-        var recipeName = $('#recipe-name').val();
-        var recipeDescription = $('#recipe-description').val();
-        var ingredients = $('#ingredient-container').children();
-        var recipeInstructions = $('#recipe-instructions').val();
-        
-        var total = [];
-        for (i = 0; i < ingredients.length; i++) {
-            var item = [];
-            var element = ingredients[i];
-            element = $(element).children();
-            item.push($(element[0]).text());
-            item.push($(element[1]).text());
-            item.push($(element[2]).text());
-            total.push(item);
-        }
-        $.ajax({
-            method:'POST',
-            url: 'php/server.php',
-            data:{
-                recipeName: recipeName,
-                recipeDescription: recipeDescription,
-                recipeInstructions: recipeInstructions,
-                ingredients: total/*,
-                image: formData*/
-            },
-            /*processData: false,
-            contentType: false,*/
-            error: function() {
-                console.log('ERROR');
-            },
-            dataType: 'text',
-            success: function (data) {
-                console.log(data);
-                console.log(formData);
-            }
-        });
     });
 });
 function newFunction() {

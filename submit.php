@@ -1,3 +1,61 @@
+<?php
+    namespace Medoo;
+    require 'Medoo.php';
+    $database = new Medoo([
+        'database_type' => 'mysql',
+        'database_name' => 'secret_du_chef',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+    
+    function generateRandomString($length = 10) {
+        return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    }
+    if(isset($_FILES['image'])){
+        $errors= array();
+        $file_name = $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+        $file_type = $_FILES['image']['type'];
+        $file_ext_arr = explode('.',$_FILES['image']['name']);       
+        $file_ext = end($file_ext_arr);      
+        $img_ext = array("jpeg","jpg","png");      
+        if(in_array($file_ext, $img_ext) === false){
+            $errors[] = "choose a JPEG or PNG file.";
+        }      
+        if($file_size > 2097152){
+            $errors[]='2 MB Max';
+        }      
+        if(empty($errors)){
+            $img = "recipe-img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
+            move_uploaded_file($file_tmp, "imgs/".$img);         
+            if($_POST){
+                $database->insert("tb_recipes", [
+                    "recipe_name"=> $_POST["recipeName"],
+                    "recipe_description"=> $_POST["recipeDescription"],
+                    "recipe_instructions"=> $_POST["recipeInstructions"],
+                    "recipe_image"=> $img
+                ]);
+                $last_recipe_id = $database->id();
+                print_r($_POST['ingredients']);
+                if(!empty($_POST['ingredients'])) {    
+                    foreach($_POST['ingredients'] as $value){
+                        $database->insert("tb_ingredients", [
+                                "id_recipe" => $last_recipe_id,
+                                "ingredient_name" => $value[0],
+                                "ingredient_amount" => $value[1],
+                                "ingredient_measure" => $value[2]
+                        ]);
+                    }
+                }
+            }
+        }
+    }else{
+        //print_r($errors);
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,19 +81,19 @@
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <ul class="burger-menu">
-                    <a href="index.html" class="burger-menu__link">
+                    <a href="index.php" class="burger-menu__link">
                         <li class="burger-menu__li">Home</li>
                     </a>
-                    <a href="contact.html" class="burger-menu__link">
+                    <a href="contact.php" class="burger-menu__link">
                         <li class="burger-menu__li">Contact</li>
                     </a>
-                    <a href="login.html" class="burger-menu__link">
+                    <a href="login.php" class="burger-menu__link">
                         <li class="burger-menu__li">Login</li>
                     </a>
-                    <a href="profile.html" class="burger-menu__link">
+                    <a href="profile.php" class="burger-menu__link">
                         <li class="burger-menu__li">Profile</li>
                     </a>
-                    <a href="submit.html" class="burger-menu__link">
+                    <a href="submit.php" class="burger-menu__link">
                         <li class="burger-menu__li">New recipe</li>
                     </a>
                     <a href="#" class="burger-menu__link">
@@ -44,20 +102,20 @@
                 </ul>
             </div>
 
-            <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
                 <input class="search-text" type="text" placeholder="Search.." name="search">
                 <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
             </div>
             <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="login.html">Login</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="login.php">Login</a></li>
                 <div id="logedin" class="main-nav__item  dropdown">
                     <button class="dropbtn">Hiram</button>
                     <div class="dropdown-content">
-                        <a href="profile.html" class="dropdown-content__a">Profile</a>
-                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
+                        <a href="profile.php" class="dropdown-content__a">Profile</a>
+                        <a href="submit.php" class="dropdown-content__a">New recipe</a>
                         <a id="logout" href="#" class="dropdown-content__a">Log out</a>
                     </div>
                 </div>
@@ -67,21 +125,21 @@
 
     <section>
         <img class="main-title" src="img/new-recipe.png" alt="New recipe title">
-        <form class="recipe-form" action="ingredients.php" method="post">
+        <form class="recipe-form" action="submit.php" method="post" enctype="multipart/form-data">
             <div class="left-block">
                 <div class="img-block border">
-                    <i class="fa fa-file-picture-o" style="font-size:15vw;color:#6B6661"></i>
+                    <img id="preview" class = "img-block" src="imgs/preview.png" alt="image to upload"/><br>
                     <p class="img-block__p">Drop an image here <br> or</p>
-                    <input type="file" id="file" name="Recipe photo" class="file-chooser" />
+                    <input type="file" id="file" name="image" class="file-chooser" onchange="readURL(this)"/>
                     <label for=file class="main-btn main-btn--size"> Choose a file..</label>
                 </div>
             </div>
             <div class="right-block" id="right-block">
                 <h3><span>Name</span> for your recipe.</h3>
-                <input class="form-text border" type="text" name="recipe-name" id="recipe-name" placeholder="Title" autofocus>
+                <input class="form-text border right-block__input" type="text" name="recipeName" id="recipe-name" placeholder="Title" autofocus>
                 <br><br><br>
                 <h3><span>Description</span> to show.</h3>
-                <textarea class="form-text text-area border" name="recipe-description" id="recipe-description" cols="30" rows="10" placeholder="Small and clear description."></textarea>
+                <textarea class="form-text text-area border right-block__input" name="recipeDescription" id="recipe-description" cols="30" rows="10" placeholder="Small and clear description."></textarea>
             </div>
 
             <div class="add-block">
@@ -109,8 +167,8 @@
                 <input id="add-ingredient-btn" class="main-btn btn-submit" type="button" value="Add ingredient">
                 <br><br>
                 <h3><span>Preparation</span> instructions.</h3>
-                <textarea class="form-steps text-area border" name="" id="recipe-instructions" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>
-                <a id="submit-recipe" class="main-btn btn-submit">Save & publish</a>
+                <textarea class="form-steps text-area border" name="recipeInstructions" id="recipe-instructions" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>
+                <input type="submit" id="submit-recipe" class="main-btn btn-submit" value="Save & publish">
             </div>
         </form>
     </section>
@@ -119,7 +177,7 @@
 
     <footer class="main-footer">
         <nav class="footer-nav">
-            <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <a href="index.php"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <ul class="footer-imgs">
                 <li class="footer-li_item">
                     <a class="footer-li_link"><img class="footer-li_img" src="img/fb.png" alt="facebook"></a>

@@ -659,7 +659,7 @@ h3 span {
 
 .generic-container {
     display: inline-block;
-    width: 90%;
+    width: 97%;
     background: #fff;
     justify-content: flex-start;
     margin: 0;
@@ -1511,7 +1511,7 @@ h3 span {
     #right-block {
         width: 90%;
     }
-    #right-block__input {
+    .right-block__input {
         width: 100%;
     }
     .add-block {
