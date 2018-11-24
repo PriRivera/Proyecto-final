@@ -18,14 +18,11 @@
             "username"=> $_POST["username"]
         ]);
         if(password_verify( $_POST["password"], $user[0]["password"])){
-
             session_start();
             $_SESSION["isLoggedIn"] = true;
             $_SESSION["usr"] = $user[0]["username"];
             $_SESSION["usrid"] = $user[0]["id_user"];
-            //
-
-            header("location:index.php");
+            header("location:profile.php");
         }else{
             $onError=true; 
         }

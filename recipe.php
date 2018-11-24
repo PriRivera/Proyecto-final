@@ -1,3 +1,28 @@
+<?php
+//'response.php?id=".$i."
+    namespace Medoo;
+    require 'Medoo.php';
+    $database = new Medoo([
+        'database_type' => 'mysql',
+        'database_name' => 'secret_du_chef',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+    $recipesId = $database->select("tb_recipes", "id_recipe");
+    if($_GET){
+        foreach ($recipesId as $id) {
+            if ($_GET["id"]==$id) {
+                $recipe = $database->select("tb_recipes", "*",["id_recipe"=>$id]);
+                $ingredients = $database -> select("tb_ingredients","*",["id_recipe"=>$id]);
+                $user = $database -> select("tb_users","*",["id_user"=>$recipe["recipe_user_id"]]);
+            }
+        }
+        if($recipe==null){
+            print_r("when get id is false we sould set default values for the recipe");
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,10 +72,10 @@
         </nav>
     </header>
     <section class="recipe-sector">
-        <h1 class="recipe-title">Oven baked potato</h1>
+        <h1 class="recipe-title"><?php echo $recipe[0]["recipe_name"]?></h1>
         <div class="left-block">
             <div class="recipe-image--container">
-                <img class="recipe-image" src="img/papa.jpg" alt="Baked potato.">
+                <img class="recipe-image" src="imgs/<?php echo $recipe[0]["recipe_image"]?>" alt="Baked potato.">
             </div>
         </div>
         <div class="right-block">
@@ -58,7 +83,7 @@
             <p>By: Priscilla la loca</p>
             <br>
             <h3><span>Description</span></h3>
-            <p class="main-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed velit ex, maximus sit amet dui a, ornare dapibus dolor. Donec tristique lobortis dolor, at suscipit arcu rutrum sed. Nullam nec nisl volutpat, finibus mi vitae, scelerisque enim. Vivamus accumsan, augue sed feugiat volutpat, massa ligula viverra lacus, vitae auctor felis erat vitae mauris. Cras ac dui sed velit rutrum consequat id id eros. Vivamus ac nulla ex. Sed eu neque justo. Sed pellentesque non ipsum non condimentum.</p>
+            <p class="main-p"><?php echo $recipe[0]["recipe_description"]?></p>
         </div>
         <div class="central-block">
             <br><br>
@@ -69,30 +94,15 @@
                     <th>Amount</th> 
                     <th>Measure</th>
                 </tr>         
-                <tr>
-                    <th>Potatoes</th>
-                    <th>5</th> 
-                    <th>Kilograms</th>
-                </tr>
-                <tr>
-                    <th>Salsa lizano</th>
-                    <th>5</th> 
-                    <th>Liters</th>
-                </tr>
-                <tr>
-                    <th>Queso</th>
-                    <th>100</th> 
-                    <th>Grams</th>
-                </tr>
+                <?php
+                    foreach ($ingredients as $value) {
+                        echo "<tr><th>".$value["ingredient_name"]."</th><th>".$value["ingredient_amount"]."</th><th>".$value["ingredient_measure"]."</th></tr>";
+                    }
+                ?>
             </table>
             <br><br>
             <h3><span>Preparation</span> instructions.</h3>
-            <p class="main-p">Proin fringilla ante eu leo consectetur, in mollis lorem hendrerit. Donec sed dui leo. Quisque vitae ante ac augue euismod ornare et ut erat. Vestibulum hendrerit libero ut neque elementum vulputate. <br><br>
-                Duis malesuada finibus mauris, ac rhoncus mauris placerat ut. Pellentesque sagittis neque ex. Aenean tristique ultricies purus non porttitor. <br><br>
-                Cras maximus dolor turpis, non iaculis mauris sodales non. Duis vulputate nisl volutpat sem bibendum, id consectetur arcu mollis. <br><br>
-                Nullam vel augue vitae est vehicula aliquet vitae quis lorem. Mauris ultricies ultricies vehicula. Quisque a venenatis purus. <br><br>
-                Fusce suscipit sodales ipsum at tincidunt. Aliquam erat volutpat. Donec facilisis euismod ligula, eget egestas odio laoreet fringilla. Vivamus ut porttitor orci, ut dignissim enim. <br><br>
-            </p>
+            <p class="main-p"><?php echo $recipe[0]["recipe_instructions"]?></p>
         </div>
     </section>
     <footer class="main-footer">

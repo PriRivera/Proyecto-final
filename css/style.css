@@ -1075,6 +1075,7 @@ h3 span {
 
 .central-block {
     width: 100%;
+    display: inline-block;
 }
 
 .ingredient-table {

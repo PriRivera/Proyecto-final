@@ -2,9 +2,6 @@
 
     namespace Medoo;
     require 'Medoo.php';
-    
-    session_start();
-
     if(isset($_SESSION["isLoggedIn"])){//isset si una funcion existe    
         $database = new Medoo([
             'database_type' => 'mysql',

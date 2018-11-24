@@ -1,12 +1,28 @@
+<?php
+    namespace Medoo;
+    require 'Medoo.php';
+    $database = new Medoo([
+        'database_type' => 'mysql',
+        'database_name' => 'secret_du_chef',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+    session_start();
+    if(isset($_SESSION["usrid"])){
+        $user = $database->select("tb_users", "*",[
+            "id_user"=> $_SESSION["usrid"]
+        ]);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Hiram_246 profile"> <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
-    <title>Profile</title>
+    <title><?PHP echo $user[0]["username"] ?>'s Profile</title>
 </head>
 <body>
     <header class="header-background__profile">
@@ -52,7 +68,7 @@
             <label for=file class="main-btn main-btn--size" id="profile-chooser"> Choose a file..</label>
         </div>
         <div class="main-profile_div">
-        <p class="main-name">Hiram_253</p>
+        <p class="main-name"><?PHP echo $user[0]["username"] ?></p>
             <label class="form-text account-description">Account Description:</label><br>
             <textarea class="form-login_imput account-description--textarea" placeholder="I like to make healthy and fat food." id="textArea"></textarea>
             <button class="main-btn save-btn" onclick="guardarDatos()">Save</button>
