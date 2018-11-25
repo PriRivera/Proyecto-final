@@ -1,3 +1,26 @@
+<?php
+    namespace Medoo;
+    require 'Medoo.php';
+    $database = new Medoo([
+        'database_type' => 'mysql',
+        'database_name' => 'secret_du_chef',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);
+    session_start();
+    if($_POST){
+        if(isset($_POST["logout"])){
+            session_destroy();
+            header("location:index.php");
+        }
+    }
+    if(isset($_GET["keyWord"])){
+        $result = $database->select("tb_recipes","*", ["recipe_name[~]"=>$_GET["keyWord"]]);
+        $category = $database->select("tb_category","*", ["category_name[~]"=>$_GET["keyWord"]]);
+        $result += $database->select("tb_recipes","*", ["recipe_category"=>$category[0]["id_category"]]);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,23 +48,32 @@
                     <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
                 </ul>
             </div>
+
             <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
-           <!-- <div class="main-nav__search-container">
+            <div class="main-nav__search-container">
                 <input class="search-text" type="text" placeholder="Search.." name="search">
                 <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
-            </div>-->
+            </div>
             <ul class="main-nav__list">
                     <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
                     <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link"href="login.php">Login</a></li>
-                    <div id="logedin" class="main-nav__item  dropdown">
-                        <button class="dropbtn">Hiram</button>
-                        <div class="dropdown-content">
-                            <a href="profile.php" class="dropdown-content__a">Profile</a>
-                            <a href="submit.php" class="dropdown-content__a">New recipe</a>
-                            <a id="logout" href="#" class="dropdown-content__a">Log out</a>
-                        </div>
-                    </div>
+                    <?php 
+                        if (isset($_SESSION["isLoggedIn"])) {
+                            echo "<div id='logedin' class='main-nav__item  dropdown'>
+                                    <button class='dropbtn'>".$_SESSION["usr"]."</button>
+                                    <div class='dropdown-content'>
+                                        <a href='profile.php' class='dropdown-content__a'>Profile</a>
+                                        <a href='submit.php' class='dropdown-content__a'>New recipe</a>
+                                        <form action='search.php' method='POST'>
+                                            <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
+                                            <label for='sublogout' id='logout' class='dropdown-content__a'>Log out
+                                        </form>
+                                    </div>
+                                </div>";
+                        }else{
+                            echo "<li class='main-nav__item'><a class='main-nav__link'href='login.php'>Login</a></li>";
+                        }
+                    ?>                   
             </ul>
         </nav>
         <div class="main-search_div">

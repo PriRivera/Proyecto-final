@@ -11,8 +11,11 @@
         'server' => 'localhost',
         'username' => 'root',
         'password' => ''
-    ]);
-
+    ]);    
+    session_start();
+    if(isset($_SESSION["isLoggedIn"])){
+        header("location:profile.php");
+    }
     if($_POST){
       $user = $database->select("tb_users", "*",[
             "username"=> $_POST["username"]
@@ -36,10 +39,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Login page">
-    <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--Icon Library-->
     <title>Create account</title>
 </head>
 

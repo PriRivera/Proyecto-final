@@ -228,7 +228,6 @@ th {
 }
 
 .dropbtn {
-    display: none;
     margin: .2em .1em 0 1em;
     background-color: none;
     font-family: 'BlackChancery';
@@ -258,7 +257,7 @@ th {
     display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown-content__a:hover {
     background-color: #ddd;
 }
 

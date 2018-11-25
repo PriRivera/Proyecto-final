@@ -1,5 +1,4 @@
 <?php
-
     namespace Medoo;
     require 'Medoo.php';
 
@@ -17,6 +16,16 @@
         "email"=> $_POST["email"],
         "comments"=>$_POST["comments"]
     ]);
+    session_start();
+    if(!isset($_SESSION["isLoggedIn"])){
+        header("location:login.php");
+    }
+    if($_POST){
+        if(isset($_POST["logout"])){
+            session_destroy();
+            header("location:login.php");
+        }
+    }
 ?>
 
 
@@ -34,51 +43,47 @@
 
 <body class="body-contact">
     <header>
-        <nav class="main-nav">
+        <nav class="main-nav">            
             <div class="burger">
                 <input type="checkbox" class="burger__button">
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <span class="burger__span"></span>
                 <ul class="burger-menu">
-                    <a href="index.html" class="burger-menu__link">
-                        <li class="burger-menu__li">Home</li>
-                    </a>
-                    <a href="contact.html" class="burger-menu__link">
-                        <li class="burger-menu__li">Contact</li>
-                    </a>
-                    <a href="login.php" class="burger-menu__link">
-                        <li class="burger-menu__li">Login</li>
-                    </a>
-                    <a href="profile.html" class="burger-menu__link">
-                        <li class="burger-menu__li">Profile</li>
-                    </a>
-                    <a href="submit.html" class="burger-menu__link">
-                        <li class="burger-menu__li">New recipe</li>
-                    </a>
-                    <a href="#" class="burger-menu__link">
-                        <li class="burger-menu__li">Logout</li>
-                    </a>
+                    <a href="index.php" class="burger-menu__link"><li class="burger-menu__li">Home</li></a>
+                    <a href="contact.php" class="burger-menu__link"><li class="burger-menu__li">Contact</li></a>
+                    <a href="login.php" class="burger-menu__link"><li class="burger-menu__li">Login</li></a>
+                    <a href="profile.php" class="burger-menu__link"><li class="burger-menu__li">Profile</li></a>
+                    <a href="submit.php" class="burger-menu__link"><li class="burger-menu__li">New recipe</li></a>
+                    <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
                 </ul>
             </div>
 
-            <a href="index.html"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <div class="main-nav__search-container">
                 <input class="search-text" type="text" placeholder="Search.." name="search">
                 <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
             </div>
             <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="index.html">Home</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="contact.html">Contact</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="login.php">Login</a></li>
-                <div id="logedin" class="main-nav__item  dropdown">
-                    <button class="dropbtn">Hiram</button>
-                    <div class="dropdown-content">
-                        <a href="profile.html" class="dropdown-content__a">Profile</a>
-                        <a href="submit.html" class="dropdown-content__a">New recipe</a>
-                        <a id="logout" href="#" class="dropdown-content__a">Log out</a>
-                    </div>
-                </div>
+                    <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
+                    <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
+                    <?php 
+                        if (isset($_SESSION["isLoggedIn"])) {
+                            echo "<div id='logedin' class='main-nav__item  dropdown'>
+                                    <button class='dropbtn'>".$_SESSION["usr"]."</button>
+                                    <div class='dropdown-content'>
+                                        <a href='profile.php' class='dropdown-content__a'>Profile</a>
+                                        <a href='submit.php' class='dropdown-content__a'>New recipe</a>
+                                        <form action='profile.php' method='POST'>
+                                            <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
+                                            <label for='sublogout' id='logout' class='dropdown-content__a'>Log out
+                                        </form>
+                                    </div>
+                                </div>";
+                        }else{
+                            echo "<li class='main-nav__item'><a class='main-nav__link'href='login.php'>Login</a></li>";
+                        }
+                    ?>                   
             </ul>
         </nav>
     </header>

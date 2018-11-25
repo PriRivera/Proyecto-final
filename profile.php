@@ -9,10 +9,18 @@
         'password' => ''
     ]);
     session_start();
-    if(isset($_SESSION["usrid"])){
+    if(isset($_SESSION["isLoggedIn"])){
         $user = $database->select("tb_users", "*",[
             "id_user"=> $_SESSION["usrid"]
         ]);
+    }else{
+        header("location:login.php");
+    }
+    if($_POST){
+        if(isset($_POST["logout"])){
+            session_destroy();
+            header("location:login.php");
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -50,15 +58,23 @@
             <ul class="main-nav__list">
                     <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
                     <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link"href="login.php">Login</a></li>
-                    <div id="logedin" class="main-nav__item  dropdown">
-                        <button class="dropbtn">Hiram</button>
-                        <div class="dropdown-content">
-                            <a href="profile.php" class="dropdown-content__a">Profile</a>
-                            <a href="submit.php" class="dropdown-content__a">New recipe</a>
-                            <a id="logout" href="#" class="dropdown-content__a">Log out</a>
-                        </div>
-                    </div>
+                    <?php 
+                        if (isset($_SESSION["isLoggedIn"])) {
+                            echo "<div id='logedin' class='main-nav__item  dropdown'>
+                                    <button class='dropbtn'>".$_SESSION["usr"]."</button>
+                                    <div class='dropdown-content'>
+                                        <a href='profile.php' class='dropdown-content__a'>Profile</a>
+                                        <a href='submit.php' class='dropdown-content__a'>New recipe</a>
+                                        <form action='profile.php' method='POST'>
+                                            <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
+                                            <label for='sublogout' id='logout' class='dropdown-content__a'>Log out
+                                        </form>
+                                    </div>
+                                </div>";
+                        }else{
+                            echo "<li class='main-nav__item'><a class='main-nav__link'href='login.php'>Login</a></li>";
+                        }
+                    ?>                   
             </ul>
         </nav>
         <div class="img-block border profile-block">
