@@ -8,6 +8,8 @@
         'username' => 'root',
         'password' => ''
     ]);
+    $categories = $database->select("tb_recipe_categories", "*");
+    $len = count($categories);
     
     function generateRandomString($length = 10) {
         return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
@@ -59,6 +61,16 @@
                         ]);
                     }
                 }
+                    //register selected recipe categories
+                    if(!empty($_POST['categories'])) {    
+                        foreach($_POST['categories'] as $value){
+                            //echo "value : ".$value.'<br/>';
+                            $database->insert("tb_recipe_in_categories", [
+                                    "id_recipe" => $last_recipe_id,
+                                    "id_category" => $value
+                            ]);
+                        }
+                    }
             }
         }
     }else{
@@ -160,6 +172,7 @@
                     </div>
 
                 </div>
+                <input id="add-ingredient-btn" class="main-btn btn-submit" type="button" value="Add ingredient">
                 <datalist id="medidas">
                     <option value="Grams">
                     <option value="Ounces">
@@ -170,12 +183,27 @@
                     <option value="Tablespoon"> 
                     <option value="Units"> 
                 </datalist>
-                <input id="add-ingredient-btn" class="main-btn btn-submit" type="button" value="Add ingredient">
+                
                 <br><br>
                 <h3><span>Preparation</span> instructions.</h3>
-                <textarea class="form-steps text-area border" name="recipeInstructions" id="recipe-instructions" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>
-                <input type="submit" id="submit-recipe" class="main-btn btn-submit" value="Save & publish">
-            </div>
+                <textarea class="form-steps text-area border" name="recipeInstructions" id="recipe-instructions" cols="30" rows="10" placeholder="Step by step description of the preparation."></textarea>     
+            </div> 
+            
+            <div class="div_checkbox">  
+            <h3><span>Please choose the category your recipe belongs to:<span></h3>
+                <?php
+                    
+                    for($i = 0; $i<$len; $i++){
+                        echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"]."' required data-msg='Please select at least one category'>";
+                        echo "<label for='' class='recipe-category'>".$categories[$i]["recipe_category"]."</label><br>";
+                    }
+                    
+                ?>
+                
+                <label for="categories[]" class="error"></label>
+            </div> 
+            <input type="submit" id="submit-recipe" class="main-btn" value="Save & publish">
+        
         </form>
     </section>
     <script src="js/new-recipe.js">

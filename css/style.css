@@ -192,6 +192,7 @@ th {
     align-items: center;
     text-decoration: none;
     padding: 1px;
+    border: none;
 }
 
 .main-nav__link:hover {
@@ -319,6 +320,7 @@ h3 span {
     color: #fff;
     font-family: 'Dejavu-Sans-Condensed';
     cursor: pointer;
+    border: none;
 }
 
 .left-block {
@@ -722,6 +724,25 @@ h3 span {
     border: none;
 }
 
+.recipe-category {
+    display: inline-block;
+    margin: 0.3em;
+}
+
+.checkbox_submit {
+    font-size: 3em;
+    display: inline;
+    background: #4C759E;
+}
+
+.div_checkbox {
+    font-size: 1.4em;
+    text-align: -webkit-left;
+    margin-left: 5.3em;
+    margin-top: 0.5em;
+    width: 57%;
+}
+
 
 /*---- Search ----*/
 
@@ -825,7 +846,7 @@ h3 span {
     text-decoration: none;
 }
 
-.search_content_container{
+.search_content_container {
     width: 100%;
     height: 20vw;
     overflow: hidden;
@@ -844,7 +865,7 @@ h3 span {
 }
 
 .search-description__margin {
-    text-align: center; 
+    text-align: center;
     padding: 0em;
 }
 
@@ -1223,6 +1244,12 @@ h3 span {
     .cuadro-registro {
         margin: 9em auto;
     }
+}
+
+form.cmxform label.error,
+label.error {
+    color: red;
+    display: block;
 }
 
 @media (max-width: 991.98px) {
