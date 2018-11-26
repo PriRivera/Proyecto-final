@@ -854,7 +854,7 @@ h3 span {
 }
 
 .search-content_img {
-    height: 100%;
+    width: 78%;
     margin: 16px 17px;
     display: inline-block;
 }
@@ -968,6 +968,18 @@ h3 span {
 
 .account-description {
     color: white;
+    display: none;
+}
+
+.account-description_profile {
+    background: black;
+    border-radius: 2%;
+    display: -webkit-inline-box;
+    width: 26%;
+    height: 8em;
+    color: white;
+    border: solid 1px white;
+    margin-top: 9px;
 }
 
 .account-description--textarea {
@@ -1022,7 +1034,7 @@ h3 span {
 }
 
 .search-content-profile {
-    margin-top: -4em;
+    margin-top: -3em;
 }
 
 .search-content-favorites {
