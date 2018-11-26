@@ -51,10 +51,10 @@
             </div>
 
             <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
-            <div class="main-nav__search-container">
-                <input class="search-text" type="text" placeholder="Search.." name="search">
-                <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
-            </div>
+            <form action="search.php" class="main-nav__search-container">
+                <input class="search-text" type="text" placeholder="Search.." name="keyWord">
+                <button class="main-nav__button" href="#"><i class="fa fa-search"></i></button>
+            </form>
             <ul class="main-nav__list">
                     <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
                     <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>

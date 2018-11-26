@@ -18,7 +18,7 @@
     if(isset($_GET["keyWord"])){
         $result = $database->select("tb_recipes","*", ["recipe_name[~]"=>$_GET["keyWord"]]);
         $category = $database->select("tb_category","*", ["category_name[~]"=>$_GET["keyWord"]]);
-        $result += $database->select("tb_recipes","*", ["recipe_category"=>$category[0]["id_category"]]);
+        $result = array_merge($result, $database->select("tb_recipes","*", ["recipe_category"=>$category[0]["id_category"]]));
     }
 ?>
 <!DOCTYPE html>
@@ -48,12 +48,11 @@
                     <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
                 </ul>
             </div>
-
             <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
-            <div class="main-nav__search-container">
-                <input class="search-text" type="text" placeholder="Search.." name="search">
-                <a class="main-nav__button" href="#"><i class="fa fa-search"></i></a>
-            </div>
+            <form action="search.php" class="main-nav__search-container">
+                <input class="search-text" type="text" placeholder="Search.." name="keyWord">
+                <button class="main-nav__button" href="#"><i class="fa fa-search"></i></button>
+            </form>
             <ul class="main-nav__list">
                     <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
                     <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
@@ -80,8 +79,8 @@
          <h1 class="main-text">Search instead for</h1>
               <div class="container-search">
                     <form class="search-bar" action="">
-                      <input class="main-nav__input-search" type="text" placeholder="Search.." name="search">
-                      <button class="main-nav__button-search" type="submit"><i class="fa fa-search"></i></button>
+                      <input class="main-nav__input-search" type="text" placeholder="Search.." name="keyWord">
+                      <button class="main-nav__button-search"><i class="fa fa-search"></i></button>
                   </form>
              </div>
             </div>
@@ -96,20 +95,18 @@
          </div>
     </header>
     <section>
-         <ul class="search-content">
-                <li class="search-content_item"><a href="recipe.php" class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt="See more"></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt="See more"></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/papa.jpg" alt=""></a><p class="recipe-menu_description search-description__margin">See more</p></a></li>
-            </ul>
+        <ul class="search-content">
+            <?php
+                foreach ($result as $value) {
+                    echo "<li class='search-content_item'>
+                        <a href='recipe.php?id=".$value["id_recipe"]."' class='search-content_link'>
+                            <div class='search_content_container'><img class='search-content_img' src='imgs/".$value["recipe_image"]."' alt=''></div>
+                            <p class='recipe-menu_description search-description__margin'>See more</p>
+                        </a>
+                    </li>";
+                }
+            ?>
+        </ul>
     </section>
     <footer class="main-footer">
             <nav class="footer-nav">

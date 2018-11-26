@@ -825,8 +825,15 @@ h3 span {
     text-decoration: none;
 }
 
+.search_content_container{
+    width: 100%;
+    height: 20vw;
+    overflow: hidden;
+    text-align: center;
+}
+
 .search-content_img {
-    width: 94%;
+    height: 100%;
     margin: 16px 17px;
     display: inline-block;
 }
@@ -837,7 +844,7 @@ h3 span {
 }
 
 .search-description__margin {
-    margin: 0em 117px;
+    text-align: center; 
     padding: 0em;
 }
 
@@ -1123,9 +1130,6 @@ h3 span {
         text-align: center;
         padding: 0em;
     }
-    .search-description__margin {
-        margin: 0em 95px;
-    }
     .header-background {
         height: auto;
     }
@@ -1310,7 +1314,6 @@ h3 span {
         display: inline-block;
     }
     .search-description__margin {
-        margin: 0em 77px;
         padding: 0em;
     }
     .search-content {
@@ -1734,7 +1737,6 @@ h3 span {
         display: inline-block;
     }
     .search-description__margin {
-        margin: 1px 29px;
         padding: 0em;
         font-size: 72%;
     }
