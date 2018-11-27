@@ -403,6 +403,15 @@ h3 span {
     padding: 2em;
 }
 
+.main-text_index {
+    color: #fff;
+    display: block;
+    position: absolute;
+    background-color: #b11921;
+    padding: 1em;
+    margin-top: 6em;
+}
+
 .slider-background {
     border: #fff solid 10px;
     background: #fff;
@@ -594,7 +603,6 @@ h3 span {
 }
 
 .form-login_imput {
-    display: inline-block;
     width: 94%;
     padding: 12px 20px;
     margin: 1em 0;
@@ -968,15 +976,14 @@ h3 span {
 
 .account-description {
     color: white;
-    display: none;
 }
 
 .account-description_profile {
+    display: -webkit-inline-box;
     background: black;
     border-radius: 2%;
-    display: -webkit-inline-box;
     width: 26%;
-    height: 8em;
+    height: auto;
     color: white;
     border: solid 1px white;
     margin-top: 9px;
@@ -1135,6 +1142,49 @@ h3 span {
     background-color: #F2F2F2;
 }
 
+form.cmxform label.error,
+label.error {
+    color: red;
+    display: block;
+}
+
+
+/******* administrador*************/
+
+.main-message {
+    display: inline-block;
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    width: 100%;
+    color: #4C759E
+}
+
+.second-message {
+    display: inherit;
+    margin-left: 1em;
+    font-family: 'Dejavu-Sans-Condensed';
+    font-size: 1.2em;
+}
+
+.list_admin {
+    width: fit-content;
+    margin: 1em;
+}
+
+.admin_input {
+    width: 30%;
+    margin-bottom: 4em;
+    margin-left: 0.5em;
+}
+
+.admin_btn {
+    font-size: 1em;
+    margin-bottom: 3em;
+    margin-top: 1em;
+    margin-left: 0.5em;
+}
+
 @media (max-width: 1199.98px) {
     /*---- Generic styles ----*/
     .footer-imgs {
@@ -1256,12 +1306,6 @@ h3 span {
     .cuadro-registro {
         margin: 9em auto;
     }
-}
-
-form.cmxform label.error,
-label.error {
-    color: red;
-    display: block;
 }
 
 @media (max-width: 991.98px) {
