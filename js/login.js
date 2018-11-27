@@ -4,7 +4,7 @@ var toRegister = $('.to-register'),
 
 toRegister.click(function() {
     $('.login-box').css({ "display": "none" }),
-    $('.registry-box').css({ "display": "block" });
+        $('.registry-box').css({ "display": "block" });
 });
 
 
@@ -31,6 +31,10 @@ $('document').ready(function() {
         messages: {
             username: {
                 required: "Please enter a username",
+                minlength: "Your username has to be at least 5 characters"
+            },
+            email: {
+                required: "Please enter a email",
                 minlength: "Your username has to be at least 5 characters"
             },
             password: {

@@ -120,7 +120,7 @@
         <form method="post" action="login.php" class="form-login" id="main_form-login">
         <?php
             if($onError){
-                echo "<p class='error_login' style='display: block;'> Invalid username or password </p>";
+                echo "<p class='error_login' style='display: block; color: red;'> Invalid username or password </p>";
             }
          ?>
             <label class="form-text" id="username">Username:</label><br>
