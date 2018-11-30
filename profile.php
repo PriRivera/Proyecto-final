@@ -8,19 +8,65 @@
         'username' => 'root',
         'password' => ''
     ]);
+    function generateRandomString($length = 10) {
+        return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+    }
     session_start();
     if(isset($_SESSION["isLoggedIn"])){
         $user = $database->select("tb_users", "*",[
             "id_user"=> $_SESSION["usrid"]
         ]);
+        $profile = $database->select("tb_profile", "*",[
+            "id_user"=> $_SESSION["usrid"]
+        ]);
+        $recipes = $database->select("tb_recipes", "*",[
+            "recipe_user_id"=> $_SESSION["usrid"]
+        ]);
+        $votes = $database->select("tb_recipes_votes", "*",[
+            "id_user"=> $_SESSION["usrid"]
+        ]);   
     }else{
         header("location:login.php");
     }
+
     if($_POST){
         if(isset($_POST["logout"])){
             session_destroy();
             header("location:login.php");
         }
+    }  
+    if(isset($_FILES['image'])){
+        $errors= array();
+        $file_name = $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+        $file_type = $_FILES['image']['type'];
+        $file_ext_arr = explode('.',$_FILES['image']['name']);       
+        $file_ext = end($file_ext_arr);      
+        $img_ext = array("jpeg","jpg","png");      
+        if(in_array($file_ext, $img_ext) === false){
+            $errors[] = "choose a JPEG or PNG file.";
+        }      
+        if($file_size > 2097152){
+            $errors[]='2 MB Max';
+        }      
+        if(empty($errors)){
+
+            $img = "profile_img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
+            move_uploaded_file($file_tmp, "imgs/".$img); 
+
+            if($_POST){
+                $database->update("tb_profile",[
+                    "profile_img"=> $img,
+                    "description"=> $_POST["description"]
+                ], [
+                    "id_user"=> $_SESSION["usrid"]
+                ]);
+            }
+            header("location:login.php");
+        }
+    }else{
+       // print_r($errors);
     }
 ?>
 <!DOCTYPE html>
@@ -77,41 +123,52 @@
                     ?>                   
             </ul>
         </nav>
-        <div class="img-block border profile-block">
-           <a><img class="login-icon profile-img" src="img/Recurso 10.svg" alt="profile image"></a> 
-            <p class="p-drop">Drop an image here or</p>
-            <input type="file" name="profile photo" class="file-chooser" id="file"> 
-            <label for=file class="main-btn main-btn--size" id="profile-chooser"> Choose a file..</label>
+        <div class="profile-edit"> 
+            <form class="" action="profile.php" method="post" enctype="multipart/form-data">
+                <div class="img-block border profile-block">
+                    <a><img id="preview" class = "img-block" src="imgs/<?php echo  $profile[0]["profile_img"] ?>" alt="image to upload"/><br>
+                    <p class="p-drop">Drop an image here or</p>
+                    <input type="file" id="file" name="image" class="file-chooser" onchange="readURL(this)"/>
+                    <label for=file class="main-btn main-btn--size" id="img"> Choose a file..</label>
+                </div>
+                <div class="main-profile_div">
+                    <p class="main-name"><?PHP echo $user[0]["username"] ?></p>
+                    <label class="form-text account-description">Account Description:</label><br>
+                    <textarea id="desc" class="form-login_imput account-description--textarea" name="description"><?PHP echo $profile[0]["description"]?></textarea>
+                </div>
+                <input type="submit" value="Accept" class="main-btn save-btn" id="accept">
+            </form>
         </div>
-        <div class="main-profile_div">
-        <p class="main-name"><?PHP echo $user[0]["username"] ?></p>
-            <label class="form-text account-description">Account Description:</label><br>
-            <textarea class="form-login_imput account-description--textarea" placeholder="I like to make healthy and fat food." id="textArea"></textarea>
-            <button class="main-btn save-btn" onclick="guardarDatos()">Save</button>
-        </header>
+        
+        
+        <div class="profile_non_edit"> 
+            <div class="img-block border profile-block">
+                <a><img id="preview" class = "img-block_profile" src="imgs/<?php echo  $profile[0]["profile_img"] ?>" alt="profile image"/>
+            </div>
+            <div class="main-profile_div">
+                <p class="main-name"><?PHP echo $user[0]["username"] ?></p>
+                <label class="form-text account-description">Account Description:</label><br>
+                <textarea id="description" class="form-login_imput account-description--textarea" disabled><?PHP echo $profile[0]["description"]?></textarea>
+            </div>
+            <button class="main-btn save-btn" id="edit">Edit</button>
         </div>
+        
+        
+    </header>
+    
     <section>
+    
         <h1 class="main-h1__profile">My Recipes</h1>
         <img class="spatulas-img" src="img/paletas.svg" alt="spoon and spatula">
         <ul class="search-content search-content-profile">  
-            <li class="search-content_item"><a class="search-content_link">
-                <div class="text-img__background"><p class="inside-text">Click to edit</p></div>     
-                <img class="profile-content-img pruebaImagen" src="img/receta1.jpg" alt="">
-                <p class="recipe-menu_description profile-img__names">Manicotti</p></a>
-            </li>
-            <li class="search-content_item"><a class="search-content_link">
-                <div class="text-img__background"><p class="inside-text">Click to edit</p></div> 
-                <img class="profile-content-img" src="img/receta2.jpg" alt="">
-                <p class="recipe-menu_description profile-img__names">Mushrooms and beef</p></a>
-            </li>
-            <li class="search-content_item"><a class="search-content_link">
-                <div class="text-img__background"><p class="inside-text">Click to edit</p></div> 
-                <img class="profile-content-img" src="img/receta3.png" alt="">
-                <p class="recipe-menu_description profile-img__names">Garlic Mushrooms</p></a>
-            </li>
+            <?php
+                foreach($recipes as $value){
+                    echo "<li class='search-content_item'><img class='profile-content-img pruebaImagen' src= imgs/".$value["recipe_image"]." alt=''> <div class='text-img__background'><a class='search-content_link inside-text' href='recipe.php?id=".$value["id_recipe"]."'>Click to edit</a> </div> <p class='recipe-menu_description profile-img__names'>".$value["recipe_name"]."</p> </li>";
+                }
+            ?>
             <li class="search-content_item"><a class="search-content_link"> 
                 <i class="search-content_img img-block border profile-item plus fa fa-plus style" style="font-size:100px"></i>
-                <img class="" src="" alt=""><p class="recipe-menu_description profile-img__names" id="add-id">Add a new recipe</p></a>
+                <img class="" src="" alt=""><a class="recipe-menu_description profile-img__names" id="add-id" href="submit.php">Add a new recipe</a>
             </li>
         </li>
     </ul>
@@ -138,6 +195,24 @@
         </nav>       
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/app.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var item = document.getElementById('preview');
+                    item.src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    var toEdit = $('#edit');
+        toEdit.click(function(){
+        $('.profile-edit').css({"display":"block"}),
+        $('.img-block').css({"width":"75%"}),
+        $('.profile-block').css({"width":"17%"}),
+        $('.profile_non_edit').css({"display":"none"});
+        });
+    </script>
 </body>
 </html>

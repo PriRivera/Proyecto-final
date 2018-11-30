@@ -120,6 +120,10 @@
             <br><br>
             <h3><span>Preparation</span> instructions.</h3>
             <p class="main-p"><?php echo $recipe[0]["recipe_instructions"]?></p>
+                <div class="vote_recipe">
+                <h4>Vote for this recipe</h4>
+                <button class="fa fa-heart-o main-heart vote_btn"style="font-size:50px"></button>
+            </div>
         </div>
     </section>
     <footer class="main-footer">

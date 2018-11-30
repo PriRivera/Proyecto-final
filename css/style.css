@@ -409,7 +409,7 @@ h3 span {
     position: absolute;
     background-color: #b11921;
     padding: 1em;
-    margin-top: 6em;
+    margin-top: 10.9em;
 }
 
 .slider-background {
@@ -647,6 +647,10 @@ h3 span {
 
 .recipe-form {
     text-align: center;
+}
+
+.img-block_profile {
+    width: 100%;
 }
 
 .img-block {
@@ -942,6 +946,14 @@ h3 span {
     text-align: inherit;
 }
 
+.profile_non_edit {
+    display: block;
+}
+
+.profile-edit {
+    display: none;
+}
+
 .profile-block {
     float: left;
     margin: 4em 3em;
@@ -1000,11 +1012,9 @@ h3 span {
 .save-btn {
     text-decoration: none;
     font-size: 109%;
-    border: #4C759E;
-    display: inline-block;
     z-index: 0;
     position: absolute;
-    margin: 5.5em 1em;
+    margin: -2.8em 21.4em;
 }
 
 .main-h1__profile {
@@ -1140,6 +1150,16 @@ h3 span {
 
 .ingredient-table tr:nth-child(odd) {
     background-color: #F2F2F2;
+}
+
+.vote_recipe {
+    margin: 1em;
+}
+
+.vote_btn {
+    border: none;
+    background: #fff;
+    cursor: pointer;
 }
 
 form.cmxform label.error,
