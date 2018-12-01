@@ -13,7 +13,6 @@ var el = document.getElementById('ingredient-container');
 var sortable = Sortable.create(el);
 
 function readURL(input) {
-
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
@@ -44,7 +43,7 @@ $('document').ready(function() {
             $('#measure').val('');
             isOnEdit = false;
         } else {
-            $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input type='hidden' name='ingredients[]' value='"+ingredient+"'></input><a id='ingr_name' >" + ingredient_name + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + measure + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span><span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
+            $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input type='hidden' name='ingredients[]' value='"+ingredient+"'></input><a id='ingr_name' >" + ingredient_name + "&#160; &#160;" + "</a><a id='quan'  >" + quantity + "&#160; &#160;" + "</a> <a id='mea'  >" + measure + "&#160; &#160;" + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span>&#160; &#160;<span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
             $('#edit' + ingrNumber).click(function() {
                 isOnEdit = true;
                 editItemID = $(this).closest('li').attr('id');
