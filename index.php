@@ -37,7 +37,7 @@
 
 <body>
     <header>
-    <nav class="main-nav">            
+        <nav class="main-nav">            
             <div class="burger">
                 <input type="checkbox" class="burger__button">
                 <span class="burger__span"></span>
@@ -46,13 +46,24 @@
                 <ul class="burger-menu">
                     <a href="index.php" class="burger-menu__link"><li class="burger-menu__li">Home</li></a>
                     <a href="contact.php" class="burger-menu__link"><li class="burger-menu__li">Contact</li></a>
-                    <a href="login.php" class="burger-menu__link"><li class="burger-menu__li">Login</li></a>
-                    <a href="profile.php" class="burger-menu__link"><li class="burger-menu__li">Profile</li></a>
-                    <a href="submit.php" class="burger-menu__link"><li class="burger-menu__li">New recipe</li></a>
-                    <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                    <?php
+                        if (isset($_SESSION["isLoggedIn"])) {
+                            echo"
+                                <a href='profile.php' class='burger-menu__link'><li class='burger-menu__li'>Profile</li></a>
+                                <a href='submit.php' class='burger-menu__link'><li class='burger-menu__li'>New recipe</li></a>
+                                <form action='profile.php' method='POST'>
+                                    <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
+                                    <label for='sublogout' id='logout' class='burger-menu__link'>Log out
+                                </form>
+                            ";#<a href="" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                        } else {
+                            echo"
+                                <a href='login.php' class='burger-menu__link'><li class='burger-menu__li'>Login</li></a>
+                            ";
+                        }                    
+                    ?>
                 </ul>
             </div>
-
             <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <form action="search.php" class="main-nav__search-container">
                 <input class="search-text" type="text" placeholder="Search.." name="keyWord">
@@ -83,18 +94,14 @@
         <div class="main-background__container">
             <div class="main-slider">
                 <div class="slider-background">
-                <h1 class="main-text_index  wow slideInRight" data-wow-delay="0s" data-wow-duration="4.7s" data-wow-iteration="infinite">Our Most Voted</h1> 
-
-                <ul class="slider-ul">
-                   
+                    <h1 class="main-text_index  wow slideInRight" data-wow-delay="0s" data-wow-duration="3s" data-wow-iteration="1">Our Most Voted</h1> 
+                    <ul class="slider-ul">
                         <li class="slider-li"><img class="slider-img" src="img/arroz-con-leche.jpg" alt="Sweet rice dessert"></li>
                         <li class="slider-li"><img class="slider-img" src="img/ensalada-cesar.jpg" alt="Caesar salad"></li>
                         <li class="slider-li"><img class="slider-img" src="img/gallo-pinto.jpg" alt="Gallo pinto"></li>
                         <li class="slider-li"><img class="slider-img" src="img/penne-tomate.jpg" alt="Penne pasta with tomato"></li>
-                        <li class="slider-li"><img class="slider-img slider-img--queque" src="img/queque.jpeg" alt="cake"></li>
-                        
-                    </ul>
-                    
+                        <li class="slider-li"><img class="slider-img slider-img--queque" src="img/queque.jpeg" alt="cake"></li>   
+                    </ul>   
                 </div>
             </div>
             <img src="img/logo.png" alt="" class="mobile-logo">
@@ -102,11 +109,11 @@
     </header>
     <section class="mid-container">
         <ul class="sub-menu">
-            <li class="sub-menu_item"><a class="sub-menu_link" href="#">Healthy</a></li>
-            <li class="sub-menu_item"><a class="sub-menu_link" href="#">Desserts</a></li>
-            <li class="sub-menu_item"><a class="sub-menu_link" href="#">Meats</a></li>
-            <li class="sub-menu_item"><a class="sub-menu_link" href="#">Pastas</a></li>
-            <li class="sub-menu_item"><a class="sub-menu_link" href="search.php">Baked</a></li>
+            <li class="sub-menu_item"><a class="sub-menu_link" href="search.php?keyWord=Healthy">Healthy</a></li>
+            <li class="sub-menu_item"><a class="sub-menu_link" href="search.php?keyWord=Dessert">Desserts</a></li>
+            <li class="sub-menu_item"><a class="sub-menu_link" href="search.php?keyWord=Meat">Meats</a></li>
+            <li class="sub-menu_item"><a class="sub-menu_link" href="search.php?keyWord=Pasta">Pastas</a></li>
+            <li class="sub-menu_item"><a class="sub-menu_link" href="search.php?keyWord=Baked">Baked</a></li>
         </ul>
         <div class="main-recipies">
             <img class="recipe-img wow fadeIn" src="img/recipes.png" alt="recepies">

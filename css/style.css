@@ -105,7 +105,7 @@ th {
     position: absolute;
     z-index: 1;
     width: 50%;
-    height: 100%;
+    height: 100em;
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -1540,7 +1540,6 @@ label.error {
     }
     .burger-menu {
         width: 30%;
-        height: 30em;
     }
     .burger-menu__li {
         font-size: 4vw;
@@ -1727,7 +1726,6 @@ label.error {
     }
     .burger-menu {
         width: 50%;
-        height: 30em;
     }
     .burger-menu__li {
         font-size: 6vw;

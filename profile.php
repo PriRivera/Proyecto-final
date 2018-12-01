@@ -34,40 +34,42 @@
             session_destroy();
             header("location:login.php");
         }
-    }  
-    if(isset($_FILES['image'])){
-        $errors= array();
-        $file_name = $_FILES['image']['name'];
-        $file_size = $_FILES['image']['size'];
-        $file_tmp = $_FILES['image']['tmp_name'];
-        $file_type = $_FILES['image']['type'];
-        $file_ext_arr = explode('.',$_FILES['image']['name']);       
-        $file_ext = end($file_ext_arr);      
-        $img_ext = array("jpeg","jpg","png");      
-        if(in_array($file_ext, $img_ext) === false){
-            $errors[] = "choose a JPEG or PNG file.";
-        }      
-        if($file_size > 2097152){
-            $errors[]='2 MB Max';
-        }      
-        if(empty($errors)){
-
-            $img = "profile_img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
-            move_uploaded_file($file_tmp, "imgs/".$img); 
-
-            if($_POST){
+        if(isset($_FILES['image'])){
+            if(!empty($_FILES['image']['name'])){
+                $errors= array();
+                $file_name = $_FILES['image']['name'];
+                $file_size = $_FILES['image']['size'];
+                $file_tmp = $_FILES['image']['tmp_name'];
+                $file_type = $_FILES['image']['type'];
+                $file_ext_arr = explode('.',$_FILES['image']['name']);       
+                $file_ext = end($file_ext_arr);      
+                $img_ext = array("jpeg","jpg","png");      
+                if(in_array($file_ext, $img_ext) === false){
+                    $errors[] = "choose a JPEG or PNG file.";
+                }      
+                if($file_size > 2097152){
+                    $errors[]='2 MB Max';
+                }      
+                if(empty($errors)){
+                    $img = "profile_img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
+                    move_uploaded_file($file_tmp, "imgs/".$img);
+                    $database->update("tb_profile",[
+                        "profile_img"=> $img
+                    ], [
+                        "id_user"=> $_SESSION["usrid"]
+                    ]);
+                }
+            }else if(!empty($_POST["description"])){
                 $database->update("tb_profile",[
-                    "profile_img"=> $img,
                     "description"=> $_POST["description"]
                 ], [
                     "id_user"=> $_SESSION["usrid"]
                 ]);
-            }
+            }            
             header("location:login.php");
         }
-    }else{
-       // print_r($errors);
-    }
+    }  
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,38 +91,49 @@
                 <ul class="burger-menu">
                     <a href="index.php" class="burger-menu__link"><li class="burger-menu__li">Home</li></a>
                     <a href="contact.php" class="burger-menu__link"><li class="burger-menu__li">Contact</li></a>
-                    <a href="login.php" class="burger-menu__link"><li class="burger-menu__li">Login</li></a>
-                    <a href="profile.php" class="burger-menu__link"><li class="burger-menu__li">Profile</li></a>
-                    <a href="submit.php" class="burger-menu__link"><li class="burger-menu__li">New recipe</li></a>
-                    <a href="#" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                    <?php
+                        if (isset($_SESSION["isLoggedIn"])) {
+                            echo"
+                                <a href='profile.php' class='burger-menu__link'><li class='burger-menu__li'>Profile</li></a>
+                                <a href='submit.php' class='burger-menu__link'><li class='burger-menu__li'>New recipe</li></a>
+                                <form action='profile.php' method='POST'>
+                                    <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
+                                    <label for='sublogout' id='logout' class='burger-menu__link'>Log out
+                                </form>
+                            ";#<a href="" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                        } else {
+                            echo"
+                                <a href='login.php' class='burger-menu__link'><li class='burger-menu__li'>Login</li></a>
+                            ";
+                        }                    
+                    ?>
                 </ul>
             </div>
-
             <a href="index.php"><img class="logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
             <form action="search.php" class="main-nav__search-container">
                 <input class="search-text" type="text" placeholder="Search.." name="keyWord">
                 <button class="main-nav__button" href="#"><i class="fa fa-search"></i></button>
             </form>
             <ul class="main-nav__list">
-                    <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
-                    <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
-                    <?php 
-                        if (isset($_SESSION["isLoggedIn"])) {
-                            echo "<div id='logedin' class='main-nav__item  dropdown'>
-                                    <button class='dropbtn'>".$_SESSION["usr"]."</button>
-                                    <div class='dropdown-content'>
-                                        <a href='profile.php' class='dropdown-content__a'>Profile</a>
-                                        <a href='submit.php' class='dropdown-content__a'>New recipe</a>
-                                        <form action='profile.php' method='POST'>
-                                            <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
-                                            <label for='sublogout' id='logout' class='dropdown-content__a'>Log out
-                                        </form>
-                                    </div>
-                                </div>";
-                        }else{
-                            echo "<li class='main-nav__item'><a class='main-nav__link'href='login.php'>Login</a></li>";
-                        }
-                    ?>                   
+                <li class="main-nav__item"><a class="main-nav__link" href="index.php">Home</a></li>
+                <li class="main-nav__item"><a class="main-nav__link" href="contact.php">Contact</a></li>
+                <?php 
+                    if (isset($_SESSION["isLoggedIn"])) {
+                        echo "<div id='logedin' class='main-nav__item  dropdown'>
+                                <button class='dropbtn'>".$_SESSION["usr"]."</button>
+                                <div class='dropdown-content'>
+                                    <a href='profile.php' class='dropdown-content__a'>Profile</a>
+                                    <a href='submit.php' class='dropdown-content__a'>New recipe</a>
+                                    <form action='profile.php' method='POST'>
+                                        <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
+                                        <label for='sublogout' id='logout' class='dropdown-content__a'>Log out
+                                    </form>
+                                </div>
+                            </div>";
+                    }else{
+                        echo "<li class='main-nav__item'><a class='main-nav__link'href='login.php'>Login</a></li>";
+                    }
+                ?>                   
             </ul>
         </nav>
         <div class="profile-edit"> 
@@ -138,11 +151,9 @@
                 </div>
                 <div class="profile-btn">
                     <input type="submit" value="Accept" class="main-btn save-btn" id="accept">
-                    </div>
+                </div>
             </form>
         </div>
-        
-        
         <div class="profile_non_edit"> 
             <div class="img-block border profile-block">
                 <a><img id="preview" class = "img-block_profile" src="imgs/<?php echo  $profile[0]["profile_img"] ?>" alt="profile image"/>
@@ -156,8 +167,6 @@
                 <button class="main-btn save-btn" id="edit">Edit</button>
             </div>
         </div>
-        
-        
     </header>
     
     <section>
