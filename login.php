@@ -18,7 +18,7 @@
     }
     if($_POST){
       $user = $database->select("tb_users", "*",[
-            "username"=> $_POST["username"]
+            "username"=> $_POST["username"]     
         ]);
         if(password_verify( $_POST["password"], $user[0]["password"])){
             session_start();
@@ -29,6 +29,8 @@
         }else{
             $onError=true; 
         }
+        
+               
     }
 ?>
 
@@ -101,7 +103,8 @@
         <h3><span>Create</span> a new account</h3>
         <form action="new-users.php" method="post" class="form-login" id="form-create-account">
             <label class="form-text">Username:</label><br>
-            <input class="form-login_imput" type="text" name="username" placeholder="Create a new username.."> <br>
+            <input class="form-login_imput" type="text" name="username" id="usr" placeholder="Create a new username.."> <br>
+
             <label class="form-text">Email:</label><br>
             <input class="form-login_imput" type="email" name="email" placeholder="Your email.."> <br>
             <label class="form-text">Create password:</label><br>
@@ -110,8 +113,13 @@
             <input class="form-login_imput" id="confirm_password" type="password" placeholder="Confirm your password.." name="confirm_password"><br>
             <input type="hidden" name="type" value="2"><br>
             <input class="main-btn btn-register" type="submit" value="Register">
+            
+            <input type="hidden file" id="file" name="image" class="" value="preview.png" style="border:none;display:none;"/>
+            <input type="text" id="text" name="desc" class="" style="border:none; display:none;" value="Add an account description">
+
         </form>
     </section>
+    
     <section class="login-box">
         <br><br>
         <img class="login-icon" src="img/Recurso 10.svg" alt="">

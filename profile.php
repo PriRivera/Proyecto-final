@@ -129,14 +129,16 @@
                     <a><img id="preview" class = "img-block" src="imgs/<?php echo  $profile[0]["profile_img"] ?>" alt="image to upload"/><br>
                     <p class="p-drop">Drop an image here or</p>
                     <input type="file" id="file" name="image" class="file-chooser" onchange="readURL(this)"/>
-                    <label for=file class="main-btn main-btn--size" id="img"> Choose a file..</label>
+                    <label for=file class="choose_size main-btn" id="img"> Choose a file..</label>
                 </div>
                 <div class="main-profile_div">
                     <p class="main-name"><?PHP echo $user[0]["username"] ?></p>
                     <label class="form-text account-description">Account Description:</label><br>
                     <textarea id="desc" class="form-login_imput account-description--textarea" name="description"><?PHP echo $profile[0]["description"]?></textarea>
                 </div>
-                <input type="submit" value="Accept" class="main-btn save-btn" id="accept">
+                <div class="profile-btn">
+                    <input type="submit" value="Accept" class="main-btn save-btn" id="accept">
+                    </div>
             </form>
         </div>
         
@@ -150,16 +152,19 @@
                 <label class="form-text account-description">Account Description:</label><br>
                 <textarea id="description" class="form-login_imput account-description--textarea" disabled><?PHP echo $profile[0]["description"]?></textarea>
             </div>
-            <button class="main-btn save-btn" id="edit">Edit</button>
+            <div class="profile-btn">
+                <button class="main-btn save-btn" id="edit">Edit</button>
+            </div>
         </div>
         
         
     </header>
     
     <section>
-    
+    <div class="my_recipes">
         <h1 class="main-h1__profile">My Recipes</h1>
         <img class="spatulas-img" src="img/paletas.svg" alt="spoon and spatula">
+    </div>
         <ul class="search-content search-content-profile">  
             <?php
                 foreach($recipes as $value){

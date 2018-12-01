@@ -946,6 +946,14 @@ h3 span {
     text-align: inherit;
 }
 
+.profile-btn {
+    width: 82%;
+    text-align: right;
+    display: block;
+    margin: -1em -36em;
+    font-size: 0.8em;
+}
+
 .profile_non_edit {
     display: block;
 }
@@ -957,7 +965,7 @@ h3 span {
 .profile-block {
     float: left;
     margin: 4em 3em;
-    width: 21%;
+    width: 16%;
 }
 
 .profile-img {
@@ -1009,18 +1017,26 @@ h3 span {
     font-size: 19px;
 }
 
+.choose_size {
+    font-size: 1em;
+}
+
 .save-btn {
     text-decoration: none;
     font-size: 109%;
     z-index: 0;
     position: absolute;
-    margin: -2.8em 21.4em;
+    margin: -2.8em 13.4em;
+}
+
+.my_recipes {
+    width: 100%;
+    text-align: center;
 }
 
 .main-h1__profile {
     font-family: 'Dejavu-Sans-Condensed';
     color: #731921;
-    margin: 1.5em 0em 0em 3em;
     font-size: 51px;
     display: inline-block;
 }

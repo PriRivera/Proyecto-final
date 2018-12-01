@@ -20,5 +20,13 @@
     $_SESSION["isLoggedIn"] = true;
     $_SESSION["usr"] =  $_POST["username"];
     $_SESSION["usrid"] = $user_id;
+
+    $database->insert("tb_profile", [
+        "id_user"=> $user_id,
+        "profile_img"=> $_POST["image"],
+        "description"=> $_POST["desc"]
+    ]);   
+
+
     header("location:profile.php");
 ?>
