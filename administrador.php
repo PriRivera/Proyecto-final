@@ -1,3 +1,29 @@
+<?php
+    namespace Medoo;
+    require 'Medoo.php';
+
+    $onError = false;
+
+    $database = new Medoo([
+
+        'database_type' => 'mysql',
+        'database_name' => 'secret_du_chef',
+        'server' => 'localhost',
+        'username' => 'root',
+        'password' => ''
+    ]);    
+    session_start();
+    if(isset($_SESSION["isLoggedIn"])){
+        if($_SESSION["usrtype"]=="2"){
+            header("location:profile.php");
+        }
+        $recipes = $database->select("tb_recipes", "*", ["recipe_status"=>null]);
+        print_r($recipes);
+    }
+    else{
+        header("location:login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,11 +104,9 @@
                 <li class="list_admin"><a href="#">Patotatos</a><input id="stat" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
                 <button class="admin_btn main-btn">Save</button></li>
                 <datalist id="status">
-                <option value="1">
-                <option value="0">
-               
-                
-        </datalist>
+                    <option value="1">
+                    <option value="0">
+                </datalist>
             </ul>
         </div>
     </body>

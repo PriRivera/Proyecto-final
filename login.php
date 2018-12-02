@@ -25,6 +25,7 @@
             $_SESSION["isLoggedIn"] = true;
             $_SESSION["usr"] = $user[0]["username"];
             $_SESSION["usrid"] = $user[0]["id_user"];
+            $_SESSION["usrtype"] = $user[0]["type"];
             header("location:profile.php");
         }else{
             $onError=true; 

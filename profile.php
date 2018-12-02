@@ -13,6 +13,9 @@
     }
     session_start();
     if(isset($_SESSION["isLoggedIn"])){
+        if($_SESSION["usrtype"]==1){
+            header("location:administrador.php");
+        }
         $user = $database->select("tb_users", "*",[
             "id_user"=> $_SESSION["usrid"]
         ]);
