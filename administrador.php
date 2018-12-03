@@ -17,8 +17,7 @@
         if($_SESSION["usrtype"]=="2"){
             header("location:profile.php");
         }
-        $recipes = $database->select("tb_recipes", "*", ["recipe_status"=>null]);
-        print_r($recipes);
+        $recipes = $database->select("tb_recipes", "*", ["recipe_status"=>""]);
     }
     else{
         header("location:login.php");
@@ -90,23 +89,38 @@
             </ul>
         </nav>
     </header>
-        <div>
+    <section>
         <h1 class="main-message">Welcome</h1>
             <a class="second-message">Recipes to be approved:</a>
             <ul>
                 <p> Change the status to one in order to aprove</p>
-                <li class="list_admin"><a href="#">Patotatos</a><input id="stat" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
+                <?php
+                foreach ($recipes as $value) {
+                    echo "
+                        <li id='recipe_li-".$value['id_recipe']."' class='list_admin'>
+                            <a href='recipe.php?id=".$value['id_recipe']."' target='_blank'>".$value['recipe_name']."</a>
+                            <input id='recipe_".$value['id_recipe']."' class='admin_input form-login_imput' list='status' placeholder='status..' name='validate-status'>
+                            <button class='admin_btn main-btn' onclick='changeState(".$value['id_recipe'].")'>Save</button>
+                    ";
+                }
+                ?>
+                <!--
+                <li class="list_admin"><a href="#">Patotatos</a><input id="" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
                 <button class="admin_btn main-btn">Save</button></li>
-                <li class="list_admin"><a href="#">Patotatos</a><input id="stat" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
+                <li class="list_admin"><a href="#">Patotatos</a><input id="" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
                 <button class="admin_btn main-btn">Save</button></li>
-                <li class="list_admin"><a href="#">Patotatos</a><input id="stat" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
+                <li class="list_admin"><a href="#">Patotatos</a><input id="" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
                 <button class="admin_btn main-btn">Save</button></li>
-                <li class="list_admin"><a href="#">Patotatos</a><input id="stat" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
-                <button class="admin_btn main-btn">Save</button></li>
+                <li class="list_admin"><a href="#">Patotatos</a><input id="" class="admin_input form-login_imput" list="status" placeholder="status.." name='validate-status'>
+                <button class="admin_btn main-btn">Save</button></li>-->
                 <datalist id="status">
                     <option value="1">
                     <option value="0">
                 </datalist>
             </ul>
-        </div>
-    </body>
+    </section>    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script src="js/admin-recipe.js"></script>
+</body>
+</html>

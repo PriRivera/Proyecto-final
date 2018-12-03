@@ -1174,7 +1174,8 @@ h3 span {
 
 .vote_btn {
     border: none;
-    background: #fff;
+    color: #731921;
+    background: #f2f2f2;
     cursor: pointer;
 }
 

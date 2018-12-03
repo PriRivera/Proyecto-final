@@ -9,22 +9,30 @@
         'username' => 'root',
         'password' => ''
     ]);
+    session_start();
     $recipesId = $database->select("tb_recipes", "id_recipe");
     if($_GET){
         foreach ($recipesId as $id) {
             if ($_GET["id"]==$id) {
                 $recipe = $database->select("tb_recipes", "*",["id_recipe"=>$id]);
                 $ingredients = $database -> select("tb_ingredients","*",["id_recipe"=>$id]);
-                $user = $database -> select("tb_users","*",["id_user"=>$recipe["recipe_user_id"]]);
+                $user = $database -> select("tb_users","*",["id_user"=>$recipe[0]["recipe_user_id"]]);
+                $like = $database->select("tb_recipe_votes", "*",["AND"=>["id_recipe"=>$id,"id_user"=>$_SESSION["usrid"]]]);
             }
         }
-        if($recipe==null){
-            print_r("when get id is false we sould set default values for the recipe");
+        print_r($like); 
+        if($user[0]['username']==null){
+            $user[0]['username']='Anonimus user';
+        }
+        if($recipe[0]['recipe_status']==null){
+            print_r("this is wating for admin");
+        }
+        if(($recipe==null || $recipe[0]['recipe_status']==0) && $_SESSION['usrtype']==2){
+            print_r("this is an error  404");
         }
     }else{        
         header("location:index.php");
     }
-    session_start();
     if($_POST){
         if(isset($_POST["logout"])){
             session_destroy();
@@ -108,7 +116,7 @@
         </div>
         <div class="right-block">
             <h3><span>Author</span></h3>
-            <p>By: Priscilla la loca</p>
+            <p>By: <?php echo $user[0]['username'] ?></p>
             <br>
             <h3><span>Description</span></h3>
             <p class="main-p"><?php echo $recipe[0]["recipe_description"]?></p>
@@ -133,7 +141,8 @@
             <p class="main-p"><?php echo $recipe[0]["recipe_instructions"]?></p>
                 <div class="vote_recipe">
                 <h4>Vote for this recipe</h4>
-                <button class="fa fa-heart-o main-heart vote_btn"style="font-size:50px"></button>
+                <button id="likeBtn" class="fa fa-heart-o main-heart vote_btn" style="font-size:50px; <?php if($like == null) echo'display:block'; else echo'display:none';?> " onclick="likeRecipe(<?php echo $recipe[0]['id_recipe'] ?>, <?php echo $_SESSION['usrid'] ?>)"></button>
+                <button id="dislikeBtn" class="fa fa-heart main-heart vote_btn" style="font-size:50px; <?php if($like == null) echo'display:none'; else echo'display:block';?> " onclick="dislikeRecipe(<?php echo $recipe[0]['id_recipe'] ?>, <?php echo $_SESSION['usrid'] ?>)"></button>
             </div>
         </div>
     </section>
@@ -151,5 +160,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/admin-recipe.js"></script>
 </body>
 </html>
