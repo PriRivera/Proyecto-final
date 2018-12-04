@@ -37,11 +37,12 @@
             }      
             if($file_size > 2097152){
                 $errors[]='2 MB Max';
-            }      
+            }   
             if(empty($errors)){
                 $img = "recipe-img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
-                move_uploaded_file($file_tmp, "imgs/".$img);         
+                move_uploaded_file($file_tmp, "imgs/".$img);    
                 if($_POST){
+                    print_r($_POST);
                     $database->insert("tb_recipes", [
                         "recipe_name"=> $_POST["recipeName"],
                         "recipe_description"=> $_POST["recipeDescription"],
@@ -50,26 +51,28 @@
                         "recipe_user_id"=>$_SESSION['usrid']
                     ]);
                     $last_recipe_id = $database->id();
-                    if(!empty($_POST['ingredients'])) {    
-                        foreach($_POST['ingredients'] as $value){
+                    if(!empty($_POST['ingredientName'])) {    
+                        for ($i=0; $i < COUNT($_POST['ingredientName']); $i++) { 
                             $database->insert("tb_ingredients", [
+                                "id_recipe" => $last_recipe_id,
+                                "ingredient_name" => $_POST['ingredientName'][$i],
+                                "ingredient_amount" => $_POST['ingredientQuantity'][$i],
+                                "ingredient_measure" => $_POST['ingredientMeasure'][$i]
+                            ]);
+                            print_r($_POST['ingredientName'][$i]);
+                            print_r($_POST['ingredientQuantity'][$i]);
+                            print_r($_POST['ingredientMeasure'][$i]);
+                        }
+                    }
+                    if(!empty($_POST['categories'])) {    
+                        foreach($_POST['categories'] as $value){
+                            $database->insert("tb_recipe_in_categories", [
                                     "id_recipe" => $last_recipe_id,
-                                    "ingredient_name" => $value[0],
-                                    "ingredient_amount" => $value[1],
-                                    "ingredient_measure" => $value[2]
+                                    "id_category" => $value
                             ]);
                         }
                     }
-                        //register selected recipe categories
-                        if(!empty($_POST['categories'])) {    
-                            foreach($_POST['categories'] as $value){
-                                //echo "value : ".$value.'<br/>';
-                                $database->insert("tb_recipe_in_categories", [
-                                        "id_recipe" => $last_recipe_id,
-                                        "id_category" => $value
-                                ]);
-                            }
-                        }
+
                 }
             }
         }
@@ -177,7 +180,7 @@
                 <div id="ingredient" class="ingredient">
                     <div class="form-text generic-container border">
                         <input id="ingredient_name" class="input-base input-name" type="text" placeholder="Ingredient name">
-                        <input id="quantity" class="input-base input-quantity" type="number" min="0" step="1" placeholder="0">
+                        <input id="quantity" class="input-base input-quantity" type="number" min="0" step="1" value="0">
                         <input id="measure" class="input-base input-unit" list="medidas" placeholder="Measure">
                     </div>
 
