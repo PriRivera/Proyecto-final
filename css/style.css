@@ -519,6 +519,19 @@ h3 span {
     background: white;
 }
 
+.background-messaje {
+    width: 50%;
+    background: #4C759E;
+    text-align: center;
+    margin: 12em 20em;
+}
+
+.menssaje-pending {
+    color: #fff;
+    padding: 1em;
+    font-size: 2em;
+}
+
 .recipe-img {
     margin: 14% 1%;
     width: 25%;
@@ -878,6 +891,14 @@ h3 span {
 
 
 /*---- Contact ----*/
+
+.thankyou-messaje {
+    font-size: 3em;
+    padding: 4em 0em;
+    text-align: center;
+    margin: 0em;
+    color: #731921;
+}
 
 .body-contact {
     background-image: url(../img/shrimp.jpg);

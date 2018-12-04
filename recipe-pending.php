@@ -10,37 +10,15 @@
         'password' => ''
     ]);
     session_start();
-    $recipesId = $database->select("tb_recipes", "id_recipe");
-    if($_GET){
-        foreach ($recipesId as $id) {
-            if ($_GET["id"]==$id) {
-                $recipe = $database->select("tb_recipes", "*",["id_recipe"=>$id]);
-                $ingredients = $database -> select("tb_ingredients","*",["id_recipe"=>$id]);
-                $user = $database -> select("tb_users","*",["id_user"=>$recipe[0]["recipe_user_id"]]);
-                $like = $database->select("tb_recipe_votes", "*",["AND"=>["id_recipe"=>$id,"id_user"=>$_SESSION["usrid"]]]);
-            }
-        }
-        print_r($like); 
-        if($user[0]['username']==null){
-            $user[0]['username']='Anonimus user';
-        }
-        if($recipe[0]['recipe_status']==null){
-           // print_r("this is wating for admin");
-            header("location:recipe-pending.php");
-        }
-        if(($recipe==null || $recipe[0]['recipe_status']==0) && $_SESSION['usrtype']==2){
-            //print_r("this is an error  404");
-            header("location:recipe-pending.php");
-        }
-    }else{        
-        header("location:index.php");
+    $user = $database->select("tb_users","*",["id_user"=>$_SESSION['usrid']]);
+    if(!isset($_SESSION["isLoggedIn"])){
+        header("location:login.php");
     }
-    if($_POST){
         if(isset($_POST["logout"])){
             session_destroy();
-            header("location:index.php");
+            header("location:login.php");
         }
-    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,44 +86,9 @@
             </ul>
         </nav>
     </header>
-    <section class="recipe-sector">
-        <h1 class="recipe-title"><?php echo $recipe[0]["recipe_name"]?></h1>
-        <div class="left-block">
-            <div class="recipe-image--container">
-                <img class="recipe-image" src="imgs/<?php echo $recipe[0]["recipe_image"]?>" alt="Baked potato.">
-            </div>
-        </div>
-        <div class="right-block">
-            <h3><span>Author</span></h3>
-            <p>By: <?php echo $user[0]['username'] ?></p>
-            <br>
-            <h3><span>Description</span></h3>
-            <p class="main-p"><?php echo $recipe[0]["recipe_description"]?></p>
-        </div>
-        <div class="central-block">
-            <br><br>
-            <h3><span>Ingredients</span> list</h3> <br>
-            <table class="ingredient-table">
-                <tr class="ingredient-title">
-                    <th>Ingredient</th>
-                    <th>Amount</th> 
-                    <th>Measure</th>
-                </tr>         
-                <?php
-                    foreach ($ingredients as $value) {
-                        echo "<tr><th>".$value["ingredient_name"]."</th><th>".$value["ingredient_amount"]."</th><th>".$value["ingredient_measure"]."</th></tr>";
-                    }
-                ?>
-            </table>
-            <br><br>
-            <h3><span>Preparation</span> instructions.</h3>
-            <p class="main-p"><?php echo $recipe[0]["recipe_instructions"]?></p>
-                <div class="vote_recipe">
-                <h4>Vote for this recipe</h4>
-                <button id="likeBtn" class="fa fa-heart-o main-heart vote_btn" style="font-size:50px; <?php if($like == null) echo'display:block'; else echo'display:none';?> " onclick="likeRecipe(<?php echo $recipe[0]['id_recipe'] ?>, <?php echo $_SESSION['usrid'] ?>)"></button>
-                <button id="dislikeBtn" class="fa fa-heart main-heart vote_btn" style="font-size:50px; <?php if($like == null) echo'display:none'; else echo'display:block';?> " onclick="dislikeRecipe(<?php echo $recipe[0]['id_recipe'] ?>, <?php echo $_SESSION['usrid'] ?>)"></button>
-            </div>
-    </section>
+    <div class="background-messaje">
+        <h1 class="menssaje-pending">This recipe is pending approval</h1>
+    </div>
     <footer class="main-footer">
         <nav class="footer-nav">
             <a href="index.php"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>

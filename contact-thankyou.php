@@ -15,22 +15,11 @@
     if(!isset($_SESSION["isLoggedIn"])){
         header("location:login.php");
     }
-    if($_POST){
-        if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['comments'])){
-            $database->insert("tb_contact", [
-                "name"=> $_POST["name"],
-                "email"=> $_POST["email"],
-                "comments"=>$_POST["comments"]
-            ]);
-            header("location:contact-thankyou.php"); #feedBack positivo
-        }else{
-            print_r($_POST);
-        }
         if(isset($_POST["logout"])){
             session_destroy();
             header("location:login.php");
         }
-    }
+    
 ?>
 
 
@@ -92,17 +81,11 @@
             </ul>
         </nav>
     </header>
-    <section class="contact-box">
-        <p class="p-have">Have <span class="p-have--span">Questions?</span></p>
-        <form  action="contact.php" method="post"  class="form-contact" id="contact-form">
-            <label class="form-text">Name:</label><br>
-            <input class="form-login_imput" id="name" type="text" name="name" value="<?php echo $user[0]['username'] ?>" minlength="1" data-msg="Please enter your name" style="pointer-events: none;"> <br>
-            <label class="form-text">Email:</label><br>
-            <input class="form-login_imput" id="email" type="email" name="email" value="<?php echo $user[0]['email'] ?>" minlength="1" data-msg="Please enter your email" style="pointer-events: none;"> <br>
-            <label class="form-text">Comments:</label><br>
-            <textarea class="form-login_imput comments" id="comments" type="text" name="comments" placeholder="Give us your feedback.." minlength="1" data-msg="Please enter your feedback" required></textarea> <br>
-            <input id="send" class="main-btn send-btn" type="submit" value="Send">
-        </form>
+    <section>
+    <div class="thankyou-box contact-box">
+        <h1 class="thankyou-messaje">Thank you for you feedback</h1>
+        <a class="main-btn send-btn" href="index.php" >Continue</a>
+    </div>
     </section>
     <footer class="main-footer">
         <nav class="footer-nav">
@@ -126,13 +109,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
-    <script>
-        $('document').ready(function() {
-
-            $('#contact-form').validate();
-
-        });
-    </script>
 </body>
 
 </html>
