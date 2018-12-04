@@ -43,6 +43,7 @@
         $_SESSION["isLoggedIn"] = true;
         $_SESSION["usr"] =  $_POST["username"];
         $_SESSION["usrid"] = $user_id;
+        $_SESSION["usrtype"] = $user_id;
     
         $database->insert("tb_profile", [
             "id_user"=> $user_id,

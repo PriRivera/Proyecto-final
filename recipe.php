@@ -20,17 +20,14 @@
                 $like = $database->select("tb_recipe_votes", "*",["AND"=>["id_recipe"=>$id,"id_user"=>$_SESSION["usrid"]]]);
             }
         }
-        print_r($like); 
         if($user[0]['username']==null){
             $user[0]['username']='Anonimus user';
         }
         if($recipe[0]['recipe_status']==null){
-           // print_r("this is wating for admin");
             header("location:recipe-pending.php");
         }
-        if(($recipe==null || $recipe[0]['recipe_status']==0) && $_SESSION['usrtype']==2){
-            //print_r("this is an error  404");
-            header("location:recipe-pending.php");
+        if((empty($recipe) || $recipe[0]['recipe_status']=='0') && $_SESSION['usrtype']==2){
+            header("location:recipe-not-found.php");
         }
     }else{        
         header("location:index.php");

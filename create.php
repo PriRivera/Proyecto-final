@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION["isLoggedIn"]){
+    header("location:profile.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,8 +87,7 @@
             <input type="hidden file" id="profileImg" name="image" class="" value="preview.png" style="border:none;display:none;"/>
             <input type="text" id="descrip" name="desc" class="" style="border:none; display:none;" value="Add an account description">
             <input class="main-btn btn-register" type="button" id="btn-register" value="Register">
-</form>
-
+        </form>
     </section>
    
     <footer class="main-footer">

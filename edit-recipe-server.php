@@ -46,7 +46,8 @@
             $database->update("tb_recipes", [
                 "recipe_name"=> $_POST["recipeName"],
                 "recipe_description"=> $_POST["recipeDescription"],
-                "recipe_instructions"=> $_POST["recipeInstructions"]
+                "recipe_instructions"=> $_POST["recipeInstructions"],
+                "recipe_status" => NULL
             ],[
                 "id_recipe"=> $_POST["id_recipe"]
             ]);

@@ -1,25 +1,18 @@
 <?php
+//'response.php?id=".$i."
     namespace Medoo;
     require 'Medoo.php';
-
-    $onError = false;
-
     $database = new Medoo([
-
         'database_type' => 'mysql',
         'database_name' => 'secret_du_chef',
         'server' => 'localhost',
         'username' => 'root',
         'password' => ''
-    ]);    
+    ]);
     session_start();
-    if(isset($_SESSION["isLoggedIn"])){
-        if($_SESSION["usrtype"]=="2"){
-            header("location:profile.php");
-        }
-        $recipes = $database->select("tb_recipes", "*", ["recipe_status"=>NULL]);
-    }
-    else{
+    $user = $database->select("tb_users","*",["id_user"=>$_SESSION['usrid']]);
+    if(isset($_POST["logout"])){
+        session_destroy();
         header("location:login.php");
     }
 ?>
@@ -28,11 +21,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="¿Que se supone que va aquí"> <!--Aiuda-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
-    <title>Administrator</title>
+    <title>Baked potato</title>
 </head>
-<body>
     <header>
         <nav class="main-nav">            
             <div class="burger">
@@ -52,7 +45,7 @@
                                     <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
                                     <label for='sublogout' id='logout' class='burger-menu__link'>Log out
                                 </form>
-                            ";#<a href="" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                            ";
                         } else {
                             echo"
                                 <a href='login.php' class='burger-menu__link'><li class='burger-menu__li'>Login</li></a>
@@ -89,29 +82,25 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <h1 class="main-message">Welcome</h1>
-            <a class="second-message">Recipes to be approved:</a>
-            <ul>
-                <p> Change the status to one in order to aprove</p>
-                <?php
-                foreach ($recipes as $value) {
-                    echo "
-                        <li id='recipe_li-".$value['id_recipe']."' class='list_admin'>
-                            <a href='recipe.php?id=".$value['id_recipe']."' target='_blank'>".$value['recipe_name']."</a>
-                            <input id='recipe_".$value['id_recipe']."' class='admin_input form-login_imput' list='status' placeholder='status..' name='validate-status'>
-                            <button class='admin_btn main-btn' onclick='changeState(".$value['id_recipe'].")'>Save</button>
-                    ";
-                }
-                ?>
-                <datalist id="status">
-                    <option value="1">
-                    <option value="0">
-                </datalist>
-            </ul>
-    </section>    
+    <div class="background-messaje">
+        <h1 class="menssaje-pending">Error 404 <br> Recipe not found</h1>
+    </div>
+        <br>
+        <br>
+    <footer class="main-footer">
+        <nav class="footer-nav">
+            <a href="index.php"><img class="footer-logo" src="img/logo.png" alt="Secret du Chef's logo"></a>
+            <ul class="footer-imgs">
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/fb.png" alt="facebook"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/instagram.png" alt="instagram"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/pinterest.png" alt="pinterest"></a></li>
+                <li class="footer-li_item"><a class="footer-li_link"></a><img class="footer-li_img" src="img/youtube.png" alt="youtube"></a></li>
+            </ul>   
+            <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p> 
+        </nav>       
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="js/admin-recipe.js"></script>
 </body>
 </html>
