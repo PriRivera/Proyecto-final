@@ -26,60 +26,6 @@
             header('location:recipe.php?id='.$_GET['id']);
         }
     }
-    if($_POST){
-        if(isset($_POST["logout"])){
-            session_destroy();
-            header("location:login.php");
-        }
-        if(isset($_FILES['image'])){
-            $errors= array();
-            $file_name = $_FILES['image']['name'];
-            $file_size = $_FILES['image']['size'];
-            $file_tmp = $_FILES['image']['tmp_name'];
-            $file_type = $_FILES['image']['type'];
-            $file_ext_arr = explode('.',$_FILES['image']['name']);       
-            $file_ext = end($file_ext_arr);      
-            $img_ext = array("jpeg","jpg","png");      
-            if(in_array($file_ext, $img_ext) === false){
-                $errors[] = "choose a JPEG or PNG file.";
-            }      
-            if($file_size > 2097152){
-                $errors[]='2 MB Max';
-            }      
-            if(empty($errors)){
-                $img = "recipe-img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
-                move_uploaded_file($file_tmp, "imgs/".$img);         
-                if($_POST){
-                    $database->insert("tb_recipes", [
-                        "recipe_name"=> $_POST["recipeName"],
-                        "recipe_description"=> $_POST["recipeDescription"],
-                        "recipe_instructions"=> $_POST["recipeInstructions"],
-                        "recipe_image"=> $img
-                    ]);
-                    $last_recipe_id = $database->id();
-                    print_r($_POST['ingredients']);
-                    if(!empty($_POST['ingredients'])) {    
-                        foreach($_POST['ingredients'] as $value){
-                            $database->insert("tb_ingredients", [
-                                    "id_recipe" => $last_recipe_id,
-                                    "ingredient_name" => $value[0],
-                                    "ingredient_amount" => $value[1],
-                                    "ingredient_measure" => $value[2]
-                            ]);
-                        }
-                    }
-                    if(!empty($_POST['categories'])) {    
-                        foreach($_POST['categories'] as $value){
-                            $database->insert("tb_recipe_in_categories", [
-                                    "id_recipe" => $last_recipe_id,
-                                    "id_category" => $value
-                            ]);
-                        }
-                    }
-                }
-            }
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -155,7 +101,8 @@
     </header>
     <section>
         <img class="main-title" src="img/new-recipe.png" alt="New recipe title">
-        <form class="recipe-form" action="edit-recipe.php" method="post" enctype="multipart/form-data">
+        <form class="recipe-form" action="edit-recipe-server.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_recipe" value="<?php echo $recipe[0]["id_recipe"] ?>">
             <div class="left-block">
                 <div class="img-block border">
                     <img id="preview" class = "img-block" src="imgs/<?php echo $recipe[0]['recipe_image']?>" alt="image to upload"/><br>
@@ -207,9 +154,9 @@
                 <?php
                     for($i = 0; $i<$len; $i++){
                         if(in_array($categories[$i]['id_recipe_category'], $recipeCategories)){
-                            echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"]."checked>";
+                            echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"]."' checked>";
                         } else{
-                            echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"].">";
+                            echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"]."'>";
                         }
                         echo "<label for='' class='recipe-category'>".$categories[$i]["recipe_category"]."</label><br>";
                     }

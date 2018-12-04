@@ -94,7 +94,7 @@
         <div class="main-background__container">
             <div class="main-slider">
                 <div class="slider-background">
-                    <h1 class="main-text_index  wow slideInRight" data-wow-delay="0s" data-wow-duration="3s" data-wow-iteration="1">Our Most Voted</h1> 
+                    <h1 class="main-text_index  wow slideInRight" data-wow-delay="0s" data-wow-duration="3s" data-wow-iteration="1">Chef's recommendation</h1> 
                     <ul class="slider-ul">
                         <li class="slider-li"><img class="slider-img" src="img/arroz-con-leche.jpg" alt="Sweet rice dessert"></li>
                         <li class="slider-li"><img class="slider-img" src="img/ensalada-cesar.jpg" alt="Caesar salad"></li>

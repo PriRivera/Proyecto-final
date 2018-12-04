@@ -148,8 +148,8 @@
         </nav>
         <div class="profile-edit"> 
             <form class="" action="profile.php" method="post" enctype="multipart/form-data">
-                <div class="img-block border profile-block">
-                    <a><img id="preview" class = "img-block" src="imgs/<?php echo  $profile[0]["profile_img"] ?>" alt="image to upload"/><br>
+                <div class="img-block border profile-block" style = "margin-bottom: 0em; width:17%">
+                    <a><img id="preview" class = "img-block" src="imgs/<?php echo  $profile[0]["profile_img"] ?>" alt="image to upload" style="width:75%"/><br>
                     <p class="p-drop">Drop an image here or</p>
                     <input type="file" id="file" name="image" class="file-chooser" onchange="readURL(this)"/>
                     <label for=file class="choose_size main-btn" id="img"> Choose a file..</label>
@@ -178,46 +178,54 @@
             </div>
         </div>
     </header>
-    
     <section>
-    <div class="my_recipes">
-        <h1 class="main-h1__profile">My Recipes</h1>
-        <img class="spatulas-img" src="img/paletas.svg" alt="spoon and spatula">
-    </div>
+        <div class="my_recipes">
+            <h1 class="main-h1__profile">My Recipes</h1>
+            <img class="spatulas-img" src="img/paletas.svg" alt="spoon and spatula">
+        </div>
         <ul class="search-content search-content-profile">  
             <?php
                 foreach($recipes as $value){
-                    echo "<li class='search-content_item'><img class='profile-content-img pruebaImagen' src= imgs/".$value["recipe_image"]." alt=''> <div class='text-img__background'><a class='search-content_link inside-text' href='recipe.php?id=".$value["id_recipe"]."'>Click to edit</a> </div> <p class='recipe-menu_description profile-img__names'>".$value["recipe_name"]."</p> </li>";
-                }
-            ?>
-            <li class="search-content_item"><a class="search-content_link"> 
-                <i class="search-content_img img-block border profile-item plus fa fa-plus style" style="font-size:100px"></i>
-                <img class="" src="" alt=""><a class="recipe-menu_description profile-img__names" id="add-id" href="submit.php">Add a new recipe</a>
-            </li>
-        </li>
-    </ul>
-    </section>
-<section>
-    <i class="fa fa-heart main-heart"style="font-size:50px"></i>
-        <h2 class="main-h2__profile">Favorite Recipes</h2>
-        <ul class="search-content search-content-favorites">
-            <?php
-            if(!empty($votedRecipes)){
-                foreach ($votedRecipes as $value) {
                     echo "
-                        <li class='search-content_item'><a class='search-content_link' href='recipe.php?id=".$value['id_recipe']."'>
-                            <div class='search_content_container'><img class='search-content_img'  src='imgs/".$value['recipe_image']."' alt='''></div>
-                            <p class='recipe-menu_description profile-img__names responsive-big_text'>".$value['recipe_name']."<br>By:".$value['0']."</p>
-                        </a></li>
-                        ";
+                    <li class='search-content_item'><a class='search-content_link' href='edit-recipe.php?id=".$value['id_recipe']."'>
+                        <div class='text-img__background'>
+                            <p class='search-content_link inside-text' href='edit-recipe.php?id=".$value["id_recipe"]."'>Click to edit</p> 
+                        </div>
+                        <div class='search_content_container'><img class='profile-content-img pruebaImagen' src= imgs/".$value["recipe_image"]." alt=''></div>   
+                        <br>                     
+                        <p class='recipe-menu_description profile-img__names'>".$value["recipe_name"]."</p> 
+                    </a></li>";
                 }
-            }
             ?>
-                <!--<li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/favrecipes.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Fried Chicken<br>By:Priscilla_Rivera</p></a></li>
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/tortillas.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Tortillas<br>By:Jorge_Miranda</p></a></li>
-        -->
-        </li>
-       </ul>
+            <li class="search-content_item">
+                <a class="search-content_link" href="submit.php"> 
+                    <p class="search-content_img img-block border profile-item plus fa fa-plus style" style="font-size:100px"></p>
+                    <a class="recipe-menu_description profile-img__names" id="add-id" >Add a new recipe</a>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <i class="fa fa-heart main-heart"style="font-size:50px"></i>
+            <h2 class="main-h2__profile">Favorite Recipes</h2>
+            <ul class="search-content search-content-favorites">
+                <?php
+                if(!empty($votedRecipes)){
+                    foreach ($votedRecipes as $value) {
+                        echo "
+                            <li class='search-content_item'><a class='search-content_link' href='recipe.php?id=".$value['id_recipe']."'>
+                                <div class='search_content_container'><img class='search-content_img'  src='imgs/".$value['recipe_image']."' alt='''></div>
+                                <p class='recipe-menu_description profile-img__names responsive-big_text'>".$value['recipe_name']."<br>By:".$value['0']."</p>
+                            </a></li>
+                            ";
+                    }
+                }
+                ?>
+                    <!--<li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/favrecipes.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Fried Chicken<br>By:Priscilla_Rivera</p></a></li>
+                    <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/tortillas.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Tortillas<br>By:Jorge_Miranda</p></a></li>
+            -->
+            </li>
+        </ul>
     </section>
     <footer class="main-footer">
         <nav class="footer-nav">
@@ -246,8 +254,6 @@
         var toEdit = $('#edit');
             toEdit.click(function(){
             $('.profile-edit').css({"display":"block"}),
-            $('.img-block').css({"width":"75%"}),
-            $('.profile-block').css({"width":"17%"}),
             $('.profile_non_edit').css({"display":"none"});
             });
     </script>

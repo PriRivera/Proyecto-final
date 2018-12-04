@@ -46,10 +46,10 @@
                         "recipe_name"=> $_POST["recipeName"],
                         "recipe_description"=> $_POST["recipeDescription"],
                         "recipe_instructions"=> $_POST["recipeInstructions"],
-                        "recipe_image"=> $img
+                        "recipe_image"=> $img,
+                        "recipe_user_id"=>$_SESSION['usrid']
                     ]);
                     $last_recipe_id = $database->id();
-                    print_r($_POST['ingredients']);
                     if(!empty($_POST['ingredients'])) {    
                         foreach($_POST['ingredients'] as $value){
                             $database->insert("tb_ingredients", [
@@ -203,7 +203,7 @@
             <h3><span>Please choose the category your recipe belongs to:<span></h3>
                 <?php
                     for($i = 0; $i<$len; $i++){
-                        echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"]."'required data-msg='Please select at least one category'>";
+                        echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"].">";
                         echo "<label for='' class='recipe-category'>".$categories[$i]["recipe_category"]."</label><br>";
                     }
                     
