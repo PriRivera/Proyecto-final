@@ -11,14 +11,14 @@ toRegister.click(function() {
 $('document').ready(function() {
     $("#form-create-account").validate({
         rules: {
-            username: {
+            usr: {
                 required: true,
                 minlength: 5
             },
-            email: {
+            mail: {
                 required: true
             },
-            password: {
+            pass: {
                 required: true,
                 minlength: 10
             },

@@ -104,30 +104,6 @@
             </ul>
         </nav>
     </header>
-    <section class="registry-box">
-        <br><br>
-        <img class="login-icon" src="img/Recurso 10.svg" alt="">
-        <br>
-        <h3><span>Create</span> a new account</h3>
-        <form action="new-users.php" method="post" class="form-login" id="form-create-account">
-            <label class="form-text">Username:</label><br>
-            <input class="form-login_imput" type="text" name="username" id="usr" placeholder="Create a new username.."> <br>
-
-            <label class="form-text">Email:</label><br>
-            <input class="form-login_imput" type="email" name="email" placeholder="Your email.."> <br>
-            <label class="form-text">Create password:</label><br>
-            <input class="form-login_imput" id="password" type="password" name="password" placeholder="Your password.."><br>
-            <label class="form-text">Confirm password:</label><br>
-            <input class="form-login_imput" id="confirm_password" type="password" placeholder="Confirm your password.." name="confirm_password"><br>
-            <input type="hidden" name="type" value="2"><br>
-            <input class="main-btn btn-register" type="submit" value="Register">
-            
-            <input type="hidden file" id="file" name="image" class="" value="preview.png" style="border:none;display:none;"/>
-            <input type="text" id="text" name="desc" class="" style="border:none; display:none;" value="Add an account description">
-
-        </form>
-    </section>
-    
     <section class="login-box">
         <br><br>
         <img class="login-icon" src="img/Recurso 10.svg" alt="">
@@ -144,7 +120,7 @@
             <label class="form-text" id="password">Password:</label><br>
             <input class="form-login_imput" type="password" name="password" placeholder="Your password.."> <br>
             <p class="dont-account">Don't have an account?</p>
-            <a href="#" class="to-register" id="form-login__p">Create account</a>
+            <a href="create.php" class="" id="form-login__p">Create account</a>
             <input class="main-btn btn-login" type="submit" value="Login" id="login">
 
         </form>
