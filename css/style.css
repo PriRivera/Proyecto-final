@@ -836,10 +836,6 @@ h3 span {
     margin-top: 3.5em;
 }
 
-.baked {
-    text-decoration: underline;
-}
-
 .search-content {
     width: auto;
     height: auto;
@@ -866,7 +862,7 @@ h3 span {
 }
 
 .search-content_img {
-    width: 78%;
+    width: 100%;
     margin: 16px 17px;
     display: inline-block;
 }

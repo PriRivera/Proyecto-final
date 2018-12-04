@@ -103,11 +103,11 @@
             </div>
          <div class="search-div">
              <ul class="search-menu">
-                        <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="#">Healthy</a></li>
-                        <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="#">Desserts</a></li>
-                        <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="#">Meats</a></li>
-                        <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="#">Pastas</a></li>
-                        <li class="sub-menu_item-search baked"><a class="sub-menu_link-search" href="#">Baked</a></li>
+                <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="search.php?keyWord=Healthy">Healthy</a></li>
+                <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="search.php?keyWord=Dessert">Desserts</a></li>
+                <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="search.php?keyWord=Meat">Meats</a></li>
+                <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="search.php?keyWord=Pasta">Pastas</a></li>
+                <li class="sub-menu_item-search"><a class="sub-menu_link-search" href="search.php?keyWord=Bake">Baked</a></li>
             </ul> 
          </div>
     </header>

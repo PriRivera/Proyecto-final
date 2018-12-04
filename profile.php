@@ -25,9 +25,16 @@
         $recipes = $database->select("tb_recipes", "*",[
             "recipe_user_id"=> $_SESSION["usrid"]
         ]);
-        $votes = $database->select("tb_recipes_votes", "*",[
+        $votes = $database->select("tb_recipe_votes", "*",[
             "id_user"=> $_SESSION["usrid"]
         ]);   
+        $votedRecipes = [];
+        foreach ($votes as $value) {
+            $counter = 0;
+            $data =  $database->select("tb_recipes", "*", ["id_recipe"=>$value["id_recipe"]]);
+            $data[0] = array_merge($data[0], $database->select("tb_users", "username", ["id_user"=>$data[0]["recipe_user_id"]]));
+            array_push($votedRecipes, $data[0]);
+        }
     }else{
         header("location:login.php");
     }
@@ -194,8 +201,21 @@
     <i class="fa fa-heart main-heart"style="font-size:50px"></i>
         <h2 class="main-h2__profile">Favorite Recipes</h2>
         <ul class="search-content search-content-favorites">
-                <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/favrecipes.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Fried Chicken<br>By:Priscilla_Rivera</p></a></li>
+            <?php
+            if(!empty($votedRecipes)){
+                foreach ($votedRecipes as $value) {
+                    echo "
+                        <li class='search-content_item'><a class='search-content_link' href='recipe.php?id=".$value['id_recipe']."'>
+                            <div class='search_content_container'><img class='search-content_img'  src='imgs/".$value['recipe_image']."' alt='''></div>
+                            <p class='recipe-menu_description profile-img__names responsive-big_text'>".$value['recipe_name']."<br>By:".$value['0']."</p>
+                        </a></li>
+                        ";
+                }
+            }
+            ?>
+                <!--<li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/favrecipes.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Fried Chicken<br>By:Priscilla_Rivera</p></a></li>
                 <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/tortillas.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Tortillas<br>By:Jorge_Miranda</p></a></li>
+        -->
         </li>
        </ul>
     </section>
@@ -223,13 +243,13 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-    var toEdit = $('#edit');
-        toEdit.click(function(){
-        $('.profile-edit').css({"display":"block"}),
-        $('.img-block').css({"width":"75%"}),
-        $('.profile-block').css({"width":"17%"}),
-        $('.profile_non_edit').css({"display":"none"});
-        });
+        var toEdit = $('#edit');
+            toEdit.click(function(){
+            $('.profile-edit').css({"display":"block"}),
+            $('.img-block').css({"width":"75%"}),
+            $('.profile-block').css({"width":"17%"}),
+            $('.profile_non_edit').css({"display":"none"});
+            });
     </script>
 </body>
 </html>
