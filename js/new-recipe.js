@@ -1,3 +1,35 @@
+$('document').ready(function() {
+    $("#recipe_form").validate({
+        rules: {
+            recipeName: {
+                required: true,
+            },
+            recipeDescription: {
+                required: true,
+                minlength: 5
+            },
+            recipeInstructions: {
+                required: true,
+                minlength: 10
+            },
+        },
+        messages: {
+            recipeName: {
+                required: "Please enter a recipe name",
+            },
+            recipeDescription: {
+                required: "Please enter a recipe description",
+                minlength: "Your description has to be longer"
+            },
+            recipeInstructions: {
+                required: "Please enter preparation instructions",
+                minlength: "Your instructions have to be longer"
+            },
+        }
+
+    });
+});
+
 var ingrNumber = 1;
 var isOnEdit = false;
 var ingredient_name = "";
@@ -14,7 +46,7 @@ var selectedmeas = "";
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) {
+        reader.onload = function(e) {
             var item = document.getElementById('preview');
             item.src = e.target.result;
         }
@@ -47,7 +79,7 @@ $('document').ready(function() {
             $('#measure').val('');
             isOnEdit = false;
         } else {
-            $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input id='input_ingr_name' type='hidden' name='ingredientName[]' value='"+ingredient_name+"'><input id='input_quan' type='hidden' name='ingredientQuantity[]' value='"+quantity+"'><input id='input_mea' type='hidden' name='ingredientMeasure[]' value='"+measure+"'></input><a id='ingr_name' >" + ingredient_name + "&#160; &#160;" + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + "&#160; &#160;"  + measure + "&#160; &#160;" + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span>&#160; &#160;<span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
+            $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input id='input_ingr_name' type='hidden' name='ingredientName[]' value='" + ingredient_name + "'><input id='input_quan' type='hidden' name='ingredientQuantity[]' value='" + quantity + "'><input id='input_mea' type='hidden' name='ingredientMeasure[]' value='" + measure + "'></input><a id='ingr_name' >" + ingredient_name + "&#160; &#160;" + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + "&#160; &#160;" + measure + "&#160; &#160;" + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span>&#160; &#160;<span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
             $('#edit' + ingrNumber).click(function() {
                 isOnEdit = true;
                 editItemID = $(this).closest('li').attr('id');
@@ -85,11 +117,13 @@ $('document').ready(function() {
         }
     });
 });
+
 function newFunction() {
     return 'ingredient-container';
 }
-function loadIngredient(ingredient_name, quantity, measure){
-    $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input id='input_ingr_name' type='hidden' name='ingredientName[]' value='"+ingredient_name+"'><input id='input_quan' type='hidden' name='ingredientQuantity[]' value='"+quantity+"'><input id='input_mea' type='hidden' name='ingredientMeasure[]' value='"+measure+"'></input><a id='ingr_name' >" + ingredient_name + "&#160; &#160;" + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + "&#160; &#160;"  + measure + "&#160; &#160;" + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span>&#160; &#160;<span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
+
+function loadIngredient(ingredient_name, quantity, measure) {
+    $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input id='input_ingr_name' type='hidden' name='ingredientName[]' value='" + ingredient_name + "'><input id='input_quan' type='hidden' name='ingredientQuantity[]' value='" + quantity + "'><input id='input_mea' type='hidden' name='ingredientMeasure[]' value='" + measure + "'></input><a id='ingr_name' >" + ingredient_name + "&#160; &#160;" + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + "&#160; &#160;" + measure + "&#160; &#160;" + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span>&#160; &#160;<span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
     $('#edit' + ingrNumber).click(function() {
         isOnEdit = true;
         editItemID = $(this).closest('li').attr('id');
@@ -119,6 +153,6 @@ function loadIngredient(ingredient_name, quantity, measure){
     });
     $('#delete' + ingrNumber).click(function() {
         $(this).closest('li').remove();
-    });   
+    });
     ingrNumber++;
 }

@@ -164,6 +164,8 @@
                     <input type="file" id="file" name="image" class="file-chooser" onchange="readURL(this)"/>
                     <label for=file class="main-btn main-btn--size"> Choose a file..</label>
                 </div>
+                <label id="img-label-error" for="validate-img" class="error"></label>
+                <input type='checkbox' style="position:absolute; left:-1000px;" id='validate-img' name='validate-img' value='1' required data-msg='Please enter at least one photo'>
             </div>
             <div class="right-block" id="right-block">
                 <h3><span>Name</span> for your recipe.</h3>
@@ -186,6 +188,8 @@
 
                 </div>
                 <input id="add-ingredient-btn" class="main-btn btn-submit" type="button" value="Add ingredient">
+                <label id="recipe-label-msg" for="validate-ingredient" class="error"></label>
+                <input type='checkbox' style="position:absolute; left:-1000px;" id='validate-ingredient' name='validate-ingredient' value='1' required data-msg='Please enter at least one ingredient'>
                 <datalist id="medidas">
                     <option value="Grams">
                     <option value="Ounces">
@@ -206,7 +210,7 @@
             <h3><span>Please choose the category your recipe belongs to:<span></h3>
                 <?php
                     for($i = 0; $i<$len; $i++){
-                        echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"].">";
+                        echo "<input type='checkbox' id='' class='checkbox_submit' name='categories[]' value='".$categories[$i]["id_recipe_category"]."' required data-msg='Please select at least one category'>";
                         echo "<label for='' class='recipe-category'>".$categories[$i]["recipe_category"]."</label><br>";
                     }
                     
@@ -217,8 +221,7 @@
         
         </form>
     </section>
-    <script src="js/new-recipe.js">
-    </script>
+   
 
     <footer class="main-footer">
         <nav class="footer-nav">
@@ -240,6 +243,8 @@
             <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p>
         </nav>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script src="js/new-recipe.js"></script>
 </body>
 
 </html>
