@@ -76,6 +76,7 @@
                 }
             }
         }
+        header("location:submit.php");
     }
     
 
