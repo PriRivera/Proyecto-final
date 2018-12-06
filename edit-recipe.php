@@ -186,5 +186,7 @@
             <p class="footer-p"> A proyect by <br> Priscilla Rivera <br> Hiram González</p>
         </nav>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script src="js/new-recipe.js"></script>
 </body>
 </html>

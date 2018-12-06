@@ -51,6 +51,8 @@ function readURL(input) {
             item.src = e.target.result;
         }
         reader.readAsDataURL(input.files[0]);
+        $('#validate-img').attr('checked', true);
+        document.getElementById("img-label-error").style.display = "none";
     }
 }
 $('document').ready(function() {
@@ -80,6 +82,8 @@ $('document').ready(function() {
             isOnEdit = false;
         } else {
             $('#ingredient-container').append("<li id='ingr" + ingrNumber + "'><input id='input_ingr_name' type='hidden' name='ingredientName[]' value='" + ingredient_name + "'><input id='input_quan' type='hidden' name='ingredientQuantity[]' value='" + quantity + "'><input id='input_mea' type='hidden' name='ingredientMeasure[]' value='" + measure + "'></input><a id='ingr_name' >" + ingredient_name + "&#160; &#160;" + "</a><a id='quan'  >" + quantity + "</a> <a id='mea'  >" + "&#160; &#160;" + measure + "&#160; &#160;" + "</a><span id='edit" + ingrNumber + "' class='fa fa-pencil-square' style='font-size:24px'></span>&#160; &#160;<span id='delete" + ingrNumber + "' class='fa fa-times-circle' style='font-size:24px''></span></li>");
+            $('#validate-ingredient').attr('checked', true);
+            $('#recipe-label-msg').hide();
             $('#edit' + ingrNumber).click(function() {
                 isOnEdit = true;
                 editItemID = $(this).closest('li').attr('id');
