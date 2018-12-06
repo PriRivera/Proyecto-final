@@ -23,7 +23,7 @@
         if($user[0]['username']==null){
             $user[0]['username']='Anonimus user';
         }
-        if($recipe[0]['recipe_status']==null){
+        if($recipe[0]['recipe_status']==null  && $_SESSION['usrtype']==2){
             header("location:recipe-pending.php");
         }
         if((empty($recipe) || $recipe[0]['recipe_status']=='0') && $_SESSION['usrtype']==2){

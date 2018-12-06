@@ -124,7 +124,7 @@
                 <ul id="ingredient-container" class="ingredient"></ul>
                 <?php
                     foreach ($ingredients as $value) {
-                        echo "<script>  loadIngredient('".$value['ingredient_name']."', '".$value['ingredient_amount']."', '".$value['ingredient_measure']."', '".$value['id_ingredient']."'); </script>";
+                        echo "<script>  loadIngredient('".$value['ingredient_name']."', '".$value['ingredient_amount']."', '".$value['ingredient_measure']."'); </script>";
                     }
                 ?>
                 <div id="ingredient" class="ingredient">

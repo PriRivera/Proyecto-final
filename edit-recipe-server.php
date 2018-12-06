@@ -51,19 +51,19 @@
             ],[
                 "id_recipe"=> $_POST["id_recipe"]
             ]);
-            if(!empty($_POST['ingredients'])) {    
-                $database->delete("tb_ingredients", "*", ["id_recipe"=> $_POST["id_recipe"]]);
-                foreach($_POST['ingredients'] as $value){
+            $database->delete("tb_ingredients", ["id_recipe"=> $_POST["id_recipe"]]);
+            if(!empty($_POST['ingredientName'])) {    
+                for ($i=0; $i < COUNT($_POST['ingredientName']); $i++) { 
                     $database->insert("tb_ingredients", [
-                            "id_recipe" => $_POST["id_recipe"],
-                            "ingredient_name" => $value[0],
-                            "ingredient_amount" => $value[1],
-                            "ingredient_measure" => $value[2]
+                        "id_recipe" => $_POST["id_recipe"],
+                        "ingredient_name" => $_POST['ingredientName'][$i],
+                        "ingredient_amount" => $_POST['ingredientQuantity'][$i],
+                        "ingredient_measure" => $_POST['ingredientMeasure'][$i]
                     ]);
                 }
             }
             if(!empty($_POST['categories'])) {    
-                $database->delete("tb_recipe_in_categories", "*", ["id_recipe"=> $_POST["id_recipe"]]);
+                $database->delete("tb_recipe_in_categories", ["id_recipe"=> $_POST["id_recipe"]]);
                 foreach($_POST['categories'] as $value){
                     $database->insert("tb_recipe_in_categories", [
                             "id_recipe" => $_POST["id_recipe"],
