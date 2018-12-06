@@ -156,7 +156,7 @@
 
     <section>
         <img class="main-title" src="img/new-recipe.png" alt="New recipe title">
-        <form class="recipe-form" action="submit.php" method="post" enctype="multipart/form-data">
+        <form id="recipe_form" class="recipe-form" action="submit.php" method="post" enctype="multipart/form-data">
             <div class="left-block">
                 <div class="img-block border">
                     <img id="preview" class = "img-block" src="imgs/preview.png" alt="image to upload"/><br>
