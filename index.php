@@ -95,13 +95,13 @@
             <div class="main-slider">
                 <div class="slider-background">
                     <h1 class="main-text_index  wow slideInRight" data-wow-delay="0s" data-wow-duration="3s" data-wow-iteration="1">Chef's recommendation</h1> 
-                    <ul class="slider-ul">
-                        <li class="slider-li"><img class="slider-img" src="img/arroz-con-leche.jpg" alt="Sweet rice dessert"></li>
-                        <li class="slider-li"><img class="slider-img" src="img/ensalada-cesar.jpg" alt="Caesar salad"></li>
-                        <li class="slider-li"><img class="slider-img" src="img/gallo-pinto.jpg" alt="Gallo pinto"></li>
-                        <li class="slider-li"><img class="slider-img" src="img/penne-tomate.jpg" alt="Penne pasta with tomato"></li>
-                        <li class="slider-li"><img class="slider-img slider-img--queque" src="img/queque.jpeg" alt="cake"></li>   
-                    </ul>   
+                    <?php echo "<ul class='slider-ul'>
+                        <li class='slider-li'><a href='recipe.php?id=9'><img class='slider-img' src='img/arroz-con-leche.jpg' alt='Sweet rice dessert'></a></li>
+                        <li class='slider-li'><a href='recipe.php?id=10'><img class='slider-img' src='img/ensalada-cesar.jpg' alt='Caesar salad'></a></li>
+                        <li class='slider-li'><a href='recipe.php?id=11'><img class='slider-img' src='img/gallo-pinto.jpg'  alt='Gallo pinto'></a></li>
+                        <li class='slider-li'><a href='recipe.php?id=12'><img class='slider-img' src='img/penne-tomate.jpg' alt='Penne pasta with tomato'></a></li>
+                        <li class='slider-li'><a href='recipe.php?id=13'><img class='slider-img slider-img--queque' src='img/queque.jpeg' alt='cake'></a></li>   
+                    </ul>"?>  
                 </div>
             </div>
             <img src="img/logo.png" alt="" class="mobile-logo">
