@@ -16,12 +16,19 @@
         }
     }
     if(isset($_GET["keyWord"])){
-        $result = $database->select("tb_recipes","*", ["recipe_name[~]"=>$_GET["keyWord"]]);
+        $result = $database->select("tb_recipes","*", ['AND'=>["recipe_name[~]"=>$_GET["keyWord"], "recipe_status"=>'1']]);
         $category = $database->select("tb_recipe_categories","*", ["recipe_category[~]"=>$_GET["keyWord"]]);
         foreach ($category as $value) {
             $categories = $database->select("tb_recipe_in_categories","*",["id_category"=>$value["id_recipe_category"]]);
-            foreach ($categories as $value) {
-                $result = array_merge($result, $database->select("tb_recipes", "*", ["id_recipe"=>$value["id_recipe"]]));
+            if(!empty($categories)){
+                foreach ($categories as $value) {
+                    $temp = $database->select("tb_recipes", "*", ['AND'=>["id_recipe"=>$value["id_recipe"],"recipe_status"=>'1']]);
+                    if(!empty($temp)){
+                        if(!in_array($temp[0], $result)){
+                            $result = array_merge($result, $temp);
+                        }
+                    }
+                }
             }
         }
     }
@@ -31,9 +38,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Baked section"> <!--Aiuda-->
+    <meta name="description" content="Baked section">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Icon Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>search</title>
 </head>
 <body>
@@ -56,7 +63,7 @@
                                     <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
                                     <label for='sublogout' id='logout' class='burger-menu__link'>Log out
                                 </form>
-                            ";#<a href="" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                            ";
                         } else {
                             echo"
                                 <a href='login.php' class='burger-menu__link'><li class='burger-menu__li'>Login</li></a>

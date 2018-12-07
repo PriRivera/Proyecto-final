@@ -165,6 +165,11 @@
             </div> 
             <input type="submit" id="submit-recipe" class="main-btn" value="Save & publish">
         </form>
+        <form class="recipe-form" action="edit-recipe-server.php" method="post">
+            <input type="hidden" name="delete" value="true">
+            <input type="hidden" name="id_recipe" value="<?php echo $recipe[0]["id_recipe"] ?>">
+            <input type="submit" id="submit-recipe" class="main-btn" value="Delete recipe">
+        </form>
     </section>
     <footer class="main-footer">
         <nav class="footer-nav">

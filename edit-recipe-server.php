@@ -17,6 +17,13 @@
             session_destroy();
             header("location:login.php");
         }
+        if(isset($_POST["delete"])&&isset($_POST["id_recipe"])){
+            $database->delete("tb_recipes", ["id_recipe"=> $_POST["id_recipe"]]);
+            $database->delete("tb_recipe_in_categories", ["id_recipe"=> $_POST["id_recipe"]]);
+            $database->delete("tb_ingredients", ["id_recipe"=> $_POST["id_recipe"]]);
+            $database->delete("tb_recipe_votes", ["id_recipe"=> $_POST["id_recipe"]]);
+            header('location:profile.php');
+        }
         if(isset($_FILES['image'])){
             if(!empty($_FILES['image']['name'])){
                 $errors= array();

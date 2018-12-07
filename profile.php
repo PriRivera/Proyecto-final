@@ -69,7 +69,8 @@
                         "id_user"=> $_SESSION["usrid"]
                     ]);
                 }
-            }else if(!empty($_POST["description"])){
+            }
+            if(!empty($_POST["description"])){
                 $database->update("tb_profile",[
                     "description"=> $_POST["description"]
                 ], [
@@ -110,7 +111,7 @@
                                     <input type='submit' id='sublogout' name='logout' value='true' style='display:none;'>
                                     <label for='sublogout' id='logout' class='burger-menu__link'>Log out
                                 </form>
-                            ";#<a href="" class="burger-menu__link"><li class="burger-menu__li">Logout</li></a>
+                            ";
                         } else {
                             echo"
                                 <a href='login.php' class='burger-menu__link'><li class='burger-menu__li'>Login</li></a>
@@ -188,8 +189,18 @@
                 foreach($recipes as $value){
                     echo "
                     <li class='search-content_item'><a class='search-content_link' href='edit-recipe.php?id=".$value['id_recipe']."'>
-                        <div class='text-img__background'>
-                            <p class='search-content_link inside-text' href='edit-recipe.php?id=".$value["id_recipe"]."'>Click to edit</p> 
+                        <div class='text-img__background'";
+                    if($value['recipe_status']=='0'){
+                        echo "style='background-color:red;'";
+                    }
+                    echo ">
+                            <p class='search-content_link inside-text' href='edit-recipe.php?id=".$value["id_recipe"]."'>";
+                    if($value['recipe_status']=='0'){
+                        echo "Rcp rejected";
+                    }else{
+                        echo "Click to edit";
+                    }
+                    echo "</p> 
                         </div>
                         <div class='search_content_container'><img class='profile-content-img pruebaImagen' src= imgs/".$value["recipe_image"]." alt=''></div>   
                         <br>                     
@@ -221,9 +232,6 @@
                     }
                 }
                 ?>
-                    <!--<li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/favrecipes.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Fried Chicken<br>By:Priscilla_Rivera</p></a></li>
-                    <li class="search-content_item"><a class="search-content_link"><img class="search-content_img" src="img/tortillas.jpeg" alt=""><p class="recipe-menu_description profile-img__names responsive-big_text">Tortillas<br>By:Jorge_Miranda</p></a></li>
-            -->
             </li>
         </ul>
     </section>

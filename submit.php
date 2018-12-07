@@ -42,7 +42,6 @@
                 $img = "recipe-img-".generateRandomString().".".pathinfo($file_name, PATHINFO_EXTENSION);
                 move_uploaded_file($file_tmp, "imgs/".$img);    
                 if($_POST){
-                    print_r($_POST);
                     $database->insert("tb_recipes", [
                         "recipe_name"=> $_POST["recipeName"],
                         "recipe_description"=> $_POST["recipeDescription"],
@@ -72,7 +71,7 @@
                             ]);
                         }
                     }
-
+                    header("location:profile.php");
                 }
             }
         }

@@ -119,22 +119,22 @@
             <img class="recipe-img wow fadeIn" src="img/recipes.png" alt="recepies">
             <ul class="recipe-menu">
                 <li class="recipe-menu_item">
-                    <a class="recipe-menu_link"><img class="recipe-menu_img wow fadeIn" src="img/frenchToast.png" alt="French Toast">French Toast</a>
+                    <a class="recipe-menu_link" href="recipe.php?id=4"><img class="recipe-menu_img wow fadeIn" src="img/frenchToast.png" alt="French Toast">French Toast</a>
                 </li>
                 <li class="recipe-menu_item">
-                    <a class="recipe-menu_link"><img class="recipe-menu_img wow fadeIn" src="img/elementoLista.jpeg" alt="lasagna">Pasta Pie</a>
+                    <a class="recipe-menu_link" href="recipe.php?id=6"><img class="recipe-menu_img wow fadeIn" src="img/elementoLista.jpeg" alt="lasagna">Pasta Pie</a>
                 </li>
                 <li class="recipe-menu_item">
-                    <a class="recipe-menu_link"><img class="recipe-menu_img wow fadeIn" src="img/chicken.png" alt="fried chicken">Chicken Tenders</a>
+                    <a class="recipe-menu_link" href="recipe.php?id=3"><img class="recipe-menu_img wow fadeIn" src="img/chicken.png" alt="fried chicken">Chicken Tenders</a>
                 </li>
                 <li class="recipe-menu_item">
-                    <a class="recipe-menu_link"><img class="recipe-menu_img wow fadeIn" src="img/favrecipes.jpeg" alt="fried chicken wings">Chicken Wings</a>
+                    <a class="recipe-menu_link" href="recipe.php?id=7"><img class="recipe-menu_img wow fadeIn" src="img/favrecipes.jpeg" alt="fried chicken wings">Chicken Wings</a>
                 </li>
                 <li class="recipe-menu_item">
-                    <a class="recipe-menu_link"><img class="recipe-menu_img wow fadeIn" src="img/papa.jpg" alt="baked potato">Baked Potato</a>
+                    <a class="recipe-menu_link" href="recipe.php?id=2"><img class="recipe-menu_img wow fadeIn" src="img/papa.jpg" alt="baked potato">Baked Potato</a>
                 </li>
                 <li class="recipe-menu_item">
-                    <a class="recipe-menu_link"><img class="recipe-menu_img wow fadeIn" src="img/ultreia-039.jpg" alt="fish">Gourmet Fish</a>
+                    <a class="recipe-menu_link" href="recipe.php?id=5"><img class="recipe-menu_img wow fadeIn" src="img/ultreia-039.jpg" alt="fish">Gourmet Fish</a>
                 </li>
             </ul>
             <div class="red-block"></div>
